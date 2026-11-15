@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-15T21:13:00.000Z",
+ "updated": "2026-11-15T21:58:25.000Z",
  "series": [
   {
    "id": "solo-leveling",
@@ -189,10 +189,10 @@
    "rating": 9.0,
    "volumes": 0,
    "publisher": null,
-   "mu": 76138565368,
-   "verify": true,
+   "mu": 17122182327,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "sword-master-youngest-son",
@@ -476,10 +476,10 @@
    "rating": 9.0,
    "volumes": 0,
    "publisher": null,
-   "mu": 47708478269,
-   "verify": true,
+   "mu": 29556692510,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "academys-genius-swordmasters",
@@ -872,10 +872,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 32367613211,
-   "verify": true,
+   "mu": 29667643858,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "apocalypse-sword-gods",
@@ -1327,10 +1327,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 28627914028,
-   "verify": true,
+   "mu": 22108062520,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "the-sss-rankers-retourn",
@@ -1457,10 +1457,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 59157659930,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "the-genius-tamer-of-the-academy",
@@ -1613,10 +1613,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 16625520379,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "ending-maker",
@@ -1665,10 +1665,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 17066552636,
-   "verify": true,
+   "mu": 77645713662,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "demon-crest",
@@ -1886,10 +1886,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 6767035553,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "reincarnator-stream",
@@ -1951,10 +1951,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 74220744179,
-   "verify": true,
+   "mu": 47777182673,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "reincarnated-streamer-scene",
@@ -2016,10 +2016,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 46211735900,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:58:25.000Z"
   },
   {
    "id": "lord-of-mysteries",
@@ -3269,9 +3269,9 @@
    "volumes": 4,
    "publisher": "Delcourt",
    "mu": 52697360707,
-   "verify": true,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2,
@@ -3317,10 +3317,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Kurokawa",
-   "mu": 18862756576,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1
    ],
@@ -3461,10 +3461,10 @@
    "rating": null,
    "volumes": 2,
    "publisher": "Kana",
-   "mu": 15541244086,
-   "verify": true,
+   "mu": 35916682500,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T21:13:00.000Z",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2
@@ -3670,10 +3670,10 @@
    "rating": null,
    "volumes": 4,
    "publisher": "Bamboo",
-   "mu": 54016803525,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2,
@@ -3749,10 +3749,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Nobi Nobi",
-   "mu": 60726078830,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [],
    "extras": 1
   },
@@ -3788,10 +3788,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Sarbacane",
-   "mu": 52621770086,
-   "verify": true,
+   "mu": 18049293276,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [],
    "extras": 1
   },
@@ -4212,10 +4212,10 @@
    "rating": null,
    "volumes": 2,
    "publisher": "Glénat",
-   "mu": 55099564912,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T21:13:00.000Z",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2
@@ -4293,10 +4293,10 @@
    "rating": null,
    "volumes": 4,
    "publisher": "Ki-Oon",
-   "mu": 27540312201,
-   "verify": true,
+   "mu": 8690952745,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2,
@@ -4364,10 +4364,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Kurokawa",
-   "mu": 32923481428,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1
    ],
@@ -4429,10 +4429,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Glénat",
-   "mu": 77962975056,
-   "verify": true,
+   "mu": 3789664759,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T21:13:00.000Z",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [],
    "extras": 1,
    "group": "one-piece"
@@ -4583,10 +4583,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Bamboo",
-   "mu": 63414246785,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1
    ],
@@ -4626,10 +4626,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Uppercut Editions",
-   "mu": 78179717895,
+   "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [],
    "extras": 1
   },
@@ -4766,10 +4766,10 @@
    "rating": null,
    "volumes": 16,
    "publisher": "Glénat",
-   "mu": null,
-   "verify": true,
+   "mu": 45405144027,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T21:13:00.000Z",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [
     1,
     2,
@@ -4926,10 +4926,10 @@
    "rating": null,
    "volumes": 1,
    "publisher": "Pika",
-   "mu": 11920035749,
-   "verify": true,
+   "mu": 46594047259,
+   "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:58:25.000Z",
    "owned": [],
    "extras": 1
   }
