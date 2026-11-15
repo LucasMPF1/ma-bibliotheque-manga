@@ -31,6 +31,7 @@
       rel, latest, unread, read,
       sparkle: s.status === 'en_cours' && unread >= SPARKLE,
       cover: s.cover || hd(rel?.cover),
+      coverFirst: (s.cover || '').split(/\s+/)[0] || hd(rel?.cover),
       type: rel?.type || '',
       voDone: !!rel?.completed,
       changedAt: rel?.changed_at || null,
@@ -77,12 +78,22 @@
   function initials(t) { return t.replace(/^(the|a|le|la|les)\s+/i, '').split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase(); }
   function coverHtml(s, d, big = false) {
     const ph = `<div class="ph" style="${phStyle(s.title)}">${esc(big ? s.title : s.title)}</div>`;
-    if (!d.cover) return ph;
-    return `${ph}<img src="${esc(d.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`;
+    return ph + imgHtml(d.cover);
   }
   function thumbHtml(s, d) {
-    return `<div class="ph" style="${phStyle(s.title)}">${esc(initials(s.title))}</div>${d.cover ? `<img src="${esc(d.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}`;
+    return `<div class="ph" style="${phStyle(s.title)}">${esc(initials(s.title))}</div>${imgHtml(d.cover)}`;
   }
+  // Une image perso peut contenir plusieurs adresses séparées par des espaces : on essaie la suivante si l'une échoue.
+  function imgHtml(cover) {
+    if (!cover) return '';
+    const [first, ...rest] = cover.trim().split(/\s+/);
+    return `<img src="${esc(first)}" data-next="${esc(rest.join(' '))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="coverNext(this)" onload="if(this.naturalWidth<20)coverNext(this)">`;
+  }
+  window.coverNext = (img) => {
+    const [n, ...rest] = (img.dataset.next || '').split(' ').filter(Boolean);
+    if (!n) { img.remove(); return; }
+    img.dataset.next = rest.join(' '); img.src = n;
+  };
   function ago(iso) {
     if (!iso) return '';
     const diff = (Date.now() - new Date(iso).getTime()) / 1000;
@@ -533,7 +544,7 @@
         <div class="grabber"></div>
         <button class="close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6 10.6 12 5 6.4z"/></svg></button>
         <div class="hero">
-          ${d.cover ? `<div class="bgblur" style="background-image:url('${esc(d.cover)}')"></div>` : ''}
+          ${d.cover ? `<div class="bgblur" style="background-image:url('${esc(d.coverFirst)}')"></div>` : ''}
           <div class="cover">${coverHtml(s, d, true)}</div>
           <div class="info">
             <h3>${esc(s.title)}</h3>
@@ -636,7 +647,7 @@
         const u = prompt("Colle l'adresse d'une image (clic droit ou appui long sur une image, puis « Copier l'adresse de l'image »). Laisse vide pour revenir à l'image automatique.", s.cover || '');
         if (u === null) return;
         const v = u.trim();
-        if (v && !/^https:\/\//.test(v)) { toast("L'adresse doit commencer par https://"); return; }
+        if (v && !v.split(/\s+/).every((x) => /^https:\/\//.test(x))) { toast("L'adresse doit commencer par https://"); return; }
         S.update(id, { cover: v || null }); draw(); toast(v ? 'Image changée' : 'Image automatique');
       });
       $('[data-rename]', sheet).addEventListener('click', () => { const t = prompt('Nouveau titre', s.title); if (t && t.trim()) { S.update(id, { title: t.trim() }); draw(); } });
