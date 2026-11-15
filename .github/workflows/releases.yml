@@ -1,0 +1,38 @@
+name: Nouveaux chapitres
+
+on:
+  schedule:
+    - cron: "15 6,18 * * *"   # 7h15 et 19h15 (heure de Paris en hiver)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: releases
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: site
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Chercher les nouveaux chapitres
+        run: python site/scripts/check_releases.py data
+      - name: Enregistrer
+        working-directory: data
+        run: |
+          git config user.name "Ma Biblio"
+          git config user.email "actions@users.noreply.github.com"
+          git add releases.json
+          git commit -m "Nouveaux chapitres $(date -u +%F)" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
