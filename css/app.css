@@ -75,7 +75,7 @@ svg { fill: currentColor; }
   .tabs { display: none; }
   .topbar { padding: calc(8px + var(--safe-t)) 16px 8px; }
   .bottomnav {
-    display: grid; grid-template-columns: repeat(4, 1fr); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
+    display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
     height: calc(var(--nav-h) + var(--safe-b)); padding-bottom: var(--safe-b);
     background: color-mix(in srgb, var(--surface) 88%, transparent); border-top: 1px solid var(--line);
     backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
@@ -159,6 +159,7 @@ button.stat:hover { outline: 2px solid var(--line); }
 .badge.rating { left: 6px; background: rgba(0,0,0,.55); color: #fff; }
 .badge.new { right: 6px; background: var(--accent); color: #fff; }
 .badge.new.big { background: linear-gradient(135deg, #ff8a00, #e5484d); }
+.badge.vol { right: 6px; background: rgba(0,0,0,.55); color: #fff; }
 .badge.done { right: 6px; background: var(--good); color: #fff; }
 .quick {
   position: absolute; right: 6px; bottom: 6px; width: 36px; height: 36px; border-radius: 50%; border: 0;
