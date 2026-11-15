@@ -15,7 +15,7 @@
   };
   const SPARKLE = 40;
 
-  const ui = { q: '' };
+  const ui = { q: '', mode: 'scan' };
 
   // ---------- Données dérivées ----------
   function derive(s) {
@@ -30,7 +30,7 @@
     return {
       rel, latest, unread, read,
       sparkle: s.status === 'en_cours' && unread >= SPARKLE,
-      cover: rel?.cover || '',
+      cover: hd(rel?.cover),
       type: rel?.type || '',
       voDone: !!rel?.completed,
       changedAt: rel?.changed_at || null,
@@ -38,6 +38,7 @@
     };
   }
 
+  function hd(url) { return url ? url.replace('/image/thumb/', '/image/') : ''; }
   function hue(str) { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 360; }
   function phStyle(t) { const h = hue(t); return `background:linear-gradient(150deg,hsl(${h} 55% 42%),hsl(${(h + 40) % 360} 60% 28%))`; }
   function initials(t) { return t.replace(/^(the|a|le|la|les)\s+/i, '').split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase(); }
@@ -61,7 +62,7 @@
   const fmtRating = (r) => (r == null ? '' : (Number.isInteger(r) ? r : r.toFixed(1).replace('.', ',')));
 
   // ---------- Routeur ----------
-  const routes = { '': renderLibrary, nouveautes: renderNews, stats: renderStats, reglages: renderSettings };
+  const routes = { '': () => renderLibrary('scan'), papier: () => renderLibrary('papier'), nouveautes: renderNews, stats: renderStats, reglages: renderSettings };
   function route() {
     const h = location.hash;
     if (h.startsWith('#sync=')) {
@@ -70,10 +71,11 @@
       S.setToken(t).then((ok) => toast(ok ? 'Synchronisation activée sur cet appareil' : 'Ce lien de synchronisation ne marche pas'));
     }
     const key = (location.hash.replace(/^#\/?/, '').split('?')[0]) || '';
-    const fn = routes[key] || renderLibrary;
-    const tab = { '': 'library', nouveautes: 'news', stats: 'stats', reglages: 'settings' }[key] || 'library';
+    const fn = routes[key] || routes[''];
+    const tab = { '': 'library', papier: 'papier', nouveautes: 'news', stats: 'stats', reglages: 'settings' }[key] || 'library';
     $$('[data-tab]').forEach((a) => a.classList.toggle('active', a.dataset.tab === tab));
-    $('.fab').hidden = tab !== 'library';
+    $('.fab').hidden = tab !== 'library' && tab !== 'papier';
+    ui.mode = tab === 'papier' ? 'papier' : 'scan';
     if (tab === 'news') markNewsSeenSoon();
     fn();
   }
@@ -86,9 +88,23 @@
     ['en_cours', 'En cours', (s) => s.status === 'en_cours'],
     ['a_commencer', 'À commencer', (s) => s.status === 'a_commencer'],
     ['terminee', 'Terminées', (s) => s.status === 'terminee'],
-    ['papier', 'Papier', (s) => s.volumes > 0],
     ['verify', 'À vérifier', (s) => s.verify],
   ];
+  const FILTERS_P = [
+    ['all', 'Tout', () => true],
+    ['seul', 'Papier seulement', (s) => s.status === 'collection'],
+    ['scan', 'Aussi en scan', (s) => s.status !== 'collection'],
+    ['manga', 'Manga', (s, d) => d.type === 'Manga'],
+    ['manhwa', 'Manhwa / webtoon', (s, d) => d.type === 'Manhwa' || d.type === 'Manhua'],
+  ];
+  const SORTS_P = {
+    title: ['Titre A → Z', (a, b) => a.s.title.localeCompare(b.s.title, 'fr')],
+    volumes: ['Le plus de tomes', (a, b) => (b.s.volumes || 0) - (a.s.volumes || 0) || a.s.title.localeCompare(b.s.title, 'fr')],
+    publisher: ['Éditeur', (a, b) => (a.s.publisher || 'zz').localeCompare(b.s.publisher || 'zz', 'fr') || a.s.title.localeCompare(b.s.title, 'fr')],
+    rating: ['Meilleure note', (a, b) => (b.s.rating ?? -1) - (a.s.rating ?? -1)],
+    updated: ['Modifiées récemment', (a, b) => (b.s.updated || '').localeCompare(a.s.updated || '')],
+  };
+  const inMode = (s, mode) => (mode === 'papier' ? s.volumes > 0 || s.status === 'collection' : s.status !== 'collection');
   const SORTS = {
     unread: ['Le plus à lire', (a, b) => sortUnread(b) - sortUnread(a) || a.s.title.localeCompare(b.s.title)],
     rating: ['Meilleure note', (a, b) => (b.s.rating ?? -1) - (a.s.rating ?? -1) || b.d.unread - a.d.unread],
@@ -100,9 +116,16 @@
   function sortUnread(x) { return x.s.status === 'en_cours' ? x.d.unread : x.s.status === 'a_commencer' ? -1 : -2; }
   function norm(t) { return (t || '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
 
-  function renderLibrary() {
+  function renderLibrary(mode = 'scan') {
     const view = $('#view');
-    const items = S.all().map((s) => ({ s, d: derive(s) }));
+    const P = mode === 'papier';
+    const items = S.all().filter((s) => inMode(s, mode)).map((s) => ({ s, d: derive(s) }));
+    const filters = P ? FILTERS_P : FILTERS, sorts = P ? SORTS_P : SORTS;
+    const fk = 'filter_' + mode, sk = 'sort_' + mode;
+    if (!S.prefs[sk]) S.prefs[sk] = P ? 'title' : (S.prefs.sort || 'unread');
+    if (!S.prefs[fk]) S.prefs[fk] = 'all';
+    const publishers = new Set(items.map((x) => x.s.publisher).filter(Boolean)).size;
+    const aCommencer = items.filter((x) => x.s.status === 'a_commencer').length;
     const enCours = items.filter((x) => x.s.status === 'en_cours');
     const toRead = enCours.reduce((a, x) => a + x.d.unread, 0);
     const sparkles = items.filter((x) => x.d.sparkle).length;
@@ -110,16 +133,20 @@
     const p = S.prefs;
 
     view.innerHTML = `
-      <div class="summary">
+      <h1>${P ? 'Ma collection papier' : 'Mes scans'}</h1>
+      <div class="summary">${P ? `
+        <button class="stat" data-filter="all"><b>${n(items.length)}</b><span>séries</span></button>
+        <button class="stat" data-filter="all"><b>${n(volumes)}</b><span>tomes</span></button>
+        <div class="stat"><b>${n(publishers)}</b><span>éditeurs</span></div>` : `
         <button class="stat" data-filter="en_cours"><b>${n(enCours.length)}</b><span>séries en cours</span></button>
         <button class="stat" data-filter="dispo"><b>${n(toRead)}</b><span>chapitres à lire</span></button>
         <button class="stat" data-filter="sparkle"><b>${n(sparkles)}</b><span>✨ avec 40+ à lire</span></button>
-        <button class="stat" data-filter="papier"><b>${n(volumes)}</b><span>tomes papier</span></button>
+        <button class="stat" data-filter="a_commencer"><b>${n(aCommencer)}</b><span>à commencer</span></button>`}
       </div>
       <div class="toolbar">
         <label class="search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.2 12.6l5.1 5.1 1.4-1.4-5.1-5.1A7 7 0 0 0 10 3zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
           <input type="search" placeholder="Rechercher une série…" value="${esc(ui.q)}" data-q autocomplete="off" enterkeyhint="search"></label>
-        <select class="select" data-sort aria-label="Trier">${Object.entries(SORTS).map(([k, [l]]) => `<option value="${k}" ${p.sort === k ? 'selected' : ''}>${l}</option>`).join('')}</select>
+        <select class="select" data-sort aria-label="Trier">${Object.entries(sorts).map(([k, [l]]) => `<option value="${k}" ${p[sk] === k ? 'selected' : ''}>${l}</option>`).join('')}</select>
         <div class="viewtoggle" role="group" aria-label="Affichage">
           <button data-view="grid" class="${p.view === 'grid' ? 'on' : ''}" aria-label="Couvertures"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z"/></svg></button>
           <button data-view="list" class="${p.view === 'list' ? 'on' : ''}" aria-label="Liste"><svg viewBox="0 0 24 24"><path d="M4 5h16v3H4zm0 5.5h16v3H4zM4 16h16v3H4z"/></svg></button>
@@ -129,32 +156,32 @@
       <div data-results></div>`;
 
     $('[data-q]', view).addEventListener('input', (e) => { ui.q = e.target.value; drawResults(); });
-    $('[data-sort]', view).addEventListener('change', (e) => { S.setPrefs({ sort: e.target.value }); drawResults(); });
-    $$('[data-view]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ view: b.dataset.view }); renderLibrary(); }));
-    $$('.stat[data-filter]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ filter: b.dataset.filter }); drawResults(); }));
+    $('[data-sort]', view).addEventListener('change', (e) => { S.setPrefs({ [sk]: e.target.value }); drawResults(); });
+    $$('[data-view]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ view: b.dataset.view }); renderLibrary(mode); }));
+    $$('.stat[data-filter]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ [fk]: b.dataset.filter }); drawResults(); }));
     drawResults();
 
     function drawResults() {
       const chips = $('[data-chips]', view);
-      chips.innerHTML = FILTERS.map(([k, l, f]) => {
+      chips.innerHTML = filters.map(([k, l, f]) => {
         const c = items.filter((x) => f(x.s, x.d)).length;
         if (k === 'verify' && !c) return '';
-        return `<button class="chip ${p.filter === k ? 'on' : ''}" data-f="${k}">${l} <i>${c}</i></button>`;
+        return `<button class="chip ${p[fk] === k ? 'on' : ''}" data-f="${k}">${l} <i>${c}</i></button>`;
       }).join('');
-      $$('[data-f]', chips).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ filter: b.dataset.f }); drawResults(); }));
+      $$('[data-f]', chips).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ [fk]: b.dataset.f }); drawResults(); }));
 
-      const f = (FILTERS.find((x) => x[0] === p.filter) || FILTERS[0])[2];
+      const f = (filters.find((x) => x[0] === p[fk]) || filters[0])[2];
       const q = norm(ui.q).trim();
       let list = items.filter((x) => f(x.s, x.d));
       if (q) list = list.filter((x) => norm(x.s.title).includes(q) || norm(x.d.rel?.title).includes(q));
-      list.sort((SORTS[p.sort] || SORTS.unread)[1]);
+      list.sort((sorts[p[sk]] || Object.values(sorts)[0])[1]);
 
       const box = $('[data-results]', view);
       if (!list.length) {
         box.innerHTML = `<div class="empty"><b>Aucune série ici</b>${q ? 'Essaie un autre mot, ou ajoute-la avec le bouton +.' : 'Change de filtre pour voir le reste de ta bibliothèque.'}</div>`;
         return;
       }
-      box.innerHTML = p.view === 'list' ? `<div class="list">${list.map(rowHtml).join('')}</div>` : `<div class="grid">${list.map(cardHtml).join('')}</div>`;
+      box.innerHTML = p.view === 'list' ? `<div class="list">${list.map((x) => rowHtml(x, mode)).join('')}</div>` : `<div class="grid">${list.map((x) => cardHtml(x, mode)).join('')}</div>`;
       bindItems(box);
     }
   }
@@ -170,7 +197,17 @@
     if (s.status === 'en_cours' && d.unread > 0) return `<span class="badge new ${d.sparkle ? 'big' : ''}">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>`;
     return '';
   }
-  function cardHtml({ s, d }) {
+  function papierMeta(s) { return `${n(s.volumes || 0)} tome${s.volumes > 1 ? 's' : ''}${s.publisher ? ' · ' + esc(s.publisher) : ''}`; }
+  function cardHtml({ s, d }, mode) {
+    if (mode === 'papier') return `<article class="card" data-id="${esc(s.id)}">
+      <div class="cover">${coverHtml(s, d)}
+        ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
+        <span class="badge vol">${n(s.volumes || 0)} t.</span>
+        <button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>
+      </div>
+      <div class="t">${esc(s.title)}</div>
+      <div class="m">${papierMeta(s)}</div>
+    </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
     return `<article class="card" data-id="${esc(s.id)}">
       <div class="cover">${coverHtml(s, d)}
@@ -183,7 +220,12 @@
       <div class="m">${metaLine(s, d)}</div>
     </article>`;
   }
-  function rowHtml({ s, d }) {
+  function rowHtml({ s, d }, mode) {
+    if (mode === 'papier') return `<article class="row" data-id="${esc(s.id)}">
+      <div class="thumb">${thumbHtml(s, d)}</div>
+      <div><div class="t">${esc(s.title)}</div><div class="m"><span>${papierMeta(s)}</span>${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
+      <div class="act"><button class="btn small" data-quickvol>+1 tome</button></div>
+    </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
     return `<article class="row" data-id="${esc(s.id)}">
       <div class="thumb">${thumbHtml(s, d)}</div>
@@ -196,6 +238,7 @@
     $$('[data-id]', box).forEach((el) => {
       el.addEventListener('click', (e) => {
         if (e.target.closest('[data-quick]')) { e.stopPropagation(); quickRead(el.dataset.id); return; }
+        if (e.target.closest('[data-quickvol]')) { e.stopPropagation(); quickVolume(el.dataset.id); return; }
         if (e.target.closest('[data-allread]')) { e.stopPropagation(); allRead(el.dataset.id); return; }
         openDetail(el.dataset.id);
       });
@@ -207,6 +250,12 @@
     S.update(id, { next: (s.next || 1) + 1, status: 'en_cours' });
     if (navigator.vibrate) navigator.vibrate(10);
     toast(`${s.title} : chapitre ${prev.next} lu`, () => S.update(id, prev));
+  }
+  function quickVolume(id) {
+    const s = S.get(id); const prev = { volumes: s.volumes || 0 };
+    S.update(id, { volumes: prev.volumes + 1 });
+    if (navigator.vibrate) navigator.vibrate(10);
+    toast(`${s.title} : tome ${prev.volumes + 1} ajouté`, () => S.update(id, prev));
   }
   function allRead(id) {
     const s = S.get(id); const d = derive(s); const prev = { next: s.next, status: s.status };
@@ -400,7 +449,7 @@
         ${s.verify || !s.mu ? `<div class="sec"><div class="warn">${s.mu ? `Je ne suis pas sûr que la fiche <b>${esc(rel?.title || '')}</b> soit la bonne.` : 'Cette série n’est reliée à aucune fiche, donc je ne peux pas suivre ses sorties.'}
           <div class="actions" style="margin-top:8px">${s.mu ? '<button class="btn small" data-okfiche>C’est la bonne</button>' : ''}<button class="btn small" data-fix>${s.mu ? 'Corriger' : 'Relier une fiche'}</button></div></div></div>` : ''}
 
-        <div class="sec">
+        ${s.status === 'collection' ? '' : `<div class="sec">
           <span class="lbl">Prochain chapitre à lire</span>
           <div class="stepper">
             <button data-step="-1" aria-label="Chapitre précédent">−</button>
@@ -413,7 +462,7 @@
             <button class="btn small" data-step="10">+10</button>
             ${d.latest ? `<button class="btn small" data-uptodate>Je suis à jour</button>` : ''}
           </div>
-        </div>
+        </div>`}
 
         <div class="sec">
           <span class="lbl">Statut</span>
@@ -451,7 +500,7 @@
         S.update(id, patch); draw();
       };
       $$('[data-step]', sheet).forEach((b) => b.addEventListener('click', () => { setNext((s.next || 1) + Number(b.dataset.step)); if (navigator.vibrate) navigator.vibrate(8); }));
-      $('[data-next]', sheet).addEventListener('change', (e) => setNext(parseInt(e.target.value, 10)));
+      $('[data-next]', sheet)?.addEventListener('change', (e) => setNext(parseInt(e.target.value, 10)));
       $('[data-uptodate]', sheet)?.addEventListener('click', () => { S.update(id, { next: d.latest + 1, status: 'en_cours' }); draw(); toast('À jour !'); });
       $$('[data-status] button', sheet).forEach((b) => b.addEventListener('click', () => { S.update(id, { status: b.dataset.v }); draw(); }));
       const r = $('[data-rating]', sheet);
@@ -500,17 +549,18 @@
   // ---------- Ajouter ----------
   function openAdd() {
     const sheet = $('#sheet');
+    let status = ui.mode === 'papier' ? 'collection' : 'a_commencer';
     sheet.innerHTML = `<div class="grabber"></div>
       <button class="close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6 10.6 12 5 6.4z"/></svg></button>
       <div class="sec" style="border:0;padding-top:20px"><h3 style="margin:0 0 14px;font-size:20px">Ajouter une série</h3>
         <label class="field"><span>Titre</span><input class="input" data-title placeholder="Ex. Omniscient Reader" autocomplete="off"></label>
-        <div class="field"><span>Statut</span><div class="seg" data-status>${['en_cours', 'a_commencer', 'terminee', 'collection'].map((k, i) => `<button data-v="${k}" class="${i === 1 ? 'on' : ''}">${STATUS[k].short}</button>`).join('')}</div></div>
+        <div class="field"><span>Statut</span><div class="seg" data-status>${['en_cours', 'a_commencer', 'terminee', 'collection'].map((k) => `<button data-v="${k}" class="${k === status ? 'on' : ''}">${STATUS[k].short}</button>`).join('')}</div></div>
         <label class="field"><span>Prochain chapitre à lire</span><input class="input" data-next inputmode="numeric" placeholder="Optionnel"></label>
+        <label class="field"><span>Tomes papier possédés</span><input class="input" data-vols inputmode="numeric" placeholder="0" value="${ui.mode === 'papier' ? 1 : ''}"></label>
         <label class="field"><span>Fiche MangaUpdates (optionnel)</span><input class="input" data-mu placeholder="https://www.mangaupdates.com/series/…" autocomplete="off">
           <p class="hint">Avec la fiche, l'appli suit les nouveaux chapitres et affiche la couverture. <a href="https://www.mangaupdates.com/series" target="_blank" rel="noopener" data-mu-search>Chercher ↗</a></p></label>
         <button class="btn primary" data-save style="width:100%">Ajouter</button>
       </div>`;
-    let status = 'a_commencer';
     $$('[data-status] button', sheet).forEach((b) => b.addEventListener('click', () => { status = b.dataset.v; $$('[data-status] button', sheet).forEach((x) => x.classList.toggle('on', x === b)); }));
     $('[data-title]', sheet).addEventListener('input', (e) => { $('[data-mu-search]', sheet).href = 'https://www.mangaupdates.com/series?search=' + encodeURIComponent(e.target.value); });
     $('[data-save]', sheet).addEventListener('click', async () => {
@@ -518,7 +568,8 @@
       const next = parseInt($('[data-next]', sheet).value, 10) || null;
       const mu = muIdFromInput($('[data-mu]', sheet).value);
       const st = next && next > 1 && status === 'a_commencer' ? 'en_cours' : status;
-      const item = S.add({ title, status: st, next, mu });
+      const volumes = parseInt($('[data-vols]', sheet).value, 10) || 0;
+      const item = S.add({ title, status: st, next, mu, volumes });
       closeSheet(); toast(`${title} ajoutée`);
       if (mu && S.token) S.runChecker().then(() => setTimeout(() => S.refresh(), 150000)).catch(() => {});
       setTimeout(() => openDetail(item.id), 350);
