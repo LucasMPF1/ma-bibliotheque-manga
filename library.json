@@ -13,7 +13,7 @@
    "mu": 15180124327,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -37,7 +37,9 @@
     20,
     21
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 21
   },
   {
    "id": "second-life-ranker",
@@ -733,13 +735,14 @@
    "mu": 1675287010,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
     3
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 7
   },
   {
    "id": "mightiest-melee-magician",
@@ -2054,12 +2057,13 @@
    "mu": 1353796125,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 33
   },
   {
    "id": "ace-of-hearts",
@@ -2072,11 +2076,13 @@
    "mu": 26184571505,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 1
   },
   {
    "id": "ajin",
@@ -2089,7 +2095,7 @@
    "mu": 72687724880,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2109,7 +2115,9 @@
     16,
     17
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 17
   },
   {
    "id": "arsene-lupin",
@@ -2140,7 +2148,7 @@
    "mu": 67339072487,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2164,7 +2172,9 @@
     20,
     21
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 21
   },
   {
    "id": "bakemonogatari",
@@ -2177,7 +2187,7 @@
    "mu": 23401013993,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2192,7 +2202,8 @@
     11,
     12
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 22
   },
   {
    "id": "bestiarius",
@@ -2275,7 +2286,7 @@
    "mu": 70180620476,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2312,7 +2323,8 @@
     33,
     34
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 38
   },
   {
    "id": "bleach",
@@ -2325,7 +2337,7 @@
    "mu": 70994361491,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2402,7 +2414,9 @@
     73,
     74
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 74
   },
   {
    "id": "blue-exorcist",
@@ -2459,7 +2473,7 @@
    "mu": 51912432379,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2477,7 +2491,8 @@
     14,
     15
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 20
   },
   {
    "id": "classroom-of-the-elite",
@@ -2490,14 +2505,15 @@
    "mu": 66860926,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
     3,
     4
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 12
   },
   {
    "id": "darker-than-black",
@@ -2612,7 +2628,7 @@
    "mu": 3479935384,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2628,7 +2644,9 @@
     12,
     13
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 13
   },
   {
    "id": "demon-slayer",
@@ -2641,7 +2659,7 @@
    "mu": 36271319846,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2667,7 +2685,9 @@
     22,
     23
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 23
   },
   {
    "id": "dofus",
@@ -2753,7 +2773,7 @@
    "mu": 40319778780,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2798,7 +2818,9 @@
     41,
     42
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 42
   },
   {
    "id": "dragon-ball-super",
@@ -2842,7 +2864,7 @@
    "mu": 372275459,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2868,7 +2890,8 @@
     22,
     23
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 27
   },
   {
    "id": "fairy-tail",
@@ -2881,7 +2904,7 @@
    "mu": 61251107617,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2947,7 +2970,9 @@
     62,
     63
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 63
   },
   {
    "id": "fairy-tail-100-years-quest",
@@ -2987,7 +3012,7 @@
    "mu": 32334361267,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -2998,7 +3023,9 @@
     7,
     8
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 8
   },
   {
    "id": "food-wars",
@@ -3011,7 +3038,7 @@
    "mu": 77962975056,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3050,7 +3077,9 @@
     35,
     36
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 36
   },
   {
    "id": "four-knights-of-the-apocalypse",
@@ -3080,7 +3109,7 @@
    "mu": 19001585632,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3110,7 +3139,9 @@
     26,
     27
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 27
   },
   {
    "id": "goblin-slayer",
@@ -3152,7 +3183,7 @@
    "mu": 27418475697,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3163,7 +3194,9 @@
     7,
     8
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 8
   },
   {
    "id": "hell-s-paradise",
@@ -3176,7 +3209,7 @@
    "mu": 61508275290,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3192,7 +3225,9 @@
     12,
     13
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 13
   },
   {
    "id": "hunter-x-hunter",
@@ -3251,7 +3286,7 @@
    "mu": 73544473356,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3265,7 +3300,9 @@
     10,
     11
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 11
   },
   {
    "id": "imperium-circus",
@@ -3315,7 +3352,7 @@
    "mu": 36804249355,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3332,7 +3369,9 @@
     13,
     14
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 14
   },
   {
    "id": "je-suis-un-assassin-et-je-surpasse-le-heros",
@@ -3365,7 +3404,7 @@
    "mu": 23801312094,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3384,7 +3423,8 @@
     15,
     16
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 30
   },
   {
    "id": "kagurabachi",
@@ -3458,7 +3498,7 @@
    "mu": 64201264591,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3476,7 +3516,8 @@
     14,
     15
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 30
   },
   {
    "id": "la-malediction-de-loki",
@@ -3489,7 +3530,7 @@
    "mu": 24998810740,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3499,7 +3540,8 @@
     6,
     7
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 8
   },
   {
    "id": "la-revanche-du-limier-des-baskerville",
@@ -3557,7 +3599,7 @@
    "mu": 23393951235,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3594,7 +3636,9 @@
     33,
     34
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 34
   },
   {
    "id": "le-garcon-et-le-dragon",
@@ -3755,7 +3799,7 @@
    "mu": 444271657,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3774,7 +3818,8 @@
     15,
     16
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 18
   },
   {
    "id": "mission-yozakura-family",
@@ -3787,7 +3832,7 @@
    "mu": 13820663332,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3803,7 +3848,8 @@
     12,
     13
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 29
   },
   {
    "id": "moi-quand-je-me-reincarne-en-slime",
@@ -3845,7 +3891,7 @@
    "mu": 63868402874,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3882,7 +3928,8 @@
     33,
     34
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 42
   },
   {
    "id": "naruto",
@@ -3895,7 +3942,7 @@
    "mu": 17360452316,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -3970,7 +4017,9 @@
     71,
     72
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 72
   },
   {
    "id": "naruto-gaiden",
@@ -3983,11 +4032,13 @@
    "mu": 23947376012,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 1
   },
   {
    "id": "omniscient-reader-s-viewpoint",
@@ -4323,7 +4374,7 @@
    "mu": 47993536244,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4333,7 +4384,9 @@
     6,
     7
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 7
   },
   {
    "id": "samurai-8-la-legende-de-hachimaru",
@@ -4346,7 +4399,7 @@
    "mu": 52459112698,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4354,7 +4407,9 @@
     4,
     5
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 5
   },
   {
    "id": "sanji-s-food-wars",
@@ -4382,7 +4437,7 @@
    "mu": 62758791984,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4426,7 +4481,9 @@
     40,
     41
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 41
   },
   {
    "id": "seven-deadly-sins-original-sin",
@@ -4595,7 +4652,7 @@
    "mu": 58588321341,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4618,7 +4675,9 @@
     19,
     20
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 20
   },
   {
    "id": "the-strange-house",
@@ -4666,7 +4725,7 @@
    "mu": 26272522291,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4683,7 +4742,9 @@
     13,
     14
    ],
-   "extras": 0
+   "extras": 0,
+   "complete": true,
+   "vfTotal": 14
   },
   {
    "id": "tokyo-ghoul-re",
@@ -4728,12 +4789,13 @@
    "mu": 31091326370,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 3
   },
   {
    "id": "undead-unluck",
@@ -4746,7 +4808,7 @@
    "mu": 6376149234,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2,
@@ -4758,7 +4820,8 @@
     8,
     9
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 27
   },
   {
    "id": "valkyrie-apocalypse",
@@ -4814,12 +4877,13 @@
    "mu": 4681793962,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T20:18:16+00:00",
    "owned": [
     1,
     2
    ],
-   "extras": 0
+   "extras": 0,
+   "vfTotal": 4
   },
   {
    "id": "why-nobody-remembers-my-world",
