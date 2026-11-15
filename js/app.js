@@ -44,10 +44,22 @@
     const owned = Array.isArray(s.owned) ? s.owned.slice().sort((a, b) => a - b) : Array.from({ length: Math.max(0, (s.volumes || 0) - extras) }, (_, i) => i + 1);
     const set = new Set(owned);
     const maxOwned = owned.length ? owned[owned.length - 1] : 0;
-    const total = Math.max(s.vfTotal || 0, maxOwned);
+    // Tomes VF connus (Wikipédia) : parus ou annoncés
+    const vf = S.vf(s);
+    const today = new Date().toISOString().slice(0, 10);
+    const info = {};
+    let released = 0;
+    const upcoming = [];
+    for (const v of vf?.volumes || []) {
+      info[v.n] = v;
+      if (v.date && v.date.length >= 4 && v.date > today && !(v.date.length < 10 && today.startsWith(v.date))) upcoming.push(v);
+      else released = Math.max(released, v.n);
+    }
+    const total = Math.max(s.vfTotal || 0, maxOwned, released);
     const missing = [];
     for (let i = 1; i <= total; i++) if (!set.has(i)) missing.push(i);
-    return { owned, set, extras, total, missing, known: !!s.vfTotal, vo: d?.rel?.vo_volumes || null, complete: !!s.complete && !missing.length };
+    const next = upcoming.filter((v) => v.n > total && !set.has(v.n)).sort((a, b) => a.n - b.n);
+    return { owned, set, extras, total, missing, info, upcoming: next, wiki: vf?.page || null, known: !!s.vfTotal || !!released, vo: d?.rel?.vo_volumes || null, complete: !!s.complete && !missing.length };
   }
   function ranges(list) {
     const out = []; let a = null, b = null;
@@ -234,7 +246,7 @@
   }
   function volMissingLine(s, d) {
     const v = vols(s, d);
-    if (!v.missing.length) return '';
+    if (!v.missing.length) return v.upcoming.length ? `<div class="m soon-line">T.${v.upcoming[0].n} ${esc(onDate(v.upcoming[0].date))}</div>` : '';
     const txt = ranges(v.missing);
     return `<div class="m miss-line">Manque : ${txt.length > 28 ? ranges(v.missing.slice(0, 6)) + '…' : txt}</div>`;
   }
@@ -592,15 +604,21 @@
     let status;
     if (v.complete) status = `<div class="vol-status full">Série terminée et complète : tu as les ${v.total} tomes ✓</div>`;
     else if (v.missing.length) status = `<div class="vol-status miss">Il te manque ${v.missing.length > 1 ? 'les tomes' : 'le tome'} <b>${ranges(v.missing)}</b></div>`;
-    else if (v.known) status = `<div class="vol-status full">Collection complète, ${v.total} tome${v.total > 1 ? 's' : ''} sur ${v.total} ✓</div>`;
+    else if (v.known) status = `<div class="vol-status full">Tu as tous les tomes parus, ${v.total} sur ${v.total} ✓${v.upcoming.length ? ` · prochain tome ${esc(onDate(v.upcoming[0].date))}` : ''}</div>`;
     else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
     const tiles = [];
-    for (let i = 1; i <= v.total; i++) tiles.push(`<button class="tome ${v.set.has(i) ? 'on' : 'miss'}" data-tome="${i}" aria-pressed="${v.set.has(i)}" aria-label="Tome ${i}">${i}</button>`);
+    for (let i = 1; i <= v.total; i++) {
+      const inf = v.info[i];
+      const tip = inf && inf.date ? ` title="Paru ${esc(onDate(inf.date))}"` : '';
+      tiles.push(`<button class="tome ${v.set.has(i) ? 'on' : 'miss'}" data-tome="${i}" aria-pressed="${v.set.has(i)}" aria-label="Tome ${i}"${tip}>${i}</button>`);
+    }
+    for (const u of v.upcoming) tiles.push(`<button class="tome soon" data-tome="${u.n}" aria-label="Tome ${u.n}, à paraître" title="À paraître ${esc(onDate(u.date))}">${u.n}</button>`);
     return `<div class="sec">
       <div class="vol-head"><span class="lbl">Mes tomes</span><b>${v.owned.length}${v.total ? ' / ' + v.total : ''}${v.extras ? ` <small>+ ${v.extras} hors-série</small>` : ''}</b></div>
       ${status}
       <div class="tomes">${tiles.join('')}<button class="tome add" data-tome-add aria-label="Ajouter le tome suivant">+</button></div>
       <p class="hint">Touche un numéro pour dire que tu l'as, ou que tu ne l'as plus.</p>
+      ${volDetails(v)}
       <div class="vf-row">
         <span>Parus en VF</span>
         <div class="mini-stepper"><button data-vf="-1" aria-label="Un de moins">−</button><b>${v.known ? v.total : '?'}</b><button data-vf="1" aria-label="Un de plus">+</button></div>
@@ -612,6 +630,26 @@
         ${v.complete ? '<button class="btn small ghost" data-complete="0">Pas encore complète</button>' : (!v.missing.length && v.owned.length ? '<button class="btn small ghost" data-complete="1">Série terminée, j’ai tout ✓</button>' : '')}
       </div>
     </div>`;
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return '';
+    const [y, m, d] = iso.split('-').map(Number);
+    if (d) return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    if (m) return new Date(y, m - 1, 1).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+    return String(y);
+  }
+  function onDate(iso) { return iso ? (iso.length >= 10 ? 'le ' : 'en ') + fmtDate(iso) : ''; }
+  function volDetails(v) {
+    const miss = v.missing.map((n) => ({ n, ...(v.info[n] || {}) }));
+    if (!miss.length && !v.upcoming.length) return v.wiki ? `<p class="hint src">Dates : <a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(v.wiki.replace(/ /g, '_'))}" target="_blank" rel="noopener">Wikipédia</a></p>` : '';
+    const row = (x, cls, label) => `<li class="${cls}"><b>Tome ${x.n}</b>${x.title ? `<span class="vt">${esc(x.title)}</span>` : ''}<span class="vd">${label}</span></li>`;
+    const shown = miss.length > 12 ? [...miss.slice(0, 5), null, ...miss.slice(-5)] : miss;
+    return `<ul class="vlist">
+      ${shown.map((x) => (x ? row(x, 'gone', x.date ? 'paru ' + onDate(x.date) : 'déjà paru') : `<li class="more">… ${miss.length - 10} autres tomes manquants</li>`)).join('')}
+      ${v.upcoming.map((x) => row(x, 'soon', x.date ? 'à paraître ' + onDate(x.date) : 'annoncé')).join('')}
+    </ul>
+    ${v.wiki ? `<p class="hint src">Dates : <a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(v.wiki.replace(/ /g, '_'))}" target="_blank" rel="noopener">Wikipédia</a></p>` : ''}`;
   }
 
   function muIdFromInput(v) {

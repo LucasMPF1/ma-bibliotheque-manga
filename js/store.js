@@ -17,6 +17,7 @@
   const Store = {
     library: LS.get('library', null),
     releases: LS.get('releases', { series: {} }),
+    volumes: LS.get('volumes', { series: {} }),
     sha: LS.get('sha', null),
     dirty: LS.get('dirty', false),
     token: LS.get('token', ''),
@@ -42,6 +43,7 @@
         // Premier lancement : données de départ embarquées dans le site
         this.library = await fetch('data/library.json').then((r) => r.json());
         this.releases = await fetch('data/releases.json').then((r) => r.json()).catch(() => ({ series: {} }));
+        this.volumes = await fetch('data/volumes.json').then((r) => r.json()).catch(() => ({ series: {} }));
         this.persist(false);
       }
       this.emit('data');
@@ -51,8 +53,9 @@
     async refresh() {
       this.setSync('busy');
       try {
-        const [lib, rel] = await Promise.all([this.fetchFile('library.json'), this.fetchFile('releases.json')]);
+        const [lib, rel, vol] = await Promise.all([this.fetchFile('library.json'), this.fetchFile('releases.json'), this.fetchFile('volumes.json').catch(() => null)]);
         if (rel && rel.json) { this.releases = rel.json; LS.set('releases', this.releases); }
+        if (vol && vol.json) { this.volumes = vol.json; LS.set('volumes', this.volumes); }
         if (lib && lib.json) {
           this.sha = lib.sha || this.sha;
           LS.set('sha', this.sha);
@@ -154,6 +157,7 @@
     },
     remove(id) { this.update(id, { deleted: true }); },
     rel(s) { return s && s.mu ? this.releases.series?.[String(s.mu)] || null : null; },
+    vf(s) { return (s && this.volumes.series?.[s.id]) || null; },
   };
 
   function merge(local, remote) {

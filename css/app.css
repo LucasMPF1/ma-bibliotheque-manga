@@ -338,7 +338,8 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 }
 .tome:active { transform: scale(.92); }
 .tome.on { background: var(--text); color: var(--bg); }
-.tome.miss { background: var(--accent-soft); color: var(--accent); border: 1.5px dashed var(--accent); }
+.tome.miss { background: var(--surface-2); color: var(--muted); border: 1.5px solid var(--line); }
+.tome.soon { background: transparent; color: var(--muted); border: 1.5px dashed var(--muted); opacity: .8; }
 .tome.add { background: transparent; border: 1.5px dashed var(--line); color: var(--muted); font-size: 20px; font-weight: 500; }
 .vf-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; font-weight: 650; }
 
@@ -355,3 +356,16 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 .vpill.full { background: #2f9e6b; }
 .card .miss-line, .row .miss-line { color: var(--accent); font-weight: 650; }
 .vbar ~ .quick { bottom: 46px; }
+
+/* Liste des tomes manquants / à paraître */
+.vlist { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.vlist li { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 7px 10px; border-radius: 10px; font-size: 13.5px; }
+.vlist li b { font-variant-numeric: tabular-nums; min-width: 62px; }
+.vlist li .vt { font-style: italic; }
+.vlist li .vd { margin-left: auto; color: var(--muted); font-size: 12.5px; }
+.vlist li.gone { background: var(--surface-2); color: var(--muted); }
+.vlist li.soon { border: 1.5px dashed var(--line); }
+.vlist li.soon .vd { color: var(--accent); font-weight: 650; }
+.vlist li.more { color: var(--muted); font-size: 12.5px; justify-content: center; }
+.hint.src a { color: var(--muted); }
+.card .soon-line { color: var(--accent); font-weight: 650; }
