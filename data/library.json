@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-15T19:49:52+00:00",
+ "updated": "2026-11-15T21:13:00.000Z",
  "series": [
   {
    "id": "solo-leveling",
@@ -848,7 +848,8 @@
    "mu": 16346236814,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-15T21:13:00.000Z",
+   "group": "tower-of-god"
   },
   {
    "id": "the-greatest-estate-developer",
@@ -2473,7 +2474,7 @@
    "mu": 51912432379,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T20:18:16+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2,
@@ -2492,7 +2493,8 @@
     15
    ],
    "extras": 0,
-   "vfTotal": 20
+   "vfTotal": 20,
+   "group": "naruto"
   },
   {
    "id": "classroom-of-the-elite",
@@ -2833,7 +2835,7 @@
    "mu": 50757891079,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2,
@@ -2851,7 +2853,8 @@
     14,
     15
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "dragon-ball"
   },
   {
    "id": "dr-stone",
@@ -2985,7 +2988,7 @@
    "mu": 17858499552,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2,
@@ -2999,7 +3002,8 @@
     10,
     11
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "fairy-tail"
   },
   {
    "id": "fire-punch",
@@ -3092,11 +3096,12 @@
    "mu": 64495369812,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "seven-deadly-sins"
   },
   {
    "id": "fullmetal-alchemist",
@@ -3459,12 +3464,13 @@
    "mu": 15541244086,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "naruto"
   },
   {
    "id": "koro-quest",
@@ -3477,7 +3483,7 @@
    "mu": 77113551669,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2,
@@ -3485,7 +3491,8 @@
     4,
     5
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "assassination-classroom"
   },
   {
    "id": "kuroko-s-basket",
@@ -4032,13 +4039,14 @@
    "mu": 23947376012,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T20:18:16+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1
    ],
    "extras": 0,
    "complete": true,
-   "vfTotal": 1
+   "vfTotal": 1,
+   "group": "naruto"
   },
   {
    "id": "omniscient-reader-s-viewpoint",
@@ -4207,12 +4215,13 @@
    "mu": 55099564912,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "one-piece"
   },
   {
    "id": "one-piece-les-films",
@@ -4225,12 +4234,13 @@
    "mu": 42064105448,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     14,
     15
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "one-piece"
   },
   {
    "id": "one-punch-man",
@@ -4422,9 +4432,10 @@
    "mu": 77962975056,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [],
-   "extras": 1
+   "extras": 1,
+   "group": "one-piece"
   },
   {
    "id": "seven-deadly-sins",
@@ -4496,9 +4507,10 @@
    "mu": 62758791984,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [],
-   "extras": 1
+   "extras": 1,
+   "group": "seven-deadly-sins"
   },
   {
    "id": "spy-x-family",
@@ -4757,7 +4769,7 @@
    "mu": null,
    "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00",
+   "updated": "2026-11-15T21:13:00.000Z",
    "owned": [
     1,
     2,
@@ -4776,7 +4788,8 @@
     15,
     16
    ],
-   "extras": 0
+   "extras": 0,
+   "group": "tokyo-ghoul"
   },
   {
    "id": "tomie",

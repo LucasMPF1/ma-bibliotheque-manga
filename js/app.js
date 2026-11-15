@@ -154,7 +154,13 @@
   function renderLibrary(mode = 'scan') {
     const view = $('#view');
     const P = mode === 'papier';
-    const items = S.all().filter((s) => inMode(s, mode)).map((s) => ({ s, d: derive(s) }));
+    const all = S.all().filter((s) => inMode(s, mode)).map((s) => ({ s, d: derive(s) }));
+    // Franchises : les séries rattachées (s.group) sont rangées sous la série principale.
+    const byId = new Map(all.map((x) => [x.s.id, x]));
+    const kids = {};
+    for (const x of all) if (x.s.group && x.s.group !== x.s.id && byId.has(x.s.group)) (kids[x.s.group] ||= []).push(x);
+    const items = all.filter((x) => !(x.s.group && x.s.group !== x.s.id && byId.has(x.s.group)));
+    for (const x of items) x.kids = kids[x.s.id] || null;
     const filters = P ? FILTERS_P : FILTERS, sorts = P ? SORTS_P : SORTS;
     const fk = 'filter_' + mode, sk = 'sort_' + mode;
     if (!S.prefs[sk]) S.prefs[sk] = P ? 'title' : (S.prefs.sort || 'unread');
@@ -209,7 +215,8 @@
       const f = (filters.find((x) => x[0] === p[fk]) || filters[0])[2];
       const q = norm(ui.q).trim();
       let list = items.filter((x) => f(x.s, x.d));
-      if (q) list = list.filter((x) => norm(x.s.title).includes(q) || norm(x.d.rel?.title).includes(q));
+      const hit = (x) => norm(x.s.title).includes(q) || norm(x.d.rel?.title).includes(q);
+      if (q) list = list.filter((x) => hit(x) || (x.kids || []).some(hit));
       list.sort((sorts[p[sk]] || Object.values(sorts)[0])[1]);
 
       const box = $('[data-results]', view);
@@ -218,7 +225,7 @@
         return;
       }
       box.innerHTML = p.view === 'list' ? `<div class="list">${list.map((x) => rowHtml(x, mode)).join('')}</div>` : `<div class="grid">${list.map((x) => cardHtml(x, mode)).join('')}</div>`;
-      bindItems(box);
+      bindItems(box, mode);
     }
   }
 
@@ -257,8 +264,11 @@
     if (v.known) return `<span class="badge vol full">${v.owned.length}/${v.total} ✓</span>`;
     return `<span class="badge vol">${n(s.volumes || 0)} t.</span>`;
   }
-  function cardHtml({ s, d }, mode) {
-    if (mode === 'papier') return `<article class="card" data-id="${esc(s.id)}">
+  function groupLine(kids) {
+    return kids ? `<div class="m grp-line">${kids.length + 1} séries</div>` : '';
+  }
+  function cardHtml({ s, d, kids }, mode) {
+    if (mode === 'papier') return `<article class="card ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="cover">${coverHtml(s, d)}
         ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${volBadge(s, d)}
@@ -268,9 +278,10 @@
       <div class="t">${esc(s.title)}</div>
       <div class="m">${papierMeta(s)}</div>
       ${volMissingLine(s, d)}
+      ${groupLine(kids)}
     </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
-    return `<article class="card" data-id="${esc(s.id)}">
+    return `<article class="card ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="cover">${coverHtml(s, d)}
         ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${newBadge(s, d)}
@@ -279,31 +290,60 @@
       </div>
       <div class="t">${esc(s.title)}</div>
       <div class="m">${metaLine(s, d)}</div>
+      ${groupLine(kids)}
     </article>`;
   }
-  function rowHtml({ s, d }, mode) {
-    if (mode === 'papier') return `<article class="row" data-id="${esc(s.id)}">
+  function rowHtml({ s, d, kids }, mode) {
+    if (mode === 'papier') return `<article class="row ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="thumb">${thumbHtml(s, d)}</div>
-      <div><div class="t">${esc(s.title)}</div>${volMissingLine(s, d)}<div class="m"><span>${papierMeta(s)}</span>${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
+      <div><div class="t">${esc(s.title)}${kids ? ` <span class="grp-tag">${kids.length + 1} séries</span>` : ''}</div>${volMissingLine(s, d)}<div class="m"><span>${papierMeta(s)}</span>${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
       <div class="act"><button class="btn small" data-quickvol>+1 tome</button></div>
     </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
-    return `<article class="row" data-id="${esc(s.id)}">
+    return `<article class="row ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="thumb">${thumbHtml(s, d)}</div>
-      <div><div class="t">${esc(s.title)}</div>
+      <div><div class="t">${esc(s.title)}${kids ? ` <span class="grp-tag">${kids.length + 1} séries</span>` : ''}</div>
         <div class="m"><span>${metaLine(s, d)}</span>${s.status === 'en_cours' && d.unread ? `<span class="pill">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>` : ''}${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
       <div class="act">${canQuick ? `<button class="btn small" data-quick>+1</button>` : ''}</div>
     </article>`;
   }
-  function bindItems(box) {
+  function bindItems(box, mode) {
     $$('[data-id]', box).forEach((el) => {
       el.addEventListener('click', (e) => {
         if (e.target.closest('[data-quick]')) { e.stopPropagation(); quickRead(el.dataset.id); return; }
         if (e.target.closest('[data-quickvol]')) { e.stopPropagation(); quickVolume(el.dataset.id); return; }
         if (e.target.closest('[data-allread]')) { e.stopPropagation(); allRead(el.dataset.id); return; }
-        openDetail(el.dataset.id);
+        if (el.hasAttribute('data-group') && mode) openGroup(el.dataset.id, mode);
+        else openDetail(el.dataset.id);
       });
     });
+  }
+
+  // Liste des séries d'une franchise : on choisit laquelle ouvrir
+  function openGroup(mainId, mode) {
+    const draw = () => {
+      const main = S.get(mainId); if (!main || main.deleted) return closeSheet();
+      const list = [main, ...S.all().filter((s) => s.group === mainId && s.id !== mainId && inMode(s, mode))]
+        .map((s) => ({ s, d: derive(s) }));
+      const sheet = $('#sheet');
+      sheet.innerHTML = `
+        <div class="grabber"></div>
+        <button class="close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6 10.6 12 5 6.4z"/></svg></button>
+        <div class="sec grp-sheet">
+          <span class="lbl">Univers ${esc(main.title)}</span>
+          <h2>Quelle série veux-tu ouvrir ?</h2>
+          <div class="list">${list.map((x, i) => rowHtml(x, mode).replace('class="row', `class="row${i === 0 ? ' main' : ''}`)).join('')}</div>
+          <p class="hint">Seule la série principale (en haut) compte pour savoir si c'est complet ou terminé.</p>
+        </div>`;
+      $$('[data-id]', sheet).forEach((el) => el.addEventListener('click', (e) => {
+        if (e.target.closest('[data-quick]')) { e.stopPropagation(); quickRead(el.dataset.id); draw(); return; }
+        if (e.target.closest('[data-quickvol]')) { e.stopPropagation(); quickVolume(el.dataset.id); draw(); return; }
+        openDetail(el.dataset.id);
+      }));
+      $('[data-close]', sheet).addEventListener('click', closeSheet);
+    };
+    draw();
+    showSheet();
   }
 
   function quickRead(id) {
@@ -547,6 +587,8 @@
 
         <div class="sec" data-fixbox hidden></div>
 
+        ${groupPicker(s)}
+
         <div class="sec actions">
           <button class="btn small ghost" data-rename>Renommer</button>
           ${s.mu && !s.verify ? '<button class="btn small ghost" data-fix>Changer de fiche</button>' : ''}
@@ -585,6 +627,10 @@
       $('[data-notes]', sheet).addEventListener('change', (e) => S.update(id, { notes: e.target.value }));
       $('[data-okfiche]', sheet)?.addEventListener('click', () => { S.update(id, { verify: false }); draw(); toast('Fiche validée'); });
       $$('[data-fix]', sheet).forEach((b) => b.addEventListener('click', () => showFix(sheet, s)));
+      $('[data-group-of]', sheet)?.addEventListener('change', (e) => {
+        S.update(id, { group: e.target.value || null }); draw();
+        toast(e.target.value ? `Rangée avec ${S.get(e.target.value)?.title}` : 'Série séparée');
+      });
       $('[data-rename]', sheet).addEventListener('click', () => { const t = prompt('Nouveau titre', s.title); if (t && t.trim()) { S.update(id, { title: t.trim() }); draw(); } });
       $('[data-delete]', sheet).addEventListener('click', () => {
         S.remove(id); closeSheet();
@@ -594,6 +640,20 @@
     };
     draw();
     showSheet();
+  }
+
+  function groupPicker(s) {
+    const all = S.all().filter((x) => !x.deleted);
+    const kids = all.filter((x) => x.group === s.id && x.id !== s.id);
+    if (kids.length) return `<div class="sec"><span class="lbl">Série principale</span>
+      <p class="hint">Regroupe aussi : ${kids.map((x) => esc(x.title)).join(', ')}.</p></div>`;
+    const mains = all.filter((x) => x.id !== s.id && !x.group).sort((a, b) => a.title.localeCompare(b.title, 'fr'));
+    return `<div class="sec"><span class="lbl">Ranger avec une autre série</span>
+      <select class="select" data-group-of aria-label="Série principale">
+        <option value="">Aucune, série à part</option>
+        ${mains.map((x) => `<option value="${esc(x.id)}" ${s.group === x.id ? 'selected' : ''}>${esc(x.title)}</option>`).join('')}
+      </select>
+      <p class="hint">Par exemple Boruto avec Naruto : une seule carte, et seule la série principale compte pour « complète ».</p></div>`;
   }
 
   function volSection(s, d) {
