@@ -180,6 +180,8 @@ def parse_page(text):
         if not num:
             continue
         n = int(num.group(1))
+        if n in vols:
+            break  # la numérotation repart à 1 : c'est une autre série (ex. Tokyo Ghoul puis Tokyo Ghoul:re)
         if p.get("langage_unique", "").lower() == "oui":
             idx = fr_idx or "1"
         else:
