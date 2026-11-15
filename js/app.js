@@ -38,6 +38,27 @@
     };
   }
 
+  // Tomes papier : numéros possédés, total paru en VF, manquants
+  function vols(s, d) {
+    const extras = s.extras || 0;
+    const owned = Array.isArray(s.owned) ? s.owned.slice().sort((a, b) => a - b) : Array.from({ length: Math.max(0, (s.volumes || 0) - extras) }, (_, i) => i + 1);
+    const set = new Set(owned);
+    const maxOwned = owned.length ? owned[owned.length - 1] : 0;
+    const total = Math.max(s.vfTotal || 0, maxOwned);
+    const missing = [];
+    for (let i = 1; i <= total; i++) if (!set.has(i)) missing.push(i);
+    return { owned, set, extras, total, missing, known: !!s.vfTotal, vo: d?.rel?.vo_volumes || null };
+  }
+  function ranges(list) {
+    const out = []; let a = null, b = null;
+    for (const x of list) { if (a == null) { a = b = x; } else if (x === b + 1) { b = x; } else { out.push(a === b ? `${a}` : `${a} à ${b}`); a = b = x; } }
+    if (a != null) out.push(a === b ? `${a}` : `${a} à ${b}`);
+    return out.join(', ');
+  }
+  function saveOwned(id, owned, extra = {}) {
+    const s = S.get(id); const u = [...new Set(owned)].sort((a, b) => a - b);
+    S.update(id, Object.assign({ owned: u, volumes: u.length + (s.extras || 0) }, extra));
+  }
   function hd(url) { return url ? url.replace('/image/thumb/', '/image/') : ''; }
   function hue(str) { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 360; }
   function phStyle(t) { const h = hue(t); return `background:linear-gradient(150deg,hsl(${h} 55% 42%),hsl(${(h + 40) % 360} 60% 28%))`; }
@@ -92,6 +113,7 @@
   ];
   const FILTERS_P = [
     ['all', 'Tout', () => true],
+    ['incomplete', 'Il en manque', (s, d) => vols(s, d).missing.length > 0],
     ['seul', 'Papier seulement', (s) => s.status === 'collection'],
     ['scan', 'Aussi en scan', (s) => s.status !== 'collection'],
     ['manga', 'Manga', (s, d) => d.type === 'Manga'],
@@ -198,11 +220,17 @@
     return '';
   }
   function papierMeta(s) { return `${n(s.volumes || 0)} tome${s.volumes > 1 ? 's' : ''}${s.publisher ? ' · ' + esc(s.publisher) : ''}`; }
+  function volBadge(s, d) {
+    const v = vols(s, d);
+    if (v.missing.length) return `<span class="badge vol miss">${v.owned.length}/${v.total}</span>`;
+    if (v.known) return `<span class="badge vol full">${v.owned.length}/${v.total} ✓</span>`;
+    return `<span class="badge vol">${n(s.volumes || 0)} t.</span>`;
+  }
   function cardHtml({ s, d }, mode) {
     if (mode === 'papier') return `<article class="card" data-id="${esc(s.id)}">
       <div class="cover">${coverHtml(s, d)}
         ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
-        <span class="badge vol">${n(s.volumes || 0)} t.</span>
+        ${volBadge(s, d)}
         <button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>
       </div>
       <div class="t">${esc(s.title)}</div>
@@ -252,10 +280,12 @@
     toast(`${s.title} : chapitre ${prev.next} lu`, () => S.update(id, prev));
   }
   function quickVolume(id) {
-    const s = S.get(id); const prev = { volumes: s.volumes || 0 };
-    S.update(id, { volumes: prev.volumes + 1 });
+    const s = S.get(id); const v = vols(s, derive(s));
+    const prev = { owned: s.owned ? s.owned.slice() : v.owned.slice(), volumes: s.volumes || 0, vfTotal: s.vfTotal ?? null };
+    const next = v.missing.length ? v.missing[0] : v.total + 1; // comble d'abord un trou, sinon tome suivant
+    saveOwned(id, [...v.owned, next], next > (s.vfTotal || 0) && s.vfTotal ? { vfTotal: next } : {});
     if (navigator.vibrate) navigator.vibrate(10);
-    toast(`${s.title} : tome ${prev.volumes + 1} ajouté`, () => S.update(id, prev));
+    toast(`${s.title} : tome ${next} ajouté`, () => S.update(id, prev));
   }
   function allRead(id) {
     const s = S.get(id); const d = derive(s); const prev = { next: s.next, status: s.status };
@@ -475,10 +505,7 @@
             <output data-rating-out>${s.rating != null ? fmtRating(s.rating) + '<small>/10</small>' : '—'}</output></div>
         </div>
 
-        <div class="sec">
-          <span class="lbl">Tomes papier</span>
-          <div class="mini-stepper"><button data-vol="-1" aria-label="Retirer un tome">−</button><b data-vol-out>${s.volumes || 0}</b><button data-vol="1" aria-label="Ajouter un tome">+</button></div>
-        </div>
+        ${volSection(s, d)}
 
         <div class="sec">
           <span class="lbl">Notes perso</span>
@@ -506,7 +533,17 @@
       const r = $('[data-rating]', sheet);
       r.addEventListener('input', () => { r.style.opacity = 1; $('[data-rating-out]', sheet).innerHTML = fmtRating(Number(r.value)) + '<small>/10</small>'; });
       r.addEventListener('change', () => S.update(id, { rating: Number(r.value) }));
-      $$('[data-vol]', sheet).forEach((b) => b.addEventListener('click', () => { S.update(id, { volumes: Math.max(0, (s.volumes || 0) + Number(b.dataset.vol)) }); draw(); }));
+      const v = vols(s, d);
+      $$('[data-tome]', sheet).forEach((b) => b.addEventListener('click', () => {
+        const k = Number(b.dataset.tome);
+        saveOwned(id, v.set.has(k) ? v.owned.filter((x) => x !== k) : [...v.owned, k]);
+        if (navigator.vibrate) navigator.vibrate(8); draw();
+      }));
+      $('[data-tome-add]', sheet)?.addEventListener('click', () => { const k = v.total + 1; saveOwned(id, [...v.owned, k], s.vfTotal ? { vfTotal: Math.max(s.vfTotal, k) } : {}); draw(); });
+      $$('[data-vf]', sheet).forEach((b) => b.addEventListener('click', () => { S.update(id, { vfTotal: Math.max(v.owned.at(-1) || 0, (s.vfTotal || v.total) + Number(b.dataset.vf)) || null }); draw(); }));
+      $('[data-vf-vo]', sheet)?.addEventListener('click', () => { S.update(id, { vfTotal: Math.max(v.vo, v.owned.at(-1) || 0) }); draw(); });
+      $('[data-vf-unknown]', sheet)?.addEventListener('click', () => { S.update(id, { vfTotal: null }); draw(); });
+      $('[data-vf-all]', sheet)?.addEventListener('click', () => { saveOwned(id, Array.from({ length: v.total }, (_, i) => i + 1)); draw(); });
       $('[data-notes]', sheet).addEventListener('change', (e) => S.update(id, { notes: e.target.value }));
       $('[data-okfiche]', sheet)?.addEventListener('click', () => { S.update(id, { verify: false }); draw(); toast('Fiche validée'); });
       $$('[data-fix]', sheet).forEach((b) => b.addEventListener('click', () => showFix(sheet, s)));
@@ -519,6 +556,34 @@
     };
     draw();
     showSheet();
+  }
+
+  function volSection(s, d) {
+    const v = vols(s, d);
+    if (!v.owned.length && !v.extras && s.status !== 'collection' && !s.vfTotal) {
+      return `<div class="sec"><span class="lbl">Tomes papier</span><button class="btn small" data-tome-add>J'ai le tome 1</button></div>`;
+    }
+    let status;
+    if (v.missing.length) status = `<div class="vol-status miss">Il te manque ${v.missing.length > 1 ? 'les tomes' : 'le tome'} <b>${ranges(v.missing)}</b></div>`;
+    else if (v.known) status = `<div class="vol-status full">Collection complète, ${v.total} tome${v.total > 1 ? 's' : ''} sur ${v.total} ✓</div>`;
+    else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
+    const tiles = [];
+    for (let i = 1; i <= v.total; i++) tiles.push(`<button class="tome ${v.set.has(i) ? 'on' : 'miss'}" data-tome="${i}" aria-pressed="${v.set.has(i)}" aria-label="Tome ${i}">${i}</button>`);
+    return `<div class="sec">
+      <div class="vol-head"><span class="lbl">Mes tomes</span><b>${v.owned.length}${v.total ? ' / ' + v.total : ''}${v.extras ? ` <small>+ ${v.extras} hors-série</small>` : ''}</b></div>
+      ${status}
+      <div class="tomes">${tiles.join('')}<button class="tome add" data-tome-add aria-label="Ajouter le tome suivant">+</button></div>
+      <p class="hint">Touche un numéro pour dire que tu l'as, ou que tu ne l'as plus.</p>
+      <div class="vf-row">
+        <span>Parus en VF</span>
+        <div class="mini-stepper"><button data-vf="-1" aria-label="Un de moins">−</button><b>${v.known ? v.total : '?'}</b><button data-vf="1" aria-label="Un de plus">+</button></div>
+      </div>
+      <div class="actions" style="margin-top:8px">
+        ${v.vo ? `<button class="btn small ghost" data-vf-vo>En VO : ${v.vo} tome${v.vo > 1 ? 's' : ''}${d.voDone ? ' (finie)' : ''}, utiliser ce nombre</button>` : ''}
+        ${v.missing.length ? '<button class="btn small ghost" data-vf-all>Je les ai tous</button>' : ''}
+        ${v.known ? '<button class="btn small ghost" data-vf-unknown>Je ne sais pas</button>' : ''}
+      </div>
+    </div>`;
   }
 
   function muIdFromInput(v) {
@@ -556,7 +621,7 @@
         <label class="field"><span>Titre</span><input class="input" data-title placeholder="Ex. Omniscient Reader" autocomplete="off"></label>
         <div class="field"><span>Statut</span><div class="seg" data-status>${['en_cours', 'a_commencer', 'terminee', 'collection'].map((k) => `<button data-v="${k}" class="${k === status ? 'on' : ''}">${STATUS[k].short}</button>`).join('')}</div></div>
         <label class="field"><span>Prochain chapitre à lire</span><input class="input" data-next inputmode="numeric" placeholder="Optionnel"></label>
-        <label class="field"><span>Tomes papier possédés</span><input class="input" data-vols inputmode="numeric" placeholder="0" value="${ui.mode === 'papier' ? 1 : ''}"></label>
+        <label class="field"><span>Tomes papier possédés (du tome 1 au tome…)</span><input class="input" data-vols inputmode="numeric" placeholder="0" value="${ui.mode === 'papier' ? 1 : ''}"></label>
         <label class="field"><span>Fiche MangaUpdates (optionnel)</span><input class="input" data-mu placeholder="https://www.mangaupdates.com/series/…" autocomplete="off">
           <p class="hint">Avec la fiche, l'appli suit les nouveaux chapitres et affiche la couverture. <a href="https://www.mangaupdates.com/series" target="_blank" rel="noopener" data-mu-search>Chercher ↗</a></p></label>
         <button class="btn primary" data-save style="width:100%">Ajouter</button>
@@ -569,7 +634,7 @@
       const mu = muIdFromInput($('[data-mu]', sheet).value);
       const st = next && next > 1 && status === 'a_commencer' ? 'en_cours' : status;
       const volumes = parseInt($('[data-vols]', sheet).value, 10) || 0;
-      const item = S.add({ title, status: st, next, mu, volumes });
+      const item = S.add({ title, status: st, next, mu, volumes, owned: Array.from({ length: volumes }, (_, i) => i + 1) });
       closeSheet(); toast(`${title} ajoutée`);
       if (mu && S.token) S.runChecker().then(() => setTimeout(() => S.refresh(), 150000)).catch(() => {});
       setTimeout(() => openDetail(item.id), 350);

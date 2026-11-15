@@ -5,6 +5,7 @@ met à jour releases.json, et indique s'il y a eu des changements.
 """
 import datetime
 import json
+import re
 import pathlib
 import sys
 import time
@@ -55,6 +56,9 @@ for sid in ids:
         "changed_at": old.get("changed_at"),
         "history": old.get("history", []),
     }
+    m = re.search(r"(\d+)\s*Volumes?", d.get("status") or "", re.I)
+    if m:
+        entry["vo_volumes"] = int(m.group(1))
     if latest and old.get("latest") and latest > old["latest"]:
         entry["changed_at"] = now
         entry["history"] = ([{"chapter": latest, "at": now}] + entry["history"])[:20]
