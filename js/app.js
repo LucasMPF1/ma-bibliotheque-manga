@@ -47,7 +47,7 @@
     const total = Math.max(s.vfTotal || 0, maxOwned);
     const missing = [];
     for (let i = 1; i <= total; i++) if (!set.has(i)) missing.push(i);
-    return { owned, set, extras, total, missing, known: !!s.vfTotal, vo: d?.rel?.vo_volumes || null };
+    return { owned, set, extras, total, missing, known: !!s.vfTotal, vo: d?.rel?.vo_volumes || null, complete: !!s.complete && !missing.length };
   }
   function ranges(list) {
     const out = []; let a = null, b = null;
@@ -113,6 +113,7 @@
   ];
   const FILTERS_P = [
     ['all', 'Tout', () => true],
+    ['complete', 'Complètes ✓', (s, d) => vols(s, d).complete],
     ['incomplete', 'Il en manque', (s, d) => vols(s, d).missing.length > 0],
     ['seul', 'Papier seulement', (s) => s.status === 'collection'],
     ['scan', 'Aussi en scan', (s) => s.status !== 'collection'],
@@ -159,7 +160,8 @@
       <div class="summary">${P ? `
         <button class="stat" data-filter="all"><b>${n(items.length)}</b><span>séries</span></button>
         <button class="stat" data-filter="all"><b>${n(volumes)}</b><span>tomes</span></button>
-        <div class="stat"><b>${n(publishers)}</b><span>éditeurs</span></div>` : `
+        <button class="stat" data-filter="complete"><b>${n(items.filter((x) => vols(x.s, x.d).complete).length)}</b><span>complètes ✓</span></button>
+        <button class="stat" data-filter="incomplete"><b>${n(items.filter((x) => vols(x.s, x.d).missing.length).length)}</b><span>où il manque des tomes</span></button>` : `
         <button class="stat" data-filter="en_cours"><b>${n(enCours.length)}</b><span>séries en cours</span></button>
         <button class="stat" data-filter="dispo"><b>${n(toRead)}</b><span>chapitres à lire</span></button>
         <button class="stat" data-filter="sparkle"><b>${n(sparkles)}</b><span>✨ avec 40+ à lire</span></button>
@@ -219,9 +221,10 @@
     if (s.status === 'en_cours' && d.unread > 0) return `<span class="badge new ${d.sparkle ? 'big' : ''}">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>`;
     return '';
   }
-  function papierMeta(s) { return `${n(s.volumes || 0)} tome${s.volumes > 1 ? 's' : ''}${s.publisher ? ' · ' + esc(s.publisher) : ''}`; }
+  function papierMeta(s) { return `${s.complete ? 'Complète · ' : ''}${n(s.volumes || 0)} tome${s.volumes > 1 ? 's' : ''}${s.publisher ? ' · ' + esc(s.publisher) : ''}`; }
   function volBadge(s, d) {
     const v = vols(s, d);
+    if (v.complete) return `<span class="badge vol full">Complète ✓</span>`;
     if (v.missing.length) return `<span class="badge vol miss">${v.owned.length}/${v.total}</span>`;
     if (v.known) return `<span class="badge vol full">${v.owned.length}/${v.total} ✓</span>`;
     return `<span class="badge vol">${n(s.volumes || 0)} t.</span>`;
@@ -231,7 +234,7 @@
       <div class="cover">${coverHtml(s, d)}
         ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${volBadge(s, d)}
-        <button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>
+        ${s.complete ? '' : `<button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>`}
       </div>
       <div class="t">${esc(s.title)}</div>
       <div class="m">${papierMeta(s)}</div>
@@ -542,7 +545,12 @@
       $('[data-tome-add]', sheet)?.addEventListener('click', () => { const k = v.total + 1; saveOwned(id, [...v.owned, k], s.vfTotal ? { vfTotal: Math.max(s.vfTotal, k) } : {}); draw(); });
       $$('[data-vf]', sheet).forEach((b) => b.addEventListener('click', () => { S.update(id, { vfTotal: Math.max(v.owned.at(-1) || 0, (s.vfTotal || v.total) + Number(b.dataset.vf)) || null }); draw(); }));
       $('[data-vf-vo]', sheet)?.addEventListener('click', () => { S.update(id, { vfTotal: Math.max(v.vo, v.owned.at(-1) || 0) }); draw(); });
-      $('[data-vf-unknown]', sheet)?.addEventListener('click', () => { S.update(id, { vfTotal: null }); draw(); });
+      $('[data-vf-unknown]', sheet)?.addEventListener('click', () => { S.update(id, { vfTotal: null, complete: false }); draw(); });
+      $('[data-complete]', sheet)?.addEventListener('click', (e) => {
+        const on = e.currentTarget.dataset.complete === '1';
+        S.update(id, on ? { complete: true, vfTotal: v.total } : { complete: false }); draw();
+        if (on) toast('Collection complète ✓');
+      });
       $('[data-vf-all]', sheet)?.addEventListener('click', () => { saveOwned(id, Array.from({ length: v.total }, (_, i) => i + 1)); draw(); });
       $('[data-notes]', sheet).addEventListener('change', (e) => S.update(id, { notes: e.target.value }));
       $('[data-okfiche]', sheet)?.addEventListener('click', () => { S.update(id, { verify: false }); draw(); toast('Fiche validée'); });
@@ -564,7 +572,8 @@
       return `<div class="sec"><span class="lbl">Tomes papier</span><button class="btn small" data-tome-add>J'ai le tome 1</button></div>`;
     }
     let status;
-    if (v.missing.length) status = `<div class="vol-status miss">Il te manque ${v.missing.length > 1 ? 'les tomes' : 'le tome'} <b>${ranges(v.missing)}</b></div>`;
+    if (v.complete) status = `<div class="vol-status full">Série terminée et complète : tu as les ${v.total} tomes ✓</div>`;
+    else if (v.missing.length) status = `<div class="vol-status miss">Il te manque ${v.missing.length > 1 ? 'les tomes' : 'le tome'} <b>${ranges(v.missing)}</b></div>`;
     else if (v.known) status = `<div class="vol-status full">Collection complète, ${v.total} tome${v.total > 1 ? 's' : ''} sur ${v.total} ✓</div>`;
     else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
     const tiles = [];
@@ -582,6 +591,7 @@
         ${v.vo ? `<button class="btn small ghost" data-vf-vo>En VO : ${v.vo} tome${v.vo > 1 ? 's' : ''}${d.voDone ? ' (finie)' : ''}, utiliser ce nombre</button>` : ''}
         ${v.missing.length ? '<button class="btn small ghost" data-vf-all>Je les ai tous</button>' : ''}
         ${v.known ? '<button class="btn small ghost" data-vf-unknown>Je ne sais pas</button>' : ''}
+        ${v.complete ? '<button class="btn small ghost" data-complete="0">Pas encore complète</button>' : (!v.missing.length && v.owned.length ? '<button class="btn small ghost" data-complete="1">Série terminée, j’ai tout ✓</button>' : '')}
       </div>
     </div>`;
   }
