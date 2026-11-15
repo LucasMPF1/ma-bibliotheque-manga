@@ -341,3 +341,17 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 .tome.miss { background: var(--accent-soft); color: var(--accent); border: 1.5px dashed var(--accent); }
 .tome.add { background: transparent; border: 1.5px dashed var(--line); color: var(--muted); font-size: 20px; font-weight: 500; }
 .vf-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; font-weight: 650; }
+
+/* Bandeau tomes sur la couverture */
+.vbar { position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: rgba(0,0,0,.45); }
+.vbar span { display: block; height: 100%; background: #fff; }
+.vbar.miss span { background: #ff5b61; }
+.vbar.full span { background: #3ccf8e; }
+.vpill {
+  position: absolute; left: 6px; bottom: 12px; font-size: 11.5px; font-weight: 800; padding: 3px 8px; border-radius: 8px;
+  color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.vpill.miss { background: var(--accent); }
+.vpill.full { background: #2f9e6b; }
+.card .miss-line, .row .miss-line { color: var(--accent); font-weight: 650; }
+.vbar ~ .quick { bottom: 46px; }

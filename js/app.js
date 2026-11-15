@@ -222,9 +222,25 @@
     return '';
   }
   function papierMeta(s) { return `${s.complete ? 'Complète · ' : ''}${n(s.volumes || 0)} tome${s.volumes > 1 ? 's' : ''}${s.publisher ? ' · ' + esc(s.publisher) : ''}`; }
+  // Bandeau en bas de la couverture : barre de progression + état
+  function volStrip(s, d) {
+    const v = vols(s, d);
+    if (!v.total) return '';
+    const pct = Math.round((v.owned.length / v.total) * 100);
+    let pill = '';
+    if (v.complete) pill = `<span class="vpill full">Complète ✓</span>`;
+    else if (v.missing.length) pill = `<span class="vpill miss">Manque ${v.missing.length}</span>`;
+    return `${pill}<div class="vbar ${v.complete ? 'full' : v.missing.length ? 'miss' : ''}"><span style="width:${pct}%"></span></div>`;
+  }
+  function volMissingLine(s, d) {
+    const v = vols(s, d);
+    if (!v.missing.length) return '';
+    const txt = ranges(v.missing);
+    return `<div class="m miss-line">Manque : ${txt.length > 28 ? ranges(v.missing.slice(0, 6)) + '…' : txt}</div>`;
+  }
   function volBadge(s, d) {
     const v = vols(s, d);
-    if (v.complete) return `<span class="badge vol full">Complète ✓</span>`;
+    if (v.complete) return `<span class="badge vol full">${v.total} ✓</span>`;
     if (v.missing.length) return `<span class="badge vol miss">${v.owned.length}/${v.total}</span>`;
     if (v.known) return `<span class="badge vol full">${v.owned.length}/${v.total} ✓</span>`;
     return `<span class="badge vol">${n(s.volumes || 0)} t.</span>`;
@@ -234,10 +250,12 @@
       <div class="cover">${coverHtml(s, d)}
         ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${volBadge(s, d)}
+        ${volStrip(s, d)}
         ${s.complete ? '' : `<button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>`}
       </div>
       <div class="t">${esc(s.title)}</div>
       <div class="m">${papierMeta(s)}</div>
+      ${volMissingLine(s, d)}
     </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
     return `<article class="card" data-id="${esc(s.id)}">
@@ -254,7 +272,7 @@
   function rowHtml({ s, d }, mode) {
     if (mode === 'papier') return `<article class="row" data-id="${esc(s.id)}">
       <div class="thumb">${thumbHtml(s, d)}</div>
-      <div><div class="t">${esc(s.title)}</div><div class="m"><span>${papierMeta(s)}</span>${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
+      <div><div class="t">${esc(s.title)}</div>${volMissingLine(s, d)}<div class="m"><span>${papierMeta(s)}</span>${s.rating != null ? `<span>★ ${fmtRating(s.rating)}</span>` : ''}${d.type ? `<span>${esc(d.type)}</span>` : ''}</div></div>
       <div class="act"><button class="btn small" data-quickvol>+1 tome</button></div>
     </article>`;
     const canQuick = s.status === 'en_cours' && s.next;
