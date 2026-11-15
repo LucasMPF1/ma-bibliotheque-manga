@@ -1,5 +1,5 @@
 // Service worker : le site s'ouvre même hors connexion.
-const CACHE = 'mabiblio-v8';
+const CACHE = 'mabiblio-v7';
 const SHELL = ['./', 'index.html', 'css/app.css', 'js/config.js', 'js/store.js', 'js/app.js', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'data/library.json', 'data/releases.json'];
 
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });

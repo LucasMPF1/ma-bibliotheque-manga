@@ -270,7 +270,7 @@
   function cardHtml({ s, d, kids }, mode) {
     if (mode === 'papier') return `<article class="card ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="cover">${coverHtml(s, d)}
-        ${s.rating != null ? `<span class="badge rating ${s.rating >= 9 ? 'top' : ''}"><i>★</i>${fmtRating(s.rating)}</span>` : ''}
+        ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${volBadge(s, d)}
         ${volStrip(s, d)}
         ${s.complete ? '' : `<button class="quick" data-quickvol aria-label="J'ai un tome de plus">+1</button>`}
@@ -283,7 +283,7 @@
     const canQuick = s.status === 'en_cours' && s.next;
     return `<article class="card ${kids ? 'stack' : ''}" data-id="${esc(s.id)}"${kids ? ' data-group' : ''}>
       <div class="cover">${coverHtml(s, d)}
-        ${s.rating != null ? `<span class="badge rating bl ${s.rating >= 9 ? 'top' : ''}"><i>★</i>${fmtRating(s.rating)}</span>` : ''}
+        ${s.rating != null ? `<span class="badge rating">★ ${fmtRating(s.rating)}</span>` : ''}
         ${newBadge(s, d)}
         ${canQuick ? `<button class="quick" data-quick aria-label="J'ai lu le chapitre ${s.next}">+1</button>` : ''}
         ${d.pct && s.status === 'en_cours' ? `<div class="progress"><span style="width:${d.pct}%"></span></div>` : ''}
