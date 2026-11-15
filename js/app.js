@@ -30,7 +30,7 @@
     return {
       rel, latest, unread, read,
       sparkle: s.status === 'en_cours' && unread >= SPARKLE,
-      cover: hd(rel?.cover),
+      cover: s.cover || hd(rel?.cover),
       type: rel?.type || '',
       voDone: !!rel?.completed,
       changedAt: rel?.changed_at || null,
@@ -591,6 +591,7 @@
 
         <div class="sec actions">
           <button class="btn small ghost" data-rename>Renommer</button>
+          <button class="btn small ghost" data-setcover>Changer l'image</button>
           ${s.mu && !s.verify ? '<button class="btn small ghost" data-fix>Changer de fiche</button>' : ''}
           <button class="btn small danger" data-delete>Supprimer</button>
         </div>`;
@@ -630,6 +631,13 @@
       $('[data-group-of]', sheet)?.addEventListener('change', (e) => {
         S.update(id, { group: e.target.value || null }); draw();
         toast(e.target.value ? `Rangée avec ${S.get(e.target.value)?.title}` : 'Série séparée');
+      });
+      $('[data-setcover]', sheet).addEventListener('click', () => {
+        const u = prompt("Colle l'adresse d'une image (clic droit ou appui long sur une image, puis « Copier l'adresse de l'image »). Laisse vide pour revenir à l'image automatique.", s.cover || '');
+        if (u === null) return;
+        const v = u.trim();
+        if (v && !/^https:\/\//.test(v)) { toast("L'adresse doit commencer par https://"); return; }
+        S.update(id, { cover: v || null }); draw(); toast(v ? 'Image changée' : 'Image automatique');
       });
       $('[data-rename]', sheet).addEventListener('click', () => { const t = prompt('Nouveau titre', s.title); if (t && t.trim()) { S.update(id, { title: t.trim() }); draw(); } });
       $('[data-delete]', sheet).addEventListener('click', () => {
