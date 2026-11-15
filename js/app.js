@@ -118,6 +118,8 @@
     const fn = routes[key] || routes[''];
     const tab = { '': 'library', papier: 'papier', nouveautes: 'news', stats: 'stats', reglages: 'settings' }[key] || 'library';
     $$('[data-tab]').forEach((a) => a.classList.toggle('active', a.dataset.tab === tab));
+    if (!$('#sheet').hidden) { $('#sheet').hidden = true; $('#sheet-backdrop').hidden = true; document.body.style.overflow = ''; }
+    $('[data-page-title]').textContent = { library: 'Mes scans', papier: 'Ma bibliothèque', news: 'Nouveautés', stats: 'Statistiques', settings: 'Réglages' }[tab];
     $('.fab').hidden = tab !== 'library' && tab !== 'papier';
     ui.mode = tab === 'papier' ? 'papier' : 'scan';
     if (tab === 'news') markNewsSeenSoon();
@@ -196,6 +198,7 @@
         <button class="stat" data-filter="sparkle"><b>${n(sparkles)}</b><span>✨ avec 40+ à lire</span></button>
         <button class="stat" data-filter="a_commencer"><b>${n(aCommencer)}</b><span>à commencer</span></button>`}
       </div>
+      ${P ? '' : continueRow(items)}
       <div class="toolbar">
         <label class="search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.2 12.6l5.1 5.1 1.4-1.4-5.1-5.1A7 7 0 0 0 10 3zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
           <input type="search" placeholder="Rechercher une série…" value="${esc(ui.q)}" data-q autocomplete="off" enterkeyhint="search"></label>
@@ -213,6 +216,8 @@
     $$('[data-view]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ view: b.dataset.view }); renderLibrary(mode); }));
     $$('.stat[data-filter]', view).forEach((b) => b.addEventListener('click', () => { S.setPrefs({ [fk]: b.dataset.filter }); drawResults(); }));
     drawResults();
+    const cont = $('[data-continue]', view);
+    if (cont) bindItems(cont, mode);
 
     function drawResults() {
       const chips = $('[data-chips]', view);
@@ -238,6 +243,22 @@
       box.innerHTML = p.view === 'list' ? `<div class="list">${list.map((x) => rowHtml(x, mode)).join('')}</div>` : `<div class="grid">${list.map((x) => cardHtml(x, mode)).join('')}</div>`;
       bindItems(box, mode);
     }
+  }
+
+  // Les séries en cours lues le plus récemment, puis celles avec le plus de chapitres à lire
+  function continueRow(items) {
+    const list = items.filter((x) => x.s.status === 'en_cours' && x.s.next)
+      .sort((a, b) => (b.s.lastRead || '').localeCompare(a.s.lastRead || '') || b.d.unread - a.d.unread).slice(0, 10);
+    if (list.length < 2) return '';
+    return `<section class="continue" data-continue>
+      <div class="sec-title">Continuer</div>
+      <div class="crow">${list.map(({ s, d }) => `<article class="ccard" data-id="${esc(s.id)}">
+        <div class="cover">${coverHtml(s, d)}${d.unread ? `<span class="badge new ${d.sparkle ? 'big' : ''}">+${n(d.unread)}</span>` : ''}
+          <button class="quick" data-quick aria-label="J'ai lu le chapitre ${s.next}">+1</button>
+          ${d.pct ? `<div class="progress"><span style="width:${d.pct}%"></span></div>` : ''}</div>
+        <div class="t">${esc(s.title)}</div><div class="m">Ch. ${n(s.next)}</div>
+      </article>`).join('')}</div>
+    </section>`;
   }
 
   function metaLine(s, d) {
@@ -359,7 +380,7 @@
 
   function quickRead(id) {
     const s = S.get(id); const prev = { next: s.next, status: s.status };
-    S.update(id, { next: (s.next || 1) + 1, status: 'en_cours' });
+    S.update(id, { next: (s.next || 1) + 1, status: 'en_cours', lastRead: new Date().toISOString() });
     if (navigator.vibrate) navigator.vibrate(10);
     toast(`${s.title} : chapitre ${prev.next} lu`, () => S.update(id, prev));
   }
@@ -374,7 +395,7 @@
   function allRead(id) {
     const s = S.get(id); const d = derive(s); const prev = { next: s.next, status: s.status };
     if (!d.latest) return;
-    S.update(id, { next: d.latest + 1, status: 'en_cours' });
+    S.update(id, { next: d.latest + 1, status: 'en_cours', lastRead: new Date().toISOString() });
     toast(`${s.title} : à jour (ch. ${d.latest})`, () => S.update(id, prev));
   }
 
@@ -609,7 +630,7 @@
 
       const setNext = (v) => {
         v = v == null || isNaN(v) ? null : Math.max(1, Math.round(v));
-        const patch = { next: v };
+        const patch = { next: v, lastRead: new Date().toISOString() };
         if (v && s.status === 'a_commencer' && v > 1) patch.status = 'en_cours';
         S.update(id, patch); draw();
       };

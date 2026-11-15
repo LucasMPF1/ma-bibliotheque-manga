@@ -386,3 +386,78 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 
 /* Note en bas à gauche sur les scans (le haut est pris par les nouveaux chapitres) */
 .badge.rating.bl { top: auto; bottom: 14px; }
+
+/* =========================================================
+   Design v2 : plus compact, plus lisible sur iPhone
+   ========================================================= */
+:root { --radius: 16px; }
+.page-title { display: none; }
+body { font-feature-settings: "ss01", "cv11"; }
+
+/* Barre du haut : sur mobile, elle porte le titre de la page */
+@media (max-width: 760px) {
+  .brand span { display: none; }
+  .brand img { width: 28px; height: 28px; border-radius: 8px; }
+  .page-title { display: block; font-size: 22px; font-weight: 800; letter-spacing: -.025em; }
+  .topbar { border-bottom-color: transparent; transition: border-color .2s; }
+  main > h1, main h1 { display: none; }
+  main .sub { margin-top: 0; }
+}
+
+/* Compteurs : 4 petites tuiles sur une ligne */
+@media (max-width: 760px) {
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; overflow: visible; margin: 2px 0 14px; padding: 0; }
+  .stat { min-width: 0; padding: 9px 9px 8px; border-radius: 14px; }
+  .stat b { font-size: 18px; line-height: 1.15; }
+  .stat span { font-size: 10.5px; line-height: 1.2; display: block; margin-top: 2px; }
+}
+.stat { transition: transform .12s; }
+.stat:active { transform: scale(.96); }
+
+/* Barre d'outils sur une seule ligne */
+@media (max-width: 760px) {
+  .toolbar { flex-wrap: nowrap; gap: 8px; }
+  .search { flex: 1 1 auto; min-width: 0; height: 40px; }
+  .toolbar .select { flex: 0 1 132px; min-width: 0; height: 40px; font-size: 13.5px; padding-right: 28px; text-overflow: ellipsis; }
+  .viewtoggle { height: 40px; flex: none; }
+  .viewtoggle button { width: 34px; }
+}
+
+/* Filtres : défilement avec fondu sur le bord */
+.chips { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); padding-right: 40px; }
+.chip { height: 32px; transition: background .15s, color .15s; }
+
+/* Cartes */
+.cover { border-radius: 14px; }
+.card .t { font-size: 13px; margin-top: 8px; }
+.card .m { font-size: 11.5px; }
+.badge { border-radius: 9px; }
+
+/* Rangée « Continuer » */
+.sec-title { font-size: 13px; font-weight: 750; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 4px 0 8px; }
+.continue { margin-bottom: 16px; }
+.crow { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px 6px; scroll-snap-type: x mandatory; scroll-padding: 0 16px; }
+.crow::-webkit-scrollbar { display: none; }
+@media (min-width: 761px) { .crow { margin: 0 -20px; padding: 2px 20px 6px; } }
+.ccard { flex: 0 0 92px; width: 92px; min-width: 0; scroll-snap-align: start; cursor: pointer; position: relative; }
+.ccard .cover { border-radius: 12px; }
+.ccard .t { font-size: 12px; font-weight: 650; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ccard .m { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ccard .badge.new { font-size: 10.5px; padding: 2px 6px; top: 5px; right: 5px; }
+.ccard .quick { width: 30px; height: 30px; font-size: 12px; right: 5px; bottom: 9px; opacity: 1; transform: none; }
+
+/* Bouton + plus discret */
+@media (max-width: 760px) { .fab { width: 52px; height: 52px; border-radius: 16px; } }
+
+/* Fiche */
+.sheet .seg[data-status] { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
+.sheet .seg[data-status] button { height: 38px; font-size: 13.5px; }
+.sec .lbl { letter-spacing: .06em; }
+.hero h3 { font-size: 21px; }
+
+/* Barre du bas : pastille sous l'onglet actif */
+@media (max-width: 760px) {
+  .bottomnav a.active::before { content: ""; position: absolute; top: 0; left: 30%; right: 30%; height: 3px; border-radius: 0 0 3px 3px; background: var(--accent); }
+  .bottomnav a svg { transition: transform .15s; }
+  .bottomnav a:active svg { transform: scale(.88); }
+}
