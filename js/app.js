@@ -133,7 +133,7 @@
     const p = S.prefs;
 
     view.innerHTML = `
-      <h1>${P ? 'Ma collection papier' : 'Mes scans'}</h1>
+      <h1>${P ? 'Ma bibliothèque' : 'Mes scans'}</h1>
       <div class="summary">${P ? `
         <button class="stat" data-filter="all"><b>${n(items.length)}</b><span>séries</span></button>
         <button class="stat" data-filter="all"><b>${n(volumes)}</b><span>tomes</span></button>
