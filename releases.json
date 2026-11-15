@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-15T19:49:52+00:00",
+ "checked_at": "2026-11-15T20:55:13+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -9,6 +9,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515366.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 15
   },
   "34373027975": {
@@ -18,7 +19,8 @@
    "latest": 237,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i477394.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "50369844984": {
    "title": "Omniscient Reader",
@@ -28,6 +30,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i519012.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 20
   },
   "66833512843": {
@@ -37,7 +40,8 @@
    "latest": 285,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503930.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "43236637606": {
    "title": "The Return of the Disaster-Class Hero",
@@ -46,7 +50,8 @@
    "latest": 196,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503940.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "14166418753": {
    "title": "The Frozen Player Returns",
@@ -55,7 +60,8 @@
    "latest": 234,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505318.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "25084267078": {
    "title": "After Ten Millennia in Hell",
@@ -64,7 +70,8 @@
    "latest": 166,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i542335.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "66042781119": {
    "title": "The Player Who Can't Level Up",
@@ -73,7 +80,8 @@
    "latest": 251,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i541936.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "60735012287": {
    "title": "The Beginning After the End",
@@ -83,6 +91,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i473881.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 3
   },
   "46253154585": {
@@ -92,7 +101,8 @@
    "latest": 130,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481871.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "76138565368": {
    "title": "The SSS-Rank Hunter's Lucky Draw",
@@ -101,7 +111,8 @@
    "latest": 136,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502142.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "74095324437": {
    "title": "The Swordmaster's Son",
@@ -110,7 +121,8 @@
    "latest": 221,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506263.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "57444291766": {
    "title": "Boundless Ascension",
@@ -119,7 +131,8 @@
    "latest": 177,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i476874.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "3796218942": {
    "title": "Doom Breaker",
@@ -129,6 +142,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i526762.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "10594239509": {
@@ -138,7 +152,8 @@
    "latest": 158,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i491665.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "47318115009": {
    "title": "Ranker's Return",
@@ -147,7 +162,8 @@
    "latest": 24,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i356826.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "7165844085": {
    "title": "World's Strongest Troll",
@@ -156,7 +172,8 @@
    "latest": 196,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i499819.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "38141085546": {
    "title": "Level Up With the Gods",
@@ -166,6 +183,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i541700.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 5
   },
   "59508337221": {
@@ -175,7 +193,8 @@
    "latest": 120,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i411968.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "33457087483": {
    "title": "The Top Dungeon Farmer",
@@ -184,7 +203,8 @@
    "latest": 152,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540009.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "34484651400": {
    "title": "The Lone Spellcaster",
@@ -193,7 +213,8 @@
    "latest": 229,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i477195.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "44581519839": {
    "title": "Tomb Raider King",
@@ -202,7 +223,8 @@
    "latest": 33,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481456.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "61777034741": {
    "title": "The Knight King Who Returned With a God",
@@ -211,7 +233,8 @@
    "latest": 186,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i507296.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "58524655910": {
    "title": "Demon Devourer",
@@ -220,7 +243,8 @@
    "latest": 148,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502620.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "47868483967": {
    "title": "The Hero Returns",
@@ -229,7 +253,8 @@
    "latest": 178,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535858.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "44657031929": {
    "title": "Taming Master",
@@ -238,7 +263,8 @@
    "latest": 187,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i443266.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "76416010450": {
    "title": "Leveling Beyond the Max",
@@ -247,7 +273,8 @@
    "latest": 85,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i466910.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "12770925855": {
    "title": "Revenge of the Baskerville Bloodhound",
@@ -256,7 +283,8 @@
    "latest": 188,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505316.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "41837581597": {
    "title": "My Blasted Reincarnated Life",
@@ -265,7 +293,8 @@
    "latest": 82,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i418196.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "60225852049": {
    "title": "The Reincarnated Assassin Is a Swordmaster",
@@ -274,7 +303,8 @@
    "latest": 100,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i486266.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "60261451232": {
    "title": "Your Talent Is Mine",
@@ -283,7 +313,8 @@
    "latest": 106,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i474156.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "47708478269": {
    "title": "The Novel's Extra",
@@ -292,7 +323,8 @@
    "latest": 1,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i389725.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "40767254486": {
    "title": "The Academy's Genius Swordsman",
@@ -301,7 +333,8 @@
    "latest": 163,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503967.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "58992657801": {
    "title": "The Celestial Returned From Hell",
@@ -310,7 +343,8 @@
    "latest": 197,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538445.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "28833357175": {
    "title": "Kill the Hero",
@@ -319,7 +353,8 @@
    "latest": 153,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503934.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "39426575272": {
    "title": "The World After the Fall",
@@ -328,7 +363,8 @@
    "latest": 245,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515495.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "64410130862": {
    "title": "Starting Over as a Tree",
@@ -337,7 +373,8 @@
    "latest": 538,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495727.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "59049915845": {
    "title": "Pick Me Up!",
@@ -346,7 +383,8 @@
    "latest": 227,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535665.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "32357730076": {
    "title": "The Infinite Mage",
@@ -355,7 +393,8 @@
    "latest": 193,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i514425.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "36395549708": {
    "title": "All-Master Necromancer",
@@ -364,7 +403,8 @@
    "latest": 96,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i479430.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "40972615446": {
    "title": "Mythic Item Obtained",
@@ -373,7 +413,8 @@
    "latest": 112,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i518175.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "50744171529": {
    "title": "Why I Quit Being the Demon King",
@@ -382,7 +423,8 @@
    "latest": 88,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538995.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "53868619311": {
    "title": "The Nine Heavens Swordmaster",
@@ -391,7 +433,8 @@
    "latest": 153,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495071.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "49838489832": {
    "title": "The Reaper (INKYO)",
@@ -400,7 +443,8 @@
    "latest": 134,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i494321.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "61711869758": {
    "title": "Teenage Mercenary",
@@ -409,7 +453,8 @@
    "latest": 276,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i346782.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "17066552636": {
    "title": "The Archmage Returns After 4000 Years",
@@ -418,7 +463,8 @@
    "latest": 282,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505314.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "5895054205": {
    "title": "The Reborn Young Lord Is an Assassin",
@@ -427,7 +473,8 @@
    "latest": 148,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505378.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "67341137571": {
    "title": "Dungeon Odyssey",
@@ -436,7 +483,8 @@
    "latest": 177,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503396.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "59619220568": {
    "title": "Past Life Regressor",
@@ -445,7 +493,8 @@
    "latest": 29,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i373291.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "1675287010": {
    "title": "A Returner's Magic Should Be Special",
@@ -455,6 +504,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i501821.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "29672526342": {
@@ -464,7 +514,8 @@
    "latest": 74,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i491670.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "52438521185": {
    "title": "Necromancer Academy and the Genius Summoner",
@@ -473,7 +524,8 @@
    "latest": 194,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i487935.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "48095731462": {
    "title": "Reborn as the Enemy Prince",
@@ -482,7 +534,8 @@
    "latest": 126,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i498176.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "5236596036": {
    "title": "Maryoku 9999 Man - Zen Zokusei Tsukai no Dai Kenja",
@@ -491,7 +544,8 @@
    "latest": 57,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528683.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "66660538701": {
    "title": "Assassin in Another World",
@@ -500,7 +554,8 @@
    "latest": 82,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i361891.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "13015731700": {
    "title": "Tower of God",
@@ -510,6 +565,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495933.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 20
   },
   "16346236814": {
@@ -519,7 +575,8 @@
    "latest": 70,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495934.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "27180626786": {
    "title": "The Greatest Estate Developer",
@@ -528,7 +585,9 @@
    "latest": 222,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534063.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 8
   },
   "32367613211": {
    "title": "Martial Master",
@@ -537,7 +596,8 @@
    "latest": 548,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i357732.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "50945386701": {
    "title": "Blade Deity: I Stun the Post-Apoc World",
@@ -546,7 +606,8 @@
    "latest": 32,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506703.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "13905960032": {
    "title": "The Return of the 8th Class Mage",
@@ -555,7 +616,9 @@
    "latest": 81,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i405360.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 5
   },
   "41254648118": {
    "title": "The Extra's Academy Survival Guide",
@@ -564,7 +627,8 @@
    "latest": 132,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538828.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "77920556712": {
    "title": "Bastard Swordsman",
@@ -573,7 +637,9 @@
    "latest": 16,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540899.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 4
   },
   "50345803844": {
    "title": "Hardcore Leveling Warrior",
@@ -582,7 +648,8 @@
    "latest": 154,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i428951.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "37355558483": {
    "title": "The Mage: Swallowed the Dragon",
@@ -591,7 +658,8 @@
    "latest": 137,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i497834.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "76874161220": {
    "title": "Log-In Murim",
@@ -600,7 +668,8 @@
    "latest": 253,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540976.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "53575829933": {
    "title": "Return of the SSS-Class Demon Lord",
@@ -609,7 +678,8 @@
    "latest": 26,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i453687.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "58848139479": {
    "title": "Return of Immortal Emperor",
@@ -618,7 +688,8 @@
    "latest": 287,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i396778.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "4974628119": {
    "title": "The Devil Never Cries",
@@ -627,7 +698,8 @@
    "latest": 96,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i496007.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "32295189380": {
    "title": "Tsue to Tsurugi no Wistoria",
@@ -636,7 +708,9 @@
    "latest": 33,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i525669.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 15
   },
   "42054693446": {
    "title": "I Killed the Main Player",
@@ -645,7 +719,8 @@
    "latest": 121,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506594.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "34313491284": {
    "title": "Becoming a Magic School Mage",
@@ -654,7 +729,8 @@
    "latest": 133,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502492.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "31481924256": {
    "title": "The Art of Reincarnation",
@@ -663,7 +739,8 @@
    "latest": 203,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i499642.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "22108062520": {
    "title": "The 100th Regression of the Max-Level Player",
@@ -672,7 +749,8 @@
    "latest": 89,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540456.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "25821490516": {
    "title": "The Martial God Who Regressed Back to Level 2",
@@ -681,7 +759,8 @@
    "latest": 134,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540700.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "37845185027": {
    "title": "The Legendary Spearman Returns",
@@ -690,7 +769,8 @@
    "latest": 223,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481452.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "28433049110": {
    "title": "Lout of Count's Family",
@@ -699,7 +779,8 @@
    "latest": 195,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i525547.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "10704835615": {
    "title": "Blink Master of the Magic Academy",
@@ -708,7 +789,8 @@
    "latest": 102,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505629.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "27558584427": {
    "title": "The Stellar Swordmaster",
@@ -717,7 +799,8 @@
    "latest": 146,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i521480.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "17058241528": {
    "title": "How to Use a Returner",
@@ -726,7 +809,8 @@
    "latest": 211,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i524531.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "13431947466": {
    "title": "Lord Hero of House Remes",
@@ -735,7 +819,8 @@
    "latest": 89,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i537164.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "22369784005": {
    "title": "Cleric of Decay",
@@ -744,7 +829,8 @@
    "latest": 79,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i491644.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "30667346558": {
    "title": "The Magic Genius of the Marquis",
@@ -753,7 +839,8 @@
    "latest": 30,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i461929.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "64993286558": {
    "title": "Reincarnation of the Hero Party's Grand Mage",
@@ -762,7 +849,8 @@
    "latest": 145,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i494100.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "23042912592": {
    "title": "I'm Not That Kind of Talent",
@@ -771,7 +859,8 @@
    "latest": 31,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i405624.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "44314549857": {
    "title": "Demon King of the Royal Class",
@@ -780,7 +869,8 @@
    "latest": 80,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502740.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "15626324892": {
    "title": "The Academy's Undercover Professor",
@@ -789,16 +879,18 @@
    "latest": 168,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503935.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "24711053222": {
    "title": "Writers Legacy",
    "url": "https://www.mangaupdates.com/series/bcobmp2/writers-legacy",
    "type": "French",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i504579.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "17407227352": {
    "title": "Mythical Archmage Returns",
@@ -807,7 +899,8 @@
    "latest": 100,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i467900.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "36005686209": {
    "title": "Descended from Divinity",
@@ -816,7 +909,8 @@
    "latest": 209,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505371.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "45510008360": {
    "title": "Ice Lord",
@@ -825,16 +919,18 @@
    "latest": 28,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i507055.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "28627914028": {
    "title": "The Great Rebirth",
    "url": "https://www.mangaupdates.com/series/d5gbju4/the-great-rebirth",
    "type": "Manhwa",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502855.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "22176525142": {
    "title": "The SSS-Ranker Returns",
@@ -843,7 +939,8 @@
    "latest": 200,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i477367.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "48896532821": {
    "title": "Legend of the Northern Blade",
@@ -852,7 +949,8 @@
    "latest": 202,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i522031.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "42001226411": {
    "title": "Ian the Illegitimate Son Was an Emperor",
@@ -861,7 +959,8 @@
    "latest": 133,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534169.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "10748997940": {
    "title": "Supremely Talented Player",
@@ -870,7 +969,8 @@
    "latest": 113,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i485700.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "51015868345": {
    "title": "Black Haze",
@@ -879,7 +979,8 @@
    "latest": 228,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540758.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "20164148992": {
    "title": "Becoming the Monarch",
@@ -888,7 +989,8 @@
    "latest": 1,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i400720.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "6633899886": {
    "title": "The Archmage's Restaurant",
@@ -897,7 +999,8 @@
    "latest": 158,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i539072.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "38438441949": {
    "title": "The Druid of Seoul Station",
@@ -906,7 +1009,8 @@
    "latest": 207,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i437466.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "47605971972": {
    "title": "Wo! Zai E Ji Mu Shi",
@@ -915,16 +1019,18 @@
    "latest": 46,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i484335.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "59157659930": {
    "title": "The Dark World",
    "url": "https://www.mangaupdates.com/series/r6cxyje/the-dark-world",
    "type": "Manhua",
-   "latest": 0,
+   "latest": null,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i451675.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "50699844874": {
    "title": "The Academy's Genius Tamer",
@@ -933,7 +1039,8 @@
    "latest": 83,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515033.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "65310725359": {
    "title": "Stay Low Profile, Sect Chief",
@@ -942,7 +1049,8 @@
    "latest": 586,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i473831.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "57558905368": {
    "title": "Book Eater (MKR)",
@@ -951,7 +1059,8 @@
    "latest": 114,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502494.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "55302214008": {
    "title": "Latna Saga: Survival of a Sword King",
@@ -960,7 +1069,8 @@
    "latest": 255,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i541934.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "32000029889": {
    "title": "Nebula's Civilization",
@@ -969,7 +1079,8 @@
    "latest": 126,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i514166.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "6574111645": {
    "title": "Return From the Abyss",
@@ -978,7 +1089,8 @@
    "latest": 40,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i487165.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "45646973509": {
    "title": "The Lord of Coins",
@@ -987,7 +1099,8 @@
    "latest": 226,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i402908.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "27330127662": {
    "title": "The Genius Medicinal Mage",
@@ -996,7 +1109,8 @@
    "latest": 48,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i437110.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "12611732362": {
    "title": "Her Summon",
@@ -1005,7 +1119,8 @@
    "latest": 76,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i493291.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "77084457305": {
    "title": "Time-Limited Genius Dark Knight",
@@ -1014,7 +1129,8 @@
    "latest": 173,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i486136.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "26970059807": {
    "title": "Red Thread of Fate (Giryang)",
@@ -1023,16 +1139,19 @@
    "latest": 11,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i367554.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "16625520379": {
    "title": "Starship Operators",
    "url": "https://www.mangaupdates.com/series/7myelmj/starship-operators",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i11106.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 2
   },
   "52542103520": {
    "title": "Ending Maker",
@@ -1041,16 +1160,18 @@
    "latest": 85,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i524602.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "11920014038": {
    "title": "Warble",
    "url": "https://www.mangaupdates.com/series/5h4v9p2/warble",
    "type": "Manhwa",
-   "latest": 0,
+   "latest": null,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i285296.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "74631868688": {
    "title": "The Regressed Mercenary Has a Plan",
@@ -1059,7 +1180,8 @@
    "latest": 114,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i509014.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "6630929182": {
    "title": "Devils' Crest",
@@ -1068,7 +1190,8 @@
    "latest": 5,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535100.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "66892705111": {
    "title": "Bad Born Blood",
@@ -1077,7 +1200,8 @@
    "latest": 108,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502497.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "39532348244": {
    "title": "I Became the Tyrant of a Defense Game",
@@ -1086,7 +1210,8 @@
    "latest": 26,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i536063.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "39882263655": {
    "title": "The Spark in Your Eyes",
@@ -1095,7 +1220,8 @@
    "latest": 229,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i487575.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "32895221226": {
    "title": "The Bastard of Swordborne",
@@ -1104,7 +1230,8 @@
    "latest": 120,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502563.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "9177102622": {
    "title": "The Genius Prismatic Mage",
@@ -1113,7 +1240,8 @@
    "latest": 102,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515997.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "67671265448": {
    "title": "The Last Adventurer",
@@ -1122,7 +1250,8 @@
    "latest": 120,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534084.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "43476221806": {
    "title": "The Lazy Lord Masters the Sword",
@@ -1131,7 +1260,8 @@
    "latest": 168,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i474834.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "36971814890": {
    "title": "The Fox-Eyed Villain of the Demon Academy",
@@ -1140,7 +1270,8 @@
    "latest": 60,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i484079.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "67624939883": {
    "title": "The Legendary Hero Is an Academy Honors Student",
@@ -1149,7 +1280,8 @@
    "latest": 113,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503822.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "11569556847": {
    "title": "The Dragon Slayer's Regression on Another Level",
@@ -1158,7 +1290,8 @@
    "latest": 110,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i509348.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "48381822589": {
    "title": "Boukun Meika no Hangyakusha -Aster-",
@@ -1167,7 +1300,8 @@
    "latest": 47,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515739.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "25062323030": {
    "title": "The Frostbound Warrior",
@@ -1176,7 +1310,8 @@
    "latest": 49,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i493339.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "55286017924": {
    "title": "I Became a Swordsmanship Instructor at the Academy",
@@ -1185,7 +1320,8 @@
    "latest": 45,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i489024.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "4081439862": {
    "title": "Villains Are Destined to Die",
@@ -1194,16 +1330,18 @@
    "latest": 214,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531650.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "6767035553": {
    "title": "My Pirate Prince",
    "url": "https://www.mangaupdates.com/series/33wx21t/my-pirate-prince",
    "type": "Manhwa",
-   "latest": 0,
+   "latest": null,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i519551.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "9946628715": {
    "title": "Reincarnator's Stream",
@@ -1212,7 +1350,8 @@
    "latest": 73,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534452.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "63958220672": {
    "title": "Act Like a Boss Monster, Mr. Swallow!",
@@ -1221,7 +1360,8 @@
    "latest": 150,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i539082.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "77645713662": {
    "title": "66,666 Years: Advent of the Dark Mage",
@@ -1230,7 +1370,8 @@
    "latest": 205,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i509110.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "25277482937": {
    "title": "My Daughter Is the Final Boss",
@@ -1239,7 +1380,8 @@
    "latest": 139,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i429094.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "74220744179": {
    "title": "Surviving as a Player",
@@ -1248,7 +1390,8 @@
    "latest": 2,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i530725.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "17590636149": {
    "title": "The SSS-Rank Paladin Who Breaks All Rules",
@@ -1257,7 +1400,8 @@
    "latest": 106,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481873.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "61048080321": {
    "title": "The Patron of Villains",
@@ -1266,7 +1410,8 @@
    "latest": 61,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531118.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "46211735900": {
    "title": "Narutaru",
@@ -1275,16 +1420,19 @@
    "latest": 40,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i229318.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": [],
+   "vo_volumes": 12
   },
   "65954658329": {
    "title": "Lord of the Mysteries",
    "url": "https://www.mangaupdates.com/series/uarp82h/lord-of-the-mysteries",
    "type": "Manhua",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535808.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "39222777340": {
    "title": "Mahou Meika ni Tensei Shita Saikyou Kensei",
@@ -1293,7 +1441,8 @@
    "latest": 22,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534055.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "1353796125": {
    "title": "Kimi wa 008",
@@ -1303,6 +1452,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i486380.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 33
   },
   "26184571505": {
@@ -1313,6 +1463,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i133468.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "72687724880": {
@@ -1323,16 +1474,18 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528198.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 17
   },
   "67284596911": {
    "title": "Kaitou Lupin",
    "url": "https://www.mangaupdates.com/series/uwrif8v/kaitou-lupin",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i277790.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 5
   },
   "67339072487": {
@@ -1343,6 +1496,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i312892.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 21
   },
   "23401013993": {
@@ -1353,6 +1507,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528199.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 22
   },
   "33723068939": {
@@ -1363,6 +1518,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i286166.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "20867452709": {
@@ -1373,6 +1529,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i537716.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 36
   },
   "70180620476": {
@@ -1383,6 +1540,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534037.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 38
   },
   "70994361491": {
@@ -1393,6 +1551,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506265.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 74
   },
   "4415562067": {
@@ -1403,6 +1562,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531168.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 34
   },
   "51912432379": {
@@ -1413,6 +1573,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i526262.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 20
   },
   "66860926": {
@@ -1423,6 +1584,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i350851.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 12
   },
   "49412338327": {
@@ -1433,6 +1595,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528555.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 2
   },
   "28035998976": {
@@ -1443,6 +1606,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i438057.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 30
   },
   "76217991771": {
@@ -1453,6 +1617,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538921.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 29
   },
   "3479935384": {
@@ -1463,6 +1628,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i295749.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 12
   },
   "36271319846": {
@@ -1473,16 +1639,18 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i525117.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 23
   },
   "12786444220": {
    "title": "Dofus",
    "url": "https://www.mangaupdates.com/series/5vgpvi4/dofus",
    "type": "French",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i487361.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 30
   },
   "58654658868": {
@@ -1493,6 +1661,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i381259.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "40319778780": {
@@ -1503,6 +1672,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i152981.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 42
   },
   "50757891079": {
@@ -1513,6 +1683,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i482614.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 24
   },
   "372275459": {
@@ -1523,6 +1694,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535298.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 27
   },
   "61251107617": {
@@ -1533,6 +1705,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i93686.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 63
   },
   "17858499552": {
@@ -1543,6 +1716,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538926.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 24
   },
   "32334361267": {
@@ -1553,6 +1727,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i527509.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 8
   },
   "77962975056": {
@@ -1563,6 +1738,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534303.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 36
   },
   "64495369812": {
@@ -1573,6 +1749,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i539121.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 28
   },
   "19001585632": {
@@ -1583,6 +1760,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i513279.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 27
   },
   "74074058344": {
@@ -1593,6 +1771,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540429.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 17
   },
   "27418475697": {
@@ -1603,6 +1782,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i318597.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "61508275290": {
@@ -1613,6 +1793,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i523282.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 13
   },
   "49449837876": {
@@ -1623,16 +1804,18 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i530450.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 39
   },
   "52697360707": {
    "title": "Koori no Buta",
    "url": "https://www.mangaupdates.com/series/o7inbr7/koori-no-buta",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i266704.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 5
   },
   "73544473356": {
@@ -1643,16 +1826,18 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i308425.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 11
   },
   "18862756576": {
    "title": "Spirit Circus",
    "url": "https://www.mangaupdates.com/series/8nyec4g/spirit-circus",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 2
   },
   "36804249355": {
@@ -1663,6 +1848,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i371755.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 14
   },
   "17379304167": {
@@ -1673,6 +1859,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i533828.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "23801312094": {
@@ -1683,6 +1870,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i470074.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 30
   },
   "60441951323": {
@@ -1693,25 +1881,28 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i536550.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 12
   },
   "15541244086": {
    "title": "Niji Shinden",
    "url": "https://www.mangaupdates.com/series/750usom/niji-shinden",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i276058.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "77113551669": {
    "title": "Keroro Quest",
    "url": "https://www.mangaupdates.com/series/zfbf19x/keroro-quest",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "64201264591": {
    "title": "Kuroko no Basket",
@@ -1721,6 +1912,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i210448.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 30
   },
   "24998810740": {
@@ -1731,6 +1923,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i391484.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 8
   },
   "26643241978": {
@@ -1741,6 +1934,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531813.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 16
   },
   "23393951235": {
@@ -1751,16 +1945,18 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i424594.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 34
   },
   "27160276859": {
    "title": "Hitoribocchi ga Tamaranakattara",
    "url": "https://www.mangaupdates.com/series/ch6izqz/hitoribocchi-ga-tamaranakattara",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i536613.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "54016803525": {
@@ -1770,7 +1966,8 @@
    "latest": 86,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i526864.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "15124812002": {
    "title": "Kusuriya no Hitorigoto",
@@ -1780,6 +1977,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535944.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 17
   },
   "38311542347": {
@@ -1790,25 +1988,28 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i542705.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "60726078830": {
    "title": "Surakkusu Joshi",
    "url": "https://www.mangaupdates.com/series/rwaqmb2/surakkusu-joshi",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i488929.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "15033466123": {
    "title": "Les Misérables",
    "url": "https://www.mangaupdates.com/series/6wmjcp7/les-miserables",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i91132.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "52621770086": {
@@ -1819,6 +2020,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i522733.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 8
   },
   "444271657": {
@@ -1829,6 +2031,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i428606.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 18
   },
   "13820663332": {
@@ -1839,6 +2042,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i475589.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 29
   },
   "270105846": {
@@ -1849,6 +2053,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i527276.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 33
   },
   "63868402874": {
@@ -1859,6 +2064,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505247.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 42
   },
   "17360452316": {
@@ -1869,6 +2075,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i140134.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 72
   },
   "23947376012": {
@@ -1879,6 +2086,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i288837.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 1
   },
   "55099564912": {
@@ -1889,16 +2097,18 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531056.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 115
   },
   "42064105448": {
    "title": "One Piece Film: Gold",
    "url": "https://www.mangaupdates.com/series/jbnvrhk/one-piece-film-gold",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i265501.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 2
   },
   "30535847369": {
@@ -1909,6 +2119,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i530468.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 37
   },
   "27540312201": {
@@ -1919,6 +2130,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i478028.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 10
   },
   "63340981116": {
@@ -1929,6 +2141,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538569.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 19
   },
   "66533484298": {
@@ -1939,16 +2152,18 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i525454.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 17
   },
   "32923481428": {
    "title": "Adequate Rainfall",
    "url": "https://www.mangaupdates.com/series/f4hsgus/adequate-rainfall",
    "type": "Manhwa",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i443599.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "47993536244": {
    "title": "Grancrest Senki",
@@ -1958,6 +2173,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i297021.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "52459112698": {
@@ -1968,6 +2184,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i315507.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 5
   },
   "62758791984": {
@@ -1978,6 +2195,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i317176.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 41
   },
   "67814124606": {
@@ -1988,6 +2206,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i542485.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 18
   },
   "17122182327": {
@@ -1998,16 +2217,18 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i469710.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 4
   },
   "63414246785": {
    "title": "Kuro no Strika",
    "url": "https://www.mangaupdates.com/series/t4r7dz5/kuro-no-strika",
    "type": "Manga",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i263136.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 2
   },
   "66280584264": {
@@ -2018,16 +2239,18 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i522941.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 18
   },
   "78179717895": {
    "title": "The Village of the Dead",
    "url": "https://www.mangaupdates.com/series/zwy6oef/the-village-of-the-dead",
    "type": "Thai",
-   "latest": 0,
+   "latest": null,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495659.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "29556692510": {
    "title": "The Novel's Extra (2022)",
@@ -2036,7 +2259,8 @@
    "latest": 179,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503938.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "58588321341": {
    "title": "Yakusoku no Neverland",
@@ -2046,6 +2270,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i518153.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 20
   },
   "76370010154": {
@@ -2056,6 +2281,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i510209.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 7
   },
   "44487524676": {
@@ -2065,7 +2291,8 @@
    "latest": 536,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i426141.jpg",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   },
   "26272522291": {
    "title": "Tokyo Ghoul",
@@ -2075,6 +2302,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i208080.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 14
   },
   "31091326370": {
@@ -2085,6 +2313,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i260645.png",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 3
   },
   "6376149234": {
@@ -2095,6 +2324,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481646.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 27
   },
   "67808789330": {
@@ -2105,6 +2335,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534711.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 28
   },
   "4681793962": {
@@ -2115,6 +2346,7 @@
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i304284.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 4
   },
   "52491147590": {
@@ -2125,6 +2357,7 @@
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i508885.jpg",
    "changed_at": null,
+   "history": [],
    "vo_volumes": 14
   },
   "11920035749": {
@@ -2134,7 +2367,8 @@
    "latest": 22,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i396038.png",
-   "changed_at": null
+   "changed_at": null,
+   "history": []
   }
  }
 }
