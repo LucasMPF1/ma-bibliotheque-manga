@@ -415,38 +415,104 @@
   function renderNews() {
     const view = $('#view');
     const items = newsItems();
-    const fresh = items.filter((x) => isFresh(x.d)).sort((a, b) => b.d.changedAt.localeCompare(a.d.changedAt));
-    const week = Date.now() - 7 * 86400e3;
-    const recent = items.filter((x) => !isFresh(x.d) && x.d.changedAt && new Date(x.d.changedAt) > week).sort((a, b) => b.d.changedAt.localeCompare(a.d.changedAt));
-    const rest = items.filter((x) => !fresh.includes(x) && !recent.includes(x)).sort((a, b) => (b.s.rating ?? 0) - (a.s.rating ?? 0) || a.d.unread - b.d.unread);
+    const week = new Date(Date.now() - 7 * 86400e3).toISOString();
+    const fresh = items.filter((x) => isFresh(x.d) || (x.d.changedAt && x.d.changedAt > week))
+      .sort((a, b) => b.d.changedAt.localeCompare(a.d.changedAt));
+    const rest = items.filter((x) => !fresh.includes(x))
+      .sort((a, b) => (b.s.rating ?? 0) - (a.s.rating ?? 0) || b.d.unread - a.d.unread);
+    const toRead = items.reduce((a, x) => a + x.d.unread, 0);
     const checked = S.releases.checked_at;
+    const soon = upcomingVolumes();
+    const heroCovers = (fresh.length ? fresh : items).slice(0, 3);
 
-    const group = (title, list, sub = '') => list.length ? `<div class="news-group"><h2>${title} <span class="sub" style="font-weight:500;font-size:14px">${sub}</span></h2><div class="list">${list.map(newsRow).join('')}</div></div>` : '';
     view.innerHTML = `
-      <div class="news-head">
-        <div><h1>Nouveautés</h1><p class="sub">${checked ? 'Dernière vérification ' + ago(checked) : 'Pas encore de vérification automatique'} · ${n(items.length)} séries avec des chapitres à lire</p></div>
-        ${S.token ? `<button class="btn small ghost" data-check><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0-7.9 6.6l2 .4A6 6 0 0 1 17.6 8H15v2h6V4h-2v2.3A8 8 0 0 0 12 4zm5.9 9A6 6 0 0 1 6.4 16H9v-2H3v6h2v-2.3A8 8 0 0 0 19.9 13.4z"/></svg>Vérifier maintenant</button>` : ''}
-      </div>
+      <section class="news-hero">
+        <div class="fan big">${heroCovers.map((x) => `<i>${thumbHtml(x.s, x.d)}</i>`).join('')}</div>
+        <div class="nh-txt">
+          <div class="nh-lbl">À lire</div>
+          <div class="nh-big"><b>${n(toRead)}</b> chapitre${toRead > 1 ? 's' : ''} à lire</div>
+          <div class="nh-sub">dans ${n(items.length)} série${items.length > 1 ? 's' : ''} · ${checked ? 'vérifié ' + ago(checked) : 'pas encore vérifié'}</div>
+        </div>
+        ${S.token ? `<button class="nh-check" data-check aria-label="Vérifier maintenant"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0-7.9 6.6l2 .4A6 6 0 0 1 17.6 8H15v2h6V4h-2v2.3A8 8 0 0 0 12 4zm5.9 9A6 6 0 0 1 6.4 16H9v-2H3v6h2v-2.3A8 8 0 0 0 19.9 13.4z"/></svg></button>` : ''}
+      </section>
       ${items.length ? '' : `<div class="empty"><b>Tu es à jour partout 🎉</b>Les nouveaux chapitres apparaîtront ici dès leur sortie.</div>`}
-      ${group('Depuis ta dernière visite', fresh, fresh.length ? `${fresh.length} série${fresh.length > 1 ? 's' : ''}` : '')}
-      ${group('Cette semaine', recent)}
-      ${group('Toujours à rattraper', rest, 'triées par ta note')}`;
+
+      ${fresh.length ? `<section class="nsec">
+        <div class="sec-title">Tout frais <span>${fresh.length}</span></div>
+        <div class="crow fresh">${fresh.map(({ s, d }) => `<article class="fcard" data-id="${esc(s.id)}">
+          <div class="cover">${coverHtml(s, d)}
+            <span class="badge new ${d.sparkle ? 'big' : ''}">+${n(d.unread)}</span>
+            <span class="when">${ago(d.changedAt)}</span>
+            <button class="quick" data-quick aria-label="J'ai lu le chapitre ${s.next}">+1</button>
+          </div>
+          <div class="t">${esc(s.title)}</div>
+          <div class="m">Ch. ${n(d.read)} → ${n(d.latest)}</div>
+        </article>`).join('')}</div>
+      </section>` : ''}
+
+      ${soon.length ? `<section class="nsec">
+        <div class="sec-title">Tomes à venir <span>${soon.length}</span></div>
+        <div class="crow">${soon.map(({ s, d, v }) => `<article class="vcard" data-vol="${esc(s.id)}">
+          <div class="cover">${coverHtml(s, d)}${imgHtml(volCoverUrls(v))}<span class="vnum">T.${v.n}</span></div>
+          <div class="date">${esc(shortDate(v.date))}</div>
+          <div class="t">${esc(s.title)}</div>
+        </article>`).join('')}</div>
+      </section>` : ''}
+
+      ${rest.length ? `<section class="nsec">
+        <div class="sec-title">À rattraper <span>${rest.length}</span></div>
+        <div class="grid">${rest.map((x) => cardHtml(x, 'scan')).join('')}</div>
+      </section>` : ''}`;
     bindItems(view);
+    $$('[data-vol]', view).forEach((el) => el.addEventListener('click', () => {
+      openDetail(el.dataset.vol);
+      setTimeout(() => ($('#sheet .vlist .soon') || $('#sheet .vlist'))?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 350);
+    }));
     const c = $('[data-check]', view);
     if (c) c.addEventListener('click', async () => {
-      c.disabled = true;
+      c.disabled = true; c.classList.add('spin');
       try { await S.runChecker(); toast('Vérification lancée, résultats dans 2 à 3 minutes'); setTimeout(() => S.refresh(), 150000); }
       catch (e) { toast(e.message); }
-      c.disabled = false;
+      c.disabled = false; c.classList.remove('spin');
     });
   }
-  function newsRow({ s, d }) {
-    return `<article class="row" data-id="${esc(s.id)}">
-      <div class="thumb">${thumbHtml(s, d)}</div>
-      <div><div class="t">${esc(s.title)}</div>
-        <div class="m"><span>Lu ${n(d.read)} / ${n(d.latest)}</span><span class="pill">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>${d.changedAt ? `<span>${ago(d.changedAt)}</span>` : ''}</div></div>
-      <div class="act"><button class="btn small" data-quick>+1</button><button class="btn small ghost" data-allread title="Marquer tout comme lu">À jour</button></div>
-    </article>`;
+  function upcomingVolumes() {
+    const today = new Date().toISOString().slice(0, 10);
+    const out = [];
+    for (const s of S.all()) {
+      const owned = new Set(Array.isArray(s.owned) ? s.owned : []);
+      for (const v of S.vf(s)?.volumes || []) {
+        if (!v.date || owned.has(v.n)) continue;
+        if (v.date.length >= 10 ? v.date > today : v.date >= today.slice(0, v.date.length)) out.push({ s, d: derive(s), v });
+      }
+    }
+    return out.sort((a, b) => a.v.date.localeCompare(b.v.date));
+  }
+  function shortDate(iso) {
+    const [y, m, d] = iso.split('-').map(Number);
+    if (d) return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+    if (m) return new Date(y, m - 1, 1).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+    return String(y);
+  }
+
+  // Couverture d'un tome à partir de son ISBN : image trouvée par la vérification, sinon Amazon, sinon Open Library
+  function isbn10(d) {
+    if (d.length === 10) return d;
+    if (d.length !== 13 || !d.startsWith('978')) return null;
+    const b = d.slice(3, 12); let sum = 0;
+    for (let k = 0; k < 9; k++) sum += (10 - k) * Number(b[k]);
+    const c = (11 - (sum % 11)) % 11;
+    return b + (c === 10 ? 'X' : c);
+  }
+  function volCoverUrls(v) {
+    if (!v) return '';
+    const urls = [];
+    if (v.cover) urls.push(v.cover);
+    const d = (v.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+    const ten = isbn10(d);
+    if (ten) urls.push(`https://images-na.ssl-images-amazon.com/images/P/${ten}.01.MZZZZZZZ.jpg`);
+    if (d.length >= 10) urls.push(`https://covers.openlibrary.org/b/isbn/${d}-M.jpg?default=false`);
+    return urls.join(' ');
   }
 
   // ---------- Stats ----------
@@ -717,17 +783,19 @@
     else if (v.known) status = `<div class="vol-status full">Tu as tous les tomes parus, ${v.total} sur ${v.total} ✓${v.upcoming.length ? ` · prochain tome ${esc(onDate(v.upcoming[0].date))}` : ''}</div>`;
     else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
     const tiles = [];
+    const covers = Object.values(v.info).some((x) => x.isbn || x.cover);
+    const inner = (i, inf) => covers ? `${imgHtml(volCoverUrls(inf))}<span>${i}</span>` : i;
     for (let i = 1; i <= v.total; i++) {
       const inf = v.info[i];
       const tip = inf && inf.date ? ` title="Paru ${esc(onDate(inf.date))}"` : '';
-      tiles.push(`<button class="tome ${v.set.has(i) ? 'on' : 'miss'}" data-tome="${i}" aria-pressed="${v.set.has(i)}" aria-label="Tome ${i}"${tip}>${i}</button>`);
+      tiles.push(`<button class="tome ${covers ? 'cov' : ''} ${v.set.has(i) ? 'on' : 'miss'}" data-tome="${i}" aria-pressed="${v.set.has(i)}" aria-label="Tome ${i}"${tip}>${inner(i, inf)}</button>`);
     }
-    for (const u of v.upcoming) tiles.push(`<button class="tome soon" data-tome="${u.n}" aria-label="Tome ${u.n}, à paraître" title="À paraître ${esc(onDate(u.date))}">${u.n}</button>`);
+    for (const u of v.upcoming) tiles.push(`<button class="tome ${covers ? 'cov' : ''} soon" data-tome="${u.n}" aria-label="Tome ${u.n}, à paraître" title="À paraître ${esc(onDate(u.date))}">${inner(u.n, u)}</button>`);
     return `<div class="sec">
       <div class="vol-head"><span class="lbl">Mes tomes</span><b>${v.owned.length}${v.total ? ' / ' + v.total : ''}${v.extras ? ` <small>+ ${v.extras} hors-série</small>` : ''}</b></div>
       ${status}
-      <div class="tomes">${tiles.join('')}<button class="tome add" data-tome-add aria-label="Ajouter le tome suivant">+</button></div>
-      <p class="hint">Touche un numéro pour dire que tu l'as, ou que tu ne l'as plus.</p>
+      <div class="tomes ${covers ? 'covers' : ''}">${tiles.join('')}<button class="tome add ${covers ? 'cov' : ''}" data-tome-add aria-label="Ajouter le tome suivant">+</button></div>
+      <p class="hint">Touche un tome pour dire que tu l'as, ou que tu ne l'as plus. Les tomes en gris te manquent.</p>
       ${volDetails(v)}
       <div class="vf-row">
         <span>Parus en VF</span>
@@ -830,12 +898,10 @@
     const ago30 = new Date(Date.now() - 30 * 86400e3).toISOString().slice(0, 10);
     const ago14 = new Date(Date.now() - 14 * 86400e3).toISOString();
     const out = [];
+    const fresh = [];
     for (const s of S.all()) {
       const d = derive(s);
-      if (s.status === 'en_cours' && d.unread > 0 && d.changedAt && d.changedAt > ago14) {
-        out.push({ key: `ch:${s.id}:${d.latest}`, kind: 'ch', at: d.changedAt, s, d,
-          text: `${n(d.unread)} chapitre${d.unread > 1 ? 's' : ''} à lire · dernier sorti : ${n(d.latest)}` });
-      }
+      if (s.status === 'en_cours' && d.unread > 0 && d.changedAt && d.changedAt > ago14) fresh.push({ s, d, c: newChapters(d, ago14) });
       const owned = new Set(Array.isArray(s.owned) ? s.owned : []);
       for (const v of S.vf(s)?.volumes || []) {
         if (!v.date || owned.has(v.n)) continue;
@@ -845,7 +911,24 @@
         else if (v.date.length >= 10 && v.date >= ago30) out.push({ key: `out:${s.id}:${v.n}`, kind: 'out', at: v.date, s, d, text: `${name} est sorti ${onDate(v.date)}` });
       }
     }
+    if (fresh.length) {
+      fresh.sort((a, b) => b.d.changedAt.localeCompare(a.d.changedAt));
+      const total = fresh.reduce((a, x) => a + x.c, 0);
+      const names = fresh.slice(0, 2).map((x) => esc(x.s.title));
+      out.push({ key: `ch:${fresh[0].d.changedAt}`, kind: 'ch', at: fresh[0].d.changedAt, group: fresh,
+        title: `${n(total)} nouveau${total > 1 ? 'x' : ''} scan${total > 1 ? 's' : ''}`,
+        text: names.join(', ') + (fresh.length > 2 ? ` et ${fresh.length - 2} autre${fresh.length > 3 ? 's' : ''}` : '') });
+    }
     return out;
+  }
+  // Chapitres sortis depuis « depuis » (sinon : ceux qui restent à lire)
+  function newChapters(d, since) {
+    const h = d.rel?.history || [];
+    const before = h.find((x) => x.at <= since);
+    const inWin = h.filter((x) => x.at > since);
+    let base = before ? before.chapter : inWin.length ? Math.min(...inWin.map((x) => x.chapter)) - 1 : null;
+    const c = base != null ? d.latest - base : d.unread;
+    return Math.max(1, Math.min(d.unread, c));
   }
   function seenSet() { return new Set(S.prefs.seenNotifs || []); }
   function unseenCount() { const seen = seenSet(); return notifs().filter((x) => !seen.has(x.key)).length; }
@@ -853,7 +936,11 @@
   function openNotifs() {
     const list = notifs();
     const seen = seenSet();
-    const row = (x) => `<article class="row notif ${seen.has(x.key) ? '' : 'unseen'}" data-nid="${esc(x.s.id)}" data-kind="${x.kind}">
+    const row = (x) => x.group ? `<article class="row notif ${seen.has(x.key) ? '' : 'unseen'}" data-gonews>
+        <div class="thumb fan">${x.group.slice(0, 3).map((g) => `<i>${thumbHtml(g.s, g.d)}</i>`).join('')}</div>
+        <div><div class="t">${x.title}</div><div class="m"><span>${x.text} · ${ago(x.at)}</span></div></div>
+        <span class="ico">📖</span>
+      </article>` : `<article class="row notif ${seen.has(x.key) ? '' : 'unseen'}" data-nid="${esc(x.s.id)}" data-kind="${x.kind}">
         <div class="thumb">${thumbHtml(x.s, x.d)}</div>
         <div><div class="t">${esc(x.s.title)}</div><div class="m"><span>${x.text}</span></div></div>
         <span class="ico">${{ ch: '📖', soon: '📅', out: '📚' }[x.kind]}</span>
@@ -871,6 +958,7 @@
         ${group('Tomes sortis ce mois-ci', list.filter((x) => x.kind === 'out').sort((a, b) => b.at.localeCompare(a.at)))}
         <p class="hint">Touche une notification pour ouvrir la série.</p>
       </div>`;
+    $('[data-gonews]', sheet)?.addEventListener('click', () => { closeSheet(); location.hash = '#/nouveautes'; });
     $$('[data-nid]', sheet).forEach((el) => el.addEventListener('click', () => {
       const kind = el.dataset.kind;
       openDetail(el.dataset.nid);
