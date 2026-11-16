@@ -93,9 +93,41 @@
   }
   window.coverNext = (img) => {
     const [n, ...rest] = (img.dataset.alt || '').split(' ').filter(Boolean);
-    if (!n) { img.remove(); return; }
+    if (!n) {
+      // Dernier recours pour un tome : Google Books, interrogé depuis l'appareil (résultat mémorisé)
+      const isbn = img.dataset.isbn;
+      if (isbn && !img.dataset.gb) { img.dataset.gb = '1'; gbCover(isbn).then((u) => (u ? (img.src = u) : img.remove())); return; }
+      img.remove(); return;
+    }
     img.dataset.alt = rest.join(' '); img.src = n;
   };
+  const GB_KEY = 'mabiblio.gbcovers';
+  let gbCache = null, gbQueue = Promise.resolve();
+  function gbGet() { if (!gbCache) { try { gbCache = JSON.parse(localStorage.getItem(GB_KEY)) || {}; } catch { gbCache = {}; } } return gbCache; }
+  function gbCover(isbn) {
+    const c = gbGet();
+    if (isbn in c) return Promise.resolve(c[isbn]);
+    // Une requête à la fois, pour rester sous la limite de Google
+    gbQueue = gbQueue.then(async () => {
+      if (isbn in c) return;
+      try {
+        const r = await fetch('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn);
+        if (r.status === 429) return; // on réessaiera plus tard
+        const j = await r.json();
+        const l = j.items?.[0]?.volumeInfo?.imageLinks || {};
+        c[isbn] = (l.thumbnail || l.smallThumbnail || '').replace('http://', 'https://').replace('&edge=curl', '');
+        try { localStorage.setItem(GB_KEY, JSON.stringify(c)); } catch {}
+      } catch {}
+    });
+    return gbQueue.then(() => c[isbn] || '');
+  }
+  function volImg(v) {
+    if (!v) return '';
+    const d = (v.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+    const urls = volCoverUrls(v);
+    if (!urls) return '';
+    return imgHtml(urls).replace('<img ', `<img data-isbn="${esc(d)}" `);
+  }
   function ago(iso) {
     if (!iso) return '';
     const diff = (Date.now() - new Date(iso).getTime()) / 1000;
@@ -453,7 +485,7 @@
       ${soon.length ? `<section class="nsec">
         <div class="sec-title">Tomes à venir <span>${soon.length}</span></div>
         <div class="crow">${soon.map(({ s, d, v }) => `<article class="vcard" data-vol="${esc(s.id)}">
-          <div class="cover">${coverHtml(s, d)}${imgHtml(volCoverUrls(v))}<span class="vnum">T.${v.n}</span></div>
+          <div class="cover">${coverHtml(s, d)}${volImg(v)}<span class="vnum">T.${v.n}</span></div>
           <div class="date">${esc(shortDate(v.date))}</div>
           <div class="t">${esc(s.title)}</div>
         </article>`).join('')}</div>
@@ -509,6 +541,8 @@
     const urls = [];
     if (v.cover) urls.push(v.cover);
     const d = (v.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+    const g = gbGet()[d];
+    if (g) urls.push(g);
     const ten = isbn10(d);
     if (ten) urls.push(`https://images-na.ssl-images-amazon.com/images/P/${ten}.01.MZZZZZZZ.jpg`);
     if (d.length >= 10) urls.push(`https://covers.openlibrary.org/b/isbn/${d}-M.jpg?default=false`);
@@ -784,7 +818,7 @@
     else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
     const tiles = [];
     const covers = Object.values(v.info).some((x) => x.isbn || x.cover);
-    const inner = (i, inf) => covers ? `${imgHtml(volCoverUrls(inf))}<span>${i}</span>` : i;
+    const inner = (i, inf) => covers ? `${volImg(inf)}<span>${i}</span>` : i;
     for (let i = 1; i <= v.total; i++) {
       const inf = v.info[i];
       const tip = inf && inf.date ? ` title="Paru ${esc(onDate(inf.date))}"` : '';
