@@ -207,7 +207,7 @@ def main():
     now = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
 
     for s in library.get("series", []):
-        if s.get("deleted") or not (s.get("volumes") or s.get("status") == "collection"):
+        if s.get("deleted"):
             continue
         if only and norm(only) not in norm(s["title"]):
             continue

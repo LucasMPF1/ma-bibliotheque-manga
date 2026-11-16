@@ -823,6 +823,66 @@
     setTimeout(() => $('[data-title]', sheet).focus(), 250);
   }
 
+  // ---------- Notifications ----------
+  // Tout ce qui est nouveau : chapitres sortis, tomes VF annoncés, tomes VF tout juste parus.
+  function notifs() {
+    const today = new Date().toISOString().slice(0, 10);
+    const ago30 = new Date(Date.now() - 30 * 86400e3).toISOString().slice(0, 10);
+    const ago14 = new Date(Date.now() - 14 * 86400e3).toISOString();
+    const out = [];
+    for (const s of S.all()) {
+      const d = derive(s);
+      if (s.status === 'en_cours' && d.unread > 0 && d.changedAt && d.changedAt > ago14) {
+        out.push({ key: `ch:${s.id}:${d.latest}`, kind: 'ch', at: d.changedAt, s, d,
+          text: `${n(d.unread)} chapitre${d.unread > 1 ? 's' : ''} à lire · dernier sorti : ${n(d.latest)}` });
+      }
+      const owned = new Set(Array.isArray(s.owned) ? s.owned : []);
+      for (const v of S.vf(s)?.volumes || []) {
+        if (!v.date || owned.has(v.n)) continue;
+        const name = `Tome ${v.n}${v.title ? ` « ${esc(v.title)} »` : ''}`;
+        const future = v.date.length >= 10 ? v.date > today : v.date >= today.slice(0, v.date.length);
+        if (future) out.push({ key: `vol:${s.id}:${v.n}`, kind: 'soon', at: v.date, s, d, text: `${name} sort ${onDate(v.date)}` });
+        else if (v.date.length >= 10 && v.date >= ago30) out.push({ key: `out:${s.id}:${v.n}`, kind: 'out', at: v.date, s, d, text: `${name} est sorti ${onDate(v.date)}` });
+      }
+    }
+    return out;
+  }
+  function seenSet() { return new Set(S.prefs.seenNotifs || []); }
+  function unseenCount() { const seen = seenSet(); return notifs().filter((x) => !seen.has(x.key)).length; }
+
+  function openNotifs() {
+    const list = notifs();
+    const seen = seenSet();
+    const row = (x) => `<article class="row notif ${seen.has(x.key) ? '' : 'unseen'}" data-nid="${esc(x.s.id)}" data-kind="${x.kind}">
+        <div class="thumb">${thumbHtml(x.s, x.d)}</div>
+        <div><div class="t">${esc(x.s.title)}</div><div class="m"><span>${x.text}</span></div></div>
+        <span class="ico">${{ ch: '📖', soon: '📅', out: '📚' }[x.kind]}</span>
+      </article>`;
+    const group = (title, items) => items.length ? `<div class="notif-group"><span class="lbl">${title}</span><div class="list">${items.map(row).join('')}</div></div>` : '';
+    const sheet = $('#sheet');
+    sheet.innerHTML = `
+      <div class="grabber"></div>
+      <button class="close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6 10.6 12 5 6.4z"/></svg></button>
+      <div class="sec notifs" style="border:0">
+        <h2>Notifications</h2>
+        ${list.length ? '' : '<div class="empty"><b>Rien de neuf pour l’instant</b>Les nouveaux chapitres et les tomes à paraître apparaîtront ici.</div>'}
+        ${group('Nouveaux chapitres', list.filter((x) => x.kind === 'ch').sort((a, b) => b.at.localeCompare(a.at)))}
+        ${group('Tomes à paraître', list.filter((x) => x.kind === 'soon').sort((a, b) => a.at.localeCompare(b.at)))}
+        ${group('Tomes sortis ce mois-ci', list.filter((x) => x.kind === 'out').sort((a, b) => b.at.localeCompare(a.at)))}
+        <p class="hint">Touche une notification pour ouvrir la série.</p>
+      </div>`;
+    $$('[data-nid]', sheet).forEach((el) => el.addEventListener('click', () => {
+      const kind = el.dataset.kind;
+      openDetail(el.dataset.nid);
+      if (kind !== 'ch') setTimeout(() => ($('#sheet .vlist .soon') || $('#sheet .vlist'))?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 350);
+    }));
+    $('[data-close]', sheet).addEventListener('click', closeSheet);
+    showSheet();
+    S.setPrefs({ seenNotifs: [...new Set([...seen, ...list.map((x) => x.key)])].slice(-600) });
+    updateBadges();
+  }
+  $('[data-notifs]').addEventListener('click', openNotifs);
+
   // ---------- Sheet & toast ----------
   function showSheet() {
     $('#sheet').hidden = false; $('#sheet-backdrop').hidden = false; document.body.style.overflow = 'hidden';
@@ -859,7 +919,9 @@
   function updateBadges() {
     const c = newsItems().filter((x) => isFresh(x.d)).length;
     $$('[data-news-count]').forEach((b) => { b.hidden = !c; b.textContent = c > 99 ? '99+' : c; });
-    if (navigator.setAppBadge) { c ? navigator.setAppBadge(c).catch(() => {}) : navigator.clearAppBadge?.().catch(() => {}); }
+    const u = unseenCount();
+    const nb = $('[data-notif-count]'); nb.hidden = !u; nb.textContent = u > 99 ? '99+' : u;
+    if (navigator.setAppBadge) { u ? navigator.setAppBadge(u).catch(() => {}) : navigator.clearAppBadge?.().catch(() => {}); }
   }
   function rerender() {
     if (!$('#sheet').hidden) return; // ne pas redessiner sous la fiche ouverte
