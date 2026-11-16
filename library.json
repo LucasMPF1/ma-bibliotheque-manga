@@ -254,10 +254,10 @@
    "rating": null,
    "volumes": 0,
    "publisher": null,
-   "mu": 47318115009,
+   "mu": 57384723284,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-16T21:56:18+00:00"
   },
   {
    "id": "world-strongest-troll",
@@ -719,10 +719,10 @@
    "rating": 9.0,
    "volumes": 0,
    "publisher": null,
-   "mu": 59619220568,
+   "mu": 55516385767,
    "verify": false,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-16T21:56:18+00:00"
   },
   {
    "id": "a-returner-magic-should-be-special",
@@ -1865,10 +1865,10 @@
    "rating": 9.0,
    "volumes": 0,
    "publisher": null,
-   "mu": 55286017924,
-   "verify": false,
+   "mu": 40767254486,
+   "verify": true,
    "notes": "",
-   "updated": "2026-11-15T19:49:52+00:00"
+   "updated": "2026-11-16T21:56:18+00:00"
   },
   {
    "id": "vilain-are-destined-to-die",
