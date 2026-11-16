@@ -581,8 +581,16 @@
           </div>
         </div>
 
-        ${s.verify || !s.mu ? `<div class="sec"><div class="warn">${s.mu ? `Je ne suis pas sûr que la fiche <b>${esc(rel?.title || '')}</b> soit la bonne.` : 'Cette série n’est reliée à aucune fiche, donc je ne peux pas suivre ses sorties.'}
-          <div class="actions" style="margin-top:8px">${s.mu ? '<button class="btn small" data-okfiche>C’est la bonne</button>' : ''}<button class="btn small" data-fix>${s.mu ? 'Corriger' : 'Relier une fiche'}</button></div></div></div>` : ''}
+        ${s.verify || !s.mu ? (() => {
+          const autoMu = !s.mu && S.mu(s);
+          const pending = !s.mu && !autoMu && !s.cover && !s.verify && !S.releases.auto?.[s.id];
+          const msg = s.mu ? `Je ne suis pas sûr que la fiche <b>${esc(rel?.title || '')}</b> soit la bonne.`
+            : autoMu ? `Fiche trouvée automatiquement : <b>${esc(rel?.title || S.releases.auto[s.id].title || '')}</b>.`
+            : pending ? 'Recherche de la fiche en cours : la couverture et les chapitres arrivent dans quelques minutes.'
+            : 'Cette série n’est reliée à aucune fiche, donc je ne peux pas suivre ses sorties.';
+          return `<div class="sec"><div class="warn">${msg}
+          <div class="actions" style="margin-top:8px">${s.mu || autoMu ? '<button class="btn small" data-okfiche>C’est la bonne</button>' : ''}<button class="btn small" data-fix>${s.mu || autoMu ? 'Corriger' : 'Relier une fiche'}</button></div></div></div>`;
+        })() : ''}
 
         ${s.status === 'collection' ? '' : `<div class="sec">
           <span class="lbl">Prochain chapitre à lire</span>
@@ -658,7 +666,7 @@
       });
       $('[data-vf-all]', sheet)?.addEventListener('click', () => { saveOwned(id, Array.from({ length: v.total }, (_, i) => i + 1)); draw(); });
       $('[data-notes]', sheet).addEventListener('change', (e) => S.update(id, { notes: e.target.value }));
-      $('[data-okfiche]', sheet)?.addEventListener('click', () => { S.update(id, { verify: false }); draw(); toast('Fiche validée'); });
+      $('[data-okfiche]', sheet)?.addEventListener('click', () => { S.update(id, { verify: false, mu: S.mu(s) }); draw(); toast('Fiche validée'); });
       $$('[data-fix]', sheet).forEach((b) => b.addEventListener('click', () => showFix(sheet, s)));
       $('[data-group-of]', sheet)?.addEventListener('change', (e) => {
         S.update(id, { group: e.target.value || null }); draw();
@@ -788,8 +796,10 @@
         <div class="field"><span>Statut</span><div class="seg" data-status>${['en_cours', 'a_commencer', 'terminee', 'collection'].map((k) => `<button data-v="${k}" class="${k === status ? 'on' : ''}">${STATUS[k].short}</button>`).join('')}</div></div>
         <label class="field"><span>Prochain chapitre à lire</span><input class="input" data-next inputmode="numeric" placeholder="Optionnel"></label>
         <label class="field"><span>Tomes papier possédés (du tome 1 au tome…)</span><input class="input" data-vols inputmode="numeric" placeholder="0" value="${ui.mode === 'papier' ? 1 : ''}"></label>
-        <label class="field"><span>Fiche MangaUpdates (optionnel)</span><input class="input" data-mu placeholder="https://www.mangaupdates.com/series/…" autocomplete="off">
-          <p class="hint">Avec la fiche, l'appli suit les nouveaux chapitres et affiche la couverture. <a href="https://www.mangaupdates.com/series" target="_blank" rel="noopener" data-mu-search>Chercher ↗</a></p></label>
+        <p class="hint">La couverture, le nombre de chapitres et les tomes VF sont retrouvés automatiquement à partir du titre, en 2 à 3 minutes.</p>
+        <details class="adv"><summary>Options avancées</summary>
+        <label class="field"><span>Fiche MangaUpdates (si la recherche automatique se trompe)</span><input class="input" data-mu placeholder="https://www.mangaupdates.com/series/…" autocomplete="off">
+          <p class="hint"><a href="https://www.mangaupdates.com/series" target="_blank" rel="noopener" data-mu-search>Chercher sur MangaUpdates ↗</a></p></label></details>
         <button class="btn primary" data-save style="width:100%">Ajouter</button>
       </div>`;
     $$('[data-status] button', sheet).forEach((b) => b.addEventListener('click', () => { status = b.dataset.v; $$('[data-status] button', sheet).forEach((x) => x.classList.toggle('on', x === b)); }));
@@ -802,7 +812,7 @@
       const volumes = parseInt($('[data-vols]', sheet).value, 10) || 0;
       const item = S.add({ title, status: st, next, mu, volumes, owned: Array.from({ length: volumes }, (_, i) => i + 1) });
       closeSheet(); toast(`${title} ajoutée`);
-      if (mu && S.token) S.runChecker().then(() => setTimeout(() => S.refresh(), 150000)).catch(() => {});
+      if (S.token) S.runChecker().then(() => { setTimeout(() => S.refresh(), 120000); setTimeout(() => S.refresh(), 240000); }).catch(() => {});
       setTimeout(() => openDetail(item.id), 350);
     });
     $('[data-close]', sheet).addEventListener('click', closeSheet);

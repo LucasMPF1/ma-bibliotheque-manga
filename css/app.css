@@ -461,3 +461,6 @@ body { font-feature-settings: "ss01", "cv11"; }
   .bottomnav a svg { transition: transform .15s; }
   .bottomnav a:active svg { transform: scale(.88); }
 }
+
+.adv { margin: 4px 0 14px; }
+.adv summary { cursor: pointer; color: var(--muted); font-weight: 650; font-size: 13.5px; padding: 6px 0; }

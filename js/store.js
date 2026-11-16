@@ -156,7 +156,8 @@
       this.library.series.push(item); this.persist(); this.emit('data'); return item;
     },
     remove(id) { this.update(id, { deleted: true }); },
-    rel(s) { return s && s.mu ? this.releases.series?.[String(s.mu)] || null : null; },
+    mu(s) { return s ? s.mu || (s.cover || s.verify ? null : this.releases.auto?.[s.id]?.mu) || null : null; },
+    rel(s) { const id = this.mu(s); return id ? this.releases.series?.[String(id)] || null : null; },
     vf(s) { return (s && this.volumes.series?.[s.id]) || null; },
   };
 
