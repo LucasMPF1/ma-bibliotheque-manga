@@ -20,7 +20,9 @@
   // ---------- Données dérivées ----------
   function derive(s) {
     const rel = S.rel(s);
-    const latest = rel && rel.latest ? rel.latest : null;
+    let latest = rel && rel.latest ? rel.latest : null;
+    // Total peu fiable (numérotation par saison…) : mieux vaut « inconnu » qu'un « 146 / 26 »
+    if (latest && s.next && s.next - 1 > latest) latest = null;
     let unread = 0;
     if (latest) {
       if (s.status === 'en_cours' && s.next) unread = Math.max(0, latest - s.next + 1);

@@ -130,6 +130,10 @@ for sid in ids:
         continue
     old = known.get(sid, {})
     latest = d.get("latest_chapter") or None
+    # Les manhwa renumérotent souvent par saison : le total est en tête du statut (« 652 Chapters »).
+    m = re.match(r"\s*(\d+)\s+Chapters?", d.get("status") or "", re.I)
+    if m and int(m.group(1)) > (latest or 0):
+        latest = int(m.group(1))
     cover = ((d.get("image") or {}).get("url") or {}).get("thumb") or old.get("cover", "")
     entry = {
         "title": d.get("title", old.get("title", "")),
@@ -144,7 +148,8 @@ for sid in ids:
     m = re.search(r"(\d+)\s*Volumes?", d.get("status") or "", re.I)
     if m:
         entry["vo_volumes"] = int(m.group(1))
-    if latest and old.get("latest") and latest > old["latest"]:
+    # Un saut énorme vient d'une correction du total (saisons), pas d'une vraie sortie
+    if latest and old.get("latest") and old["latest"] < latest <= old["latest"] + 30:
         entry["changed_at"] = now
         entry["history"] = ([{"chapter": latest, "at": now}] + entry["history"])[:20]
         new_count += 1
