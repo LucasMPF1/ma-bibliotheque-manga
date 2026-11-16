@@ -96,11 +96,17 @@
     if (!n) {
       // Dernier recours pour un tome : Google Books, interrogé depuis l'appareil (résultat mémorisé)
       const isbn = img.dataset.isbn;
-      if (isbn && !img.dataset.gb) { img.dataset.gb = '1'; gbCover(isbn).then((u) => (u ? (img.src = u) : img.remove())); return; }
-      img.remove(); return;
+      if (isbn && !img.dataset.gb) { img.dataset.gb = '1'; gbCover(isbn).then((u) => (u ? (img.src = u) : coverLast(img))); return; }
+      coverLast(img); return;
     }
     img.dataset.alt = rest.join(' '); img.src = n;
   };
+  // Pas d'image pour ce tome : on montre la couverture de la série, marquée comme « générique »
+  function coverLast(img) {
+    const last = (img.dataset.last || '').split(/\s+/)[0];
+    if (last && img.dataset.usedLast !== '1') { img.dataset.usedLast = '1'; img.dataset.alt = ''; img.parentElement?.classList.add('generic'); img.src = last; return; }
+    img.remove();
+  }
   const GB_KEY = 'mabiblio.gbcovers';
   let gbCache = null, gbQueue = Promise.resolve();
   function gbGet() { if (!gbCache) { try { gbCache = JSON.parse(localStorage.getItem(GB_KEY)) || {}; } catch { gbCache = {}; } } return gbCache; }
@@ -121,12 +127,13 @@
     });
     return gbQueue.then(() => c[isbn] || '');
   }
-  function volImg(v) {
-    if (!v) return '';
-    const d = (v.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+  function volImg(v, fallback = '') {
+    const d = (v?.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
     const urls = volCoverUrls(v);
-    if (!urls) return '';
-    return imgHtml(urls).replace('<img ', `<img data-isbn="${esc(d)}" `);
+    const last = (fallback || '').trim().split(/\s+/)[0] || '';
+    if (!urls && !last) return '';
+    if (!urls) return imgHtml(last).replace('<img ', '<img data-used-last="1" ');
+    return imgHtml(urls).replace('<img ', `<img data-isbn="${esc(d)}" data-last="${esc(last)}" `);
   }
   function ago(iso) {
     if (!iso) return '';
@@ -817,8 +824,8 @@
     else if (v.known) status = `<div class="vol-status full">Tu as tous les tomes parus, ${v.total} sur ${v.total} ✓${v.upcoming.length ? ` · prochain tome ${esc(onDate(v.upcoming[0].date))}` : ''}</div>`;
     else status = `<div class="vol-status">Tu as tous les tomes jusqu'au ${v.total}. Indique combien sont parus en VF pour voir ce qui manque.</div>`;
     const tiles = [];
-    const covers = Object.values(v.info).some((x) => x.isbn || x.cover);
-    const inner = (i, inf) => covers ? `${volImg(inf)}<span>${i}</span>` : i;
+    const covers = !!d.cover || Object.values(v.info).some((x) => x.isbn || x.cover);
+    const inner = (i, inf) => covers ? `${volImg(inf, d.cover)}<span>${i}</span>` : i;
     for (let i = 1; i <= v.total; i++) {
       const inf = v.info[i];
       const tip = inf && inf.date ? ` title="Paru ${esc(onDate(inf.date))}"` : '';

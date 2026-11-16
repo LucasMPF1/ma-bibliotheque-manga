@@ -544,3 +544,14 @@ body { font-feature-settings: "ss01", "cv11"; }
   .topbar .sync-dot { grid-column: 1; grid-row: 1; margin: 0; justify-self: start; }
   .topbar .bell { grid-column: 3; grid-row: 1; margin: 0; justify-self: end; }
 }
+
+/* Tome sans image propre : couverture de la série, atténuée */
+.tome.cov img[data-used-last="1"] { filter: saturate(.6) brightness(.85); }
+/* Ordinateur : onglets centrés dans la barre du haut */
+@media (min-width: 761px) {
+  .topbar { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; }
+  .topbar .brand { grid-column: 1; grid-row: 1; }
+  .topbar .tabs { grid-column: 2; grid-row: 1; }
+  .topbar .sync-dot { grid-column: 3; grid-row: 1; justify-self: end; margin: 0 52px 0 0; }
+  .topbar .bell { grid-column: 3; grid-row: 1; justify-self: end; margin: 0; }
+}
