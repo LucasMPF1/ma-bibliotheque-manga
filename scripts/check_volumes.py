@@ -196,6 +196,39 @@ def parse_page(text):
     return [vols[k] for k in sorted(vols)]
 
 
+def fill_covers(known, library, limit=400):
+    """Couverture de chaque tome via Google Books (par ISBN). Les tomes possédés d'abord."""
+    owned = {s["id"]: set(s.get("owned") or []) for s in library.get("series", [])}
+    todo = []
+    for sid, entry in known.items():
+        for v in entry.get("volumes") or []:
+            if "cover" not in v and v.get("isbn"):
+                todo.append((0 if v["n"] in owned.get(sid, ()) else 1, sid, v))
+    todo.sort(key=lambda x: x[0])
+    found = 0
+    for _, sid, v in todo[:limit]:
+        isbn = re.sub(r"[^0-9Xx]", "", v["isbn"])
+        url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                print("Google Books : limite atteinte, la suite au prochain passage")
+                break
+            continue
+        except Exception:
+            continue
+        links = ((d.get("items") or [{}])[0].get("volumeInfo") or {}).get("imageLinks") or {}
+        img = links.get("thumbnail") or links.get("smallThumbnail") or ""
+        img = img.replace("http://", "https://").replace("&edge=curl", "")
+        v["cover"] = img
+        found += bool(img)
+        time.sleep(0.4)
+    print(f"Couvertures de tomes : {found} trouvées sur {min(len(todo), limit)} cherchées ({len(todo)} restantes avant)")
+
+
 def main():
     folder = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
@@ -250,9 +283,15 @@ def main():
             known[s["id"]] = {"page": None, "none_until": now}
             print(f"-- {s['title']} : page {page} sans tomes VF")
             continue
+        # On garde les couvertures déjà trouvées
+        old_cov = {x["n"]: x["cover"] for x in prev.get("volumes", []) if "cover" in x}
+        for v in vols:
+            if v["n"] in old_cov:
+                v["cover"] = old_cov[v["n"]]
         known[s["id"]] = {"page": page, "pages": pages, "checked_at": now, "volumes": vols}
         print(f"OK {s['title']} -> {page} : {len(vols)} tomes VF (dernier {vols[-1]['n']} le {vols[-1]['date']})")
 
+    fill_covers(known, library)
     out["checked_at"] = now
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
