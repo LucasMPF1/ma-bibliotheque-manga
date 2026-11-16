@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-16T15:48:25+00:00",
+ "checked_at": "2026-11-16T21:57:51+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -26,11 +26,16 @@
    "title": "Omniscient Reader",
    "url": "https://www.mangaupdates.com/series/n50wl4o/omniscient-reader",
    "type": "Manhwa",
-   "latest": 308,
+   "latest": 311,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i519012.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 311,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ],
    "vo_volumes": 20
   },
   "66833512843": {
@@ -92,7 +97,7 @@
    "title": "The Beginning After the End",
    "url": "https://www.mangaupdates.com/series/rwg23en/the-beginning-after-the-end",
    "type": "OEL",
-   "latest": 1,
+   "latest": 250,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i473881.jpg",
    "changed_at": null,
@@ -103,11 +108,16 @@
    "title": "The Slumbering Ranker",
    "url": "https://www.mangaupdates.com/series/l8xxmhl/the-slumbering-ranker",
    "type": "Manhwa",
-   "latest": 130,
+   "latest": 154,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481871.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 154,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "76138565368": {
    "title": "The SSS-Rank Hunter's Lucky Draw",
@@ -154,11 +164,16 @@
    "title": "The Constellations Are My Disciples",
    "url": "https://www.mangaupdates.com/series/4v7jbit/the-constellations-are-my-disciples",
    "type": "Manhwa",
-   "latest": 158,
+   "latest": 160,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i491665.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 160,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "47318115009": {
    "title": "Ranker's Return",
@@ -225,7 +240,7 @@
    "title": "Tomb Raider King",
    "url": "https://www.mangaupdates.com/series/khaoov3/tomb-raider-king",
    "type": "Manhwa",
-   "latest": 33,
+   "latest": 397,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481456.jpg",
    "changed_at": null,
@@ -265,21 +280,31 @@
    "title": "Taming Master",
    "url": "https://www.mangaupdates.com/series/kijn6d5/taming-master",
    "type": "Manhwa",
-   "latest": 187,
+   "latest": 188,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i443266.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 188,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "76416010450": {
    "title": "Leveling Beyond the Max",
    "url": "https://www.mangaupdates.com/series/z3s4b0y/leveling-beyond-the-max",
    "type": "Manhwa",
-   "latest": 85,
+   "latest": 103,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i466910.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 103,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "12770925855": {
    "title": "Revenge of the Baskerville Bloodhound",
@@ -350,11 +375,16 @@
    "title": "The Celestial Returned From Hell",
    "url": "https://www.mangaupdates.com/series/r3mpe2x/the-celestial-returned-from-hell",
    "type": "Manhwa",
-   "latest": 197,
+   "latest": 224,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538445.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 224,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "28833357175": {
    "title": "Kill the Hero",
@@ -370,11 +400,15 @@
    "title": "The World After the Fall",
    "url": "https://www.mangaupdates.com/series/i41kc6g/the-world-after-the-fall",
    "type": "Manhwa",
-   "latest": 246,
+   "latest": 258,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515495.jpg",
-   "changed_at": "2026-11-16T15:48:25+00:00",
+   "changed_at": "2026-11-16T21:57:51+00:00",
    "history": [
+    {
+     "chapter": 258,
+     "at": "2026-11-16T21:57:51+00:00"
+    },
     {
      "chapter": 246,
      "at": "2026-11-16T15:48:25+00:00"
@@ -425,7 +459,7 @@
    "title": "Mythic Item Obtained",
    "url": "https://www.mangaupdates.com/series/itm1ceu/mythic-item-obtained",
    "type": "Manhwa",
-   "latest": 112,
+   "latest": 194,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i518175.jpg",
    "changed_at": null,
@@ -435,11 +469,16 @@
    "title": "Why I Quit Being the Demon King",
    "url": "https://www.mangaupdates.com/series/nb7rpc9/why-i-quit-being-the-demon-king",
    "type": "Manhwa",
-   "latest": 88,
+   "latest": 94,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538995.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 94,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "53868619311": {
    "title": "The Nine Heavens Swordmaster",
@@ -455,21 +494,31 @@
    "title": "The Reaper (INKYO)",
    "url": "https://www.mangaupdates.com/series/mw8jsvc/the-reaper-inkyo",
    "type": "Manhwa",
-   "latest": 134,
+   "latest": 135,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i494321.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 135,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "61711869758": {
    "title": "Teenage Mercenary",
    "url": "https://www.mangaupdates.com/series/sclnjge/teenage-mercenary",
    "type": "Manhwa",
-   "latest": 276,
+   "latest": 280,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i346782.png",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 280,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "17066552636": {
    "title": "The Archmage Returns After 4000 Years",
@@ -526,21 +575,31 @@
    "title": "All STR Sorcerer",
    "url": "https://www.mangaupdates.com/series/dmq97uu/all-str-sorcerer",
    "type": "Manhwa",
-   "latest": 74,
+   "latest": 80,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i491670.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 80,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "52438521185": {
    "title": "Necromancer Academy and the Genius Summoner",
    "url": "https://www.mangaupdates.com/series/o38jhwh/necromancer-academy-and-the-genius-summoner",
    "type": "Manhwa",
-   "latest": 194,
+   "latest": 224,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i487935.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 224,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "48095731462": {
    "title": "Reborn as the Enemy Prince",
@@ -556,7 +615,7 @@
    "title": "Maryoku 9999 Man - Zen Zokusei Tsukai no Dai Kenja",
    "url": "https://www.mangaupdates.com/series/2elqfd0/maryoku-9999-man-zen-zokusei-tsukai-no-dai-kenja",
    "type": "Manga",
-   "latest": 57,
+   "latest": 192,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528683.jpg",
    "changed_at": null,
@@ -576,7 +635,7 @@
    "title": "Tower of God",
    "url": "https://www.mangaupdates.com/series/5z98aus/tower-of-god",
    "type": "Manhwa",
-   "latest": 235,
+   "latest": 652,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i495933.jpg",
    "changed_at": null,
@@ -618,7 +677,7 @@
    "title": "Blade Deity: I Stun the Post-Apoc World",
    "url": "https://www.mangaupdates.com/series/nejkfyl/blade-deity-i-stun-the-post-apoc-world",
    "type": "Manhua",
-   "latest": 32,
+   "latest": 117,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506703.jpg",
    "changed_at": null,
@@ -690,11 +749,16 @@
    "title": "Return of the SSS-Class Demon Lord",
    "url": "https://www.mangaupdates.com/series/om1nyy5/return-of-the-sss-class-demon-lord",
    "type": "Manhwa",
-   "latest": 26,
+   "latest": 40,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i453687.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 40,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "58848139479": {
    "title": "Return of Immortal Emperor",
@@ -710,7 +774,7 @@
    "title": "The Devil Never Cries",
    "url": "https://www.mangaupdates.com/series/2a9rjmf/the-devil-never-cries",
    "type": "Manhua",
-   "latest": 96,
+   "latest": 151,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i496007.jpg",
    "changed_at": null,
@@ -831,11 +895,16 @@
    "title": "Lord Hero of House Remes",
    "url": "https://www.mangaupdates.com/series/66518zu/lord-hero-of-house-remes",
    "type": "Manhwa",
-   "latest": 89,
+   "latest": 90,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i537164.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 90,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "22369784005": {
    "title": "Cleric of Decay",
@@ -871,7 +940,7 @@
    "title": "I'm Not That Kind of Talent",
    "url": "https://www.mangaupdates.com/series/al35l5c/i-m-not-that-kind-of-talent",
    "type": "Manhwa",
-   "latest": 31,
+   "latest": 127,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i405624.jpg",
    "changed_at": null,
@@ -901,7 +970,7 @@
    "title": "Writers Legacy",
    "url": "https://www.mangaupdates.com/series/bcobmp2/writers-legacy",
    "type": "French",
-   "latest": null,
+   "latest": 55,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i504579.png",
    "changed_at": null,
@@ -931,7 +1000,7 @@
    "title": "Ice Lord",
    "url": "https://www.mangaupdates.com/series/kwnhf6w/ice-lord",
    "type": "Manhwa",
-   "latest": 28,
+   "latest": 65,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i507055.jpg",
    "changed_at": null,
@@ -1001,7 +1070,7 @@
    "title": "Becoming the Monarch",
    "url": "https://www.mangaupdates.com/series/99h7oxs/becoming-the-monarch",
    "type": "Manhwa",
-   "latest": 1,
+   "latest": 146,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i400720.png",
    "changed_at": null,
@@ -1031,11 +1100,16 @@
    "title": "Wo! Zai E Ji Mu Shi",
    "url": "https://www.mangaupdates.com/series/lvbd72c/wo-zai-e-ji-mu-shi",
    "type": "Manhua",
-   "latest": 46,
+   "latest": 56,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i484335.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 56,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "59157659930": {
    "title": "The Dark World",
@@ -1061,11 +1135,16 @@
    "title": "Stay Low Profile, Sect Chief",
    "url": "https://www.mangaupdates.com/series/u04bi7j/stay-low-profile-sect-chief",
    "type": "Manhua",
-   "latest": 586,
+   "latest": 594,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i473831.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 594,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "57558905368": {
    "title": "Book Eater (MKR)",
@@ -1091,11 +1170,16 @@
    "title": "Nebula's Civilization",
    "url": "https://www.mangaupdates.com/series/ep7zp35/nebula-s-civilization",
    "type": "Manhwa",
-   "latest": 126,
+   "latest": 140,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i514166.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 140,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "6574111645": {
    "title": "Return From the Abyss",
@@ -1151,7 +1235,7 @@
    "title": "Red Thread of Fate (Giryang)",
    "url": "https://www.mangaupdates.com/series/ce19zbz/red-thread-of-fate-giryang",
    "type": "Manhwa",
-   "latest": 11,
+   "latest": 76,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i367554.jpg",
    "changed_at": null,
@@ -1182,7 +1266,7 @@
    "title": "Warble",
    "url": "https://www.mangaupdates.com/series/5h4v9p2/warble",
    "type": "Manhwa",
-   "latest": null,
+   "latest": 116,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i285296.jpg",
    "changed_at": null,
@@ -1202,7 +1286,7 @@
    "title": "Devils' Crest",
    "url": "https://www.mangaupdates.com/series/31nvtpa/devils-crest",
    "type": "Manga",
-   "latest": 5,
+   "latest": 104,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535100.jpg",
    "changed_at": null,
@@ -1222,7 +1306,7 @@
    "title": "I Became the Tyrant of a Defense Game",
    "url": "https://www.mangaupdates.com/series/i5sjf4k/i-became-the-tyrant-of-a-defense-game",
    "type": "Manhwa",
-   "latest": 26,
+   "latest": 195,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i536063.png",
    "changed_at": null,
@@ -1397,11 +1481,16 @@
    "title": "My Daughter Is the Final Boss",
    "url": "https://www.mangaupdates.com/series/bm1k6nt/my-daughter-is-the-final-boss",
    "type": "Manhwa",
-   "latest": 139,
+   "latest": 165,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i429094.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-16T21:57:51+00:00",
+   "history": [
+    {
+     "chapter": 165,
+     "at": "2026-11-16T21:57:51+00:00"
+    }
+   ]
   },
   "74220744179": {
    "title": "Surviving as a Player",
@@ -1417,7 +1506,7 @@
    "title": "The SSS-Rank Paladin Who Breaks All Rules",
    "url": "https://www.mangaupdates.com/series/82x0dpx/the-sss-rank-paladin-who-breaks-all-rules",
    "type": "Manhua",
-   "latest": 106,
+   "latest": 210,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i481873.jpg",
    "changed_at": null,
@@ -1448,7 +1537,7 @@
    "title": "Lord of the Mysteries",
    "url": "https://www.mangaupdates.com/series/uarp82h/lord-of-the-mysteries",
    "type": "Manhua",
-   "latest": null,
+   "latest": 65,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535808.png",
    "changed_at": null,
@@ -2475,6 +2564,27 @@
    "changed_at": null,
    "history": [],
    "vo_volumes": 24
+  },
+  "55516385767": {
+   "title": "Reincarnator (ALLA)",
+   "url": "https://www.mangaupdates.com/series/pi50tev/reincarnator-alla",
+   "type": "Manhwa",
+   "latest": 149,
+   "completed": false,
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i504254.jpg",
+   "changed_at": null,
+   "history": []
+  },
+  "57384723284": {
+   "title": "Ranker's Return (2021)",
+   "url": "https://www.mangaupdates.com/series/qd1drv8/ranker-s-return-2021",
+   "type": "Manhwa",
+   "latest": 269,
+   "completed": false,
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i531585.jpg",
+   "changed_at": null,
+   "history": []
   }
- }
+ },
+ "auto": {}
 }
