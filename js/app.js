@@ -87,12 +87,12 @@
   function imgHtml(cover) {
     if (!cover) return '';
     const [first, ...rest] = cover.trim().split(/\s+/);
-    return `<img src="${esc(first)}" data-next="${esc(rest.join(' '))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="coverNext(this)" onload="if(this.naturalWidth<20)coverNext(this)">`;
+    return `<img src="${esc(first)}" data-alt="${esc(rest.join(' '))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="coverNext(this)" onload="if(this.naturalWidth<20)coverNext(this)">`;
   }
   window.coverNext = (img) => {
-    const [n, ...rest] = (img.dataset.next || '').split(' ').filter(Boolean);
+    const [n, ...rest] = (img.dataset.alt || '').split(' ').filter(Boolean);
     if (!n) { img.remove(); return; }
-    img.dataset.next = rest.join(' '); img.src = n;
+    img.dataset.alt = rest.join(' '); img.src = n;
   };
   function ago(iso) {
     if (!iso) return '';
@@ -256,13 +256,13 @@
         <div class="cover">${coverHtml(s, d)}${d.unread ? `<span class="badge new ${d.sparkle ? 'big' : ''}">+${n(d.unread)}</span>` : ''}
           <button class="quick" data-quick aria-label="J'ai lu le chapitre ${s.next}">+1</button>
           ${d.pct ? `<div class="progress"><span style="width:${d.pct}%"></span></div>` : ''}</div>
-        <div class="t">${esc(s.title)}</div><div class="m">Ch. ${n(s.next)}</div>
+        <div class="t">${esc(s.title)}</div><div class="m">Ch. ${n(d.read)} lu</div>
       </article>`).join('')}</div>
     </section>`;
   }
 
   function metaLine(s, d) {
-    if (s.status === 'en_cours') return s.next ? `Ch. ${n(s.next)}${d.latest ? ' / ' + n(d.latest) : ''}` : 'En cours';
+    if (s.status === 'en_cours') return d.read ? `Ch. ${n(d.read)}${d.latest ? ' / ' + n(d.latest) : ''}` : 'En cours';
     if (s.status === 'a_commencer') return d.latest ? `À commencer · ${n(d.latest)} ch.` : 'À commencer';
     if (s.status === 'terminee') return 'Terminée';
     return s.volumes ? `${n(s.volumes)} tome${s.volumes > 1 ? 's' : ''}` : 'Collection';
@@ -442,7 +442,7 @@
     return `<article class="row" data-id="${esc(s.id)}">
       <div class="thumb">${thumbHtml(s, d)}</div>
       <div><div class="t">${esc(s.title)}</div>
-        <div class="m"><span>Ch. ${n(s.next)} → ${n(d.latest)}</span><span class="pill">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>${d.changedAt ? `<span>${ago(d.changedAt)}</span>` : ''}</div></div>
+        <div class="m"><span>Lu ${n(d.read)} / ${n(d.latest)}</span><span class="pill">${d.sparkle ? '✨ ' : ''}+${n(d.unread)}</span>${d.changedAt ? `<span>${ago(d.changedAt)}</span>` : ''}</div></div>
       <div class="act"><button class="btn small" data-quick>+1</button><button class="btn small ghost" data-allread title="Marquer tout comme lu">À jour</button></div>
     </article>`;
   }
@@ -593,10 +593,10 @@
         })() : ''}
 
         ${s.status === 'collection' ? '' : `<div class="sec">
-          <span class="lbl">Prochain chapitre à lire</span>
+          <span class="lbl">Dernier chapitre lu</span>
           <div class="stepper">
             <button data-step="-1" aria-label="Chapitre précédent">−</button>
-            <div class="val"><input inputmode="numeric" pattern="[0-9]*" value="${s.next ?? ''}" placeholder="—" data-next aria-label="Prochain chapitre">
+            <div class="val"><input inputmode="numeric" pattern="[0-9]*" value="${s.next ? s.next - 1 : ''}" placeholder="—" data-next aria-label="Dernier chapitre lu">
               <small>${d.latest ? (d.unread ? `${n(d.unread)} à lire · dernier sorti : ${n(d.latest)}` : `À jour · dernier sorti : ${n(d.latest)}`) : 'Dernier sorti inconnu'}</small></div>
             <button class="plus" data-step="1" aria-label="J'ai lu un chapitre">+</button>
           </div>
@@ -643,7 +643,7 @@
         S.update(id, patch); draw();
       };
       $$('[data-step]', sheet).forEach((b) => b.addEventListener('click', () => { setNext((s.next || 1) + Number(b.dataset.step)); if (navigator.vibrate) navigator.vibrate(8); }));
-      $('[data-next]', sheet)?.addEventListener('change', (e) => setNext(parseInt(e.target.value, 10)));
+      $('[data-next]', sheet)?.addEventListener('change', (e) => setNext(parseInt(e.target.value, 10) + 1));
       $('[data-uptodate]', sheet)?.addEventListener('click', () => { S.update(id, { next: d.latest + 1, status: 'en_cours' }); draw(); toast('À jour !'); });
       $$('[data-status] button', sheet).forEach((b) => b.addEventListener('click', () => { S.update(id, { status: b.dataset.v }); draw(); }));
       const r = $('[data-rating]', sheet);
@@ -794,7 +794,7 @@
       <div class="sec" style="border:0;padding-top:20px"><h3 style="margin:0 0 14px;font-size:20px">Ajouter une série</h3>
         <label class="field"><span>Titre</span><input class="input" data-title placeholder="Ex. Omniscient Reader" autocomplete="off"></label>
         <div class="field"><span>Statut</span><div class="seg" data-status>${['en_cours', 'a_commencer', 'terminee', 'collection'].map((k) => `<button data-v="${k}" class="${k === status ? 'on' : ''}">${STATUS[k].short}</button>`).join('')}</div></div>
-        <label class="field"><span>Prochain chapitre à lire</span><input class="input" data-next inputmode="numeric" placeholder="Optionnel"></label>
+        <label class="field"><span>Dernier chapitre lu</span><input class="input" data-next inputmode="numeric" placeholder="Optionnel"></label>
         <label class="field"><span>Tomes papier possédés (du tome 1 au tome…)</span><input class="input" data-vols inputmode="numeric" placeholder="0" value="${ui.mode === 'papier' ? 1 : ''}"></label>
         <p class="hint">La couverture, le nombre de chapitres et les tomes VF sont retrouvés automatiquement à partir du titre, en 2 à 3 minutes.</p>
         <details class="adv"><summary>Options avancées</summary>
@@ -806,7 +806,8 @@
     $('[data-title]', sheet).addEventListener('input', (e) => { $('[data-mu-search]', sheet).href = 'https://www.mangaupdates.com/series?search=' + encodeURIComponent(e.target.value); });
     $('[data-save]', sheet).addEventListener('click', async () => {
       const title = $('[data-title]', sheet).value.trim(); if (!title) return $('[data-title]', sheet).focus();
-      const next = parseInt($('[data-next]', sheet).value, 10) || null;
+      const lastRead = parseInt($('[data-next]', sheet).value, 10);
+      const next = lastRead >= 0 ? lastRead + 1 : null;
       const mu = muIdFromInput($('[data-mu]', sheet).value);
       const st = next && next > 1 && status === 'a_commencer' ? 'en_cours' : status;
       const volumes = parseInt($('[data-vols]', sheet).value, 10) || 0;
