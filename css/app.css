@@ -527,9 +527,20 @@ body { font-feature-settings: "ss01", "cv11"; }
 .tome.cov:not(:has(img)) { display: grid; place-items: center; }
 .tome.cov.on { background: var(--surface-2); color: var(--text); box-shadow: 0 2px 6px rgba(0,0,0,.18); }
 .tome.cov.miss { border: 1.5px solid var(--line); }
-.tome.cov.miss img { filter: grayscale(1); opacity: .32; }
+.tome.cov.miss img { filter: saturate(.45); opacity: .5; }
+.tome.cov.miss { border-style: dashed; }
+.tome.cov.miss span { background: var(--accent); }
 .tome.cov.soon { border: 1.5px dashed var(--muted); }
 .tome.cov.soon img { opacity: .55; }
 .tome.cov.add { font-size: 24px; }
 .row.notif:has(.fan) { grid-template-columns: 66px 1fr auto; }
 .tome.cov.on:not(:has(img)) { background: var(--text); color: var(--bg); }
+
+/* Barre du haut centrée sur mobile */
+@media (max-width: 760px) {
+  .topbar { display: grid; grid-template-columns: 40px 1fr 40px; gap: 8px; align-items: center; }
+  .topbar .brand { grid-column: 2; grid-row: 1; justify-content: center; min-width: 0; }
+  .topbar .page-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .topbar .sync-dot { grid-column: 1; grid-row: 1; margin: 0; justify-self: start; }
+  .topbar .bell { grid-column: 3; grid-row: 1; margin: 0; justify-self: end; }
+}
