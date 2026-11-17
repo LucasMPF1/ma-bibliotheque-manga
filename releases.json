@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-17T01:52:42+00:00",
+ "checked_at": "2026-11-17T16:00:14+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -676,7 +676,7 @@
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534063.jpg",
    "changed_at": null,
    "history": [],
-   "vo_volumes": 8
+   "vo_volumes": 10
   },
   "32367613211": {
    "title": "Martial Master",
@@ -1010,11 +1010,16 @@
    "title": "Descended from Divinity",
    "url": "https://www.mangaupdates.com/series/gjguta9/descended-from-divinity",
    "type": "Manhwa",
-   "latest": 209,
+   "latest": 212,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505371.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-17T16:00:14+00:00",
+   "history": [
+    {
+     "chapter": 212,
+     "at": "2026-11-17T16:00:14+00:00"
+    }
+   ]
   },
   "45510008360": {
    "title": "Ice Lord",
