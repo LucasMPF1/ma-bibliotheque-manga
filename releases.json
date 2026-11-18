@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-17T16:00:14+00:00",
+ "checked_at": "2026-11-18T00:58:01+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -630,11 +630,16 @@
    "title": "Maryoku 9999 Man - Zen Zokusei Tsukai no Dai Kenja",
    "url": "https://www.mangaupdates.com/series/2elqfd0/maryoku-9999-man-zen-zokusei-tsukai-no-dai-kenja",
    "type": "Manga",
-   "latest": 192,
+   "latest": 207,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i528683.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-18T00:58:01+00:00",
+   "history": [
+    {
+     "chapter": 207,
+     "at": "2026-11-18T00:58:01+00:00"
+    }
+   ]
   },
   "66660538701": {
    "title": "Assassin in Another World",
@@ -1225,11 +1230,16 @@
    "title": "The Lord of Coins",
    "url": "https://www.mangaupdates.com/series/kyx126d/the-lord-of-coins",
    "type": "Manhwa",
-   "latest": 226,
+   "latest": 227,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i402908.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-18T00:58:01+00:00",
+   "history": [
+    {
+     "chapter": 227,
+     "at": "2026-11-18T00:58:01+00:00"
+    }
+   ]
   },
   "27330127662": {
    "title": "The Genius Medicinal Mage",
@@ -1356,11 +1366,16 @@
    "title": "The Bastard of Swordborne",
    "url": "https://www.mangaupdates.com/series/f40yr56/the-bastard-of-swordborne",
    "type": "Manhwa",
-   "latest": 120,
+   "latest": 121,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502563.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-18T00:58:01+00:00",
+   "history": [
+    {
+     "chapter": 121,
+     "at": "2026-11-18T00:58:01+00:00"
+    }
+   ]
   },
   "9177102622": {
    "title": "The Genius Prismatic Mage",
