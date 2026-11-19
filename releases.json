@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-19T00:23:44+00:00",
+ "checked_at": "2026-11-19T15:45:04+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -52,11 +52,16 @@
    "title": "The Return of the Disaster-Class Hero",
    "url": "https://www.mangaupdates.com/series/jv1z73a/the-return-of-the-disaster-class-hero",
    "type": "Manhwa",
-   "latest": 196,
+   "latest": 197,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503940.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-19T15:45:04+00:00",
+   "history": [
+    {
+     "chapter": 197,
+     "at": "2026-11-19T15:45:04+00:00"
+    }
+   ]
   },
   "14166418753": {
    "title": "The Frozen Player Returns",
@@ -1049,11 +1054,15 @@
    "title": "Descended from Divinity",
    "url": "https://www.mangaupdates.com/series/gjguta9/descended-from-divinity",
    "type": "Manhwa",
-   "latest": 212,
+   "latest": 215,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505371.jpg",
-   "changed_at": "2026-11-17T16:00:14+00:00",
+   "changed_at": "2026-11-19T15:45:04+00:00",
    "history": [
+    {
+     "chapter": 215,
+     "at": "2026-11-19T15:45:04+00:00"
+    },
     {
      "chapter": 212,
      "at": "2026-11-17T16:00:14+00:00"
@@ -1375,7 +1384,7 @@
    "title": "Bad Born Blood",
    "url": "https://www.mangaupdates.com/series/uqa6tlj/bad-born-blood",
    "type": "Manhwa",
-   "latest": 108,
+   "latest": 100,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502497.jpg",
    "changed_at": null,
@@ -1954,11 +1963,16 @@
    "title": "Hagane no Renkinjutsushi",
    "url": "https://www.mangaupdates.com/series/8q91xb4/hagane-no-renkinjutsushi",
    "type": "Manga",
-   "latest": 166,
+   "latest": 167,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i513279.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-19T15:45:04+00:00",
+   "history": [
+    {
+     "chapter": 167,
+     "at": "2026-11-19T15:45:04+00:00"
+    }
+   ],
    "vo_volumes": 27
   },
   "74074058344": {
