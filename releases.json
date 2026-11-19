@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-18T15:40:57+00:00",
+ "checked_at": "2026-11-19T00:23:44+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -415,11 +415,15 @@
    "title": "The World After the Fall",
    "url": "https://www.mangaupdates.com/series/i41kc6g/the-world-after-the-fall",
    "type": "Manhwa",
-   "latest": 258,
+   "latest": 259,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515495.jpg",
-   "changed_at": "2026-11-16T21:57:51+00:00",
+   "changed_at": "2026-11-19T00:23:44+00:00",
    "history": [
+    {
+     "chapter": 259,
+     "at": "2026-11-19T00:23:44+00:00"
+    },
     {
      "chapter": 258,
      "at": "2026-11-16T21:57:51+00:00"
@@ -444,11 +448,16 @@
    "title": "Pick Me Up!",
    "url": "https://www.mangaupdates.com/series/r4ksmo5/pick-me-up",
    "type": "Manhwa",
-   "latest": 227,
+   "latest": 228,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535665.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-19T00:23:44+00:00",
+   "history": [
+    {
+     "chapter": 228,
+     "at": "2026-11-19T00:23:44+00:00"
+    }
+   ]
   },
   "32357730076": {
    "title": "The Infinite Mage",
@@ -559,11 +568,16 @@
    "title": "The Reborn Young Lord Is an Assassin",
    "url": "https://www.mangaupdates.com/series/2phrgxp/the-reborn-young-lord-is-an-assassin",
    "type": "Manhwa",
-   "latest": 148,
+   "latest": 149,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505378.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-19T00:23:44+00:00",
+   "history": [
+    {
+     "chapter": 149,
+     "at": "2026-11-19T00:23:44+00:00"
+    }
+   ]
   },
   "67341137571": {
    "title": "Dungeon Odyssey",
@@ -925,11 +939,16 @@
    "title": "How to Use a Returner",
    "url": "https://www.mangaupdates.com/series/7u41beg/how-to-use-a-returner",
    "type": "Manhwa",
-   "latest": 211,
+   "latest": 212,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i524531.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-19T00:23:44+00:00",
+   "history": [
+    {
+     "chapter": 212,
+     "at": "2026-11-19T00:23:44+00:00"
+    }
+   ]
   },
   "13431947466": {
    "title": "Lord Hero of House Remes",
