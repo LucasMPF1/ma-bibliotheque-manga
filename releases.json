@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-19T15:45:04+00:00",
+ "checked_at": "2026-11-20T00:37:28+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -16,11 +16,16 @@
    "title": "Second Life Ranker",
    "url": "https://www.mangaupdates.com/series/fsgta4n/second-life-ranker",
    "type": "Manhwa",
-   "latest": 237,
+   "latest": 238,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i477394.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T00:37:28+00:00",
+   "history": [
+    {
+     "chapter": 238,
+     "at": "2026-11-20T00:37:28+00:00"
+    }
+   ]
   },
   "50369844984": {
    "title": "Omniscient Reader",
@@ -573,11 +578,15 @@
    "title": "The Reborn Young Lord Is an Assassin",
    "url": "https://www.mangaupdates.com/series/2phrgxp/the-reborn-young-lord-is-an-assassin",
    "type": "Manhwa",
-   "latest": 149,
+   "latest": 153,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505378.jpg",
-   "changed_at": "2026-11-19T00:23:44+00:00",
+   "changed_at": "2026-11-20T00:37:28+00:00",
    "history": [
+    {
+     "chapter": 153,
+     "at": "2026-11-20T00:37:28+00:00"
+    },
     {
      "chapter": 149,
      "at": "2026-11-19T00:23:44+00:00"
@@ -1614,11 +1623,16 @@
    "title": "The Patron of Villains",
    "url": "https://www.mangaupdates.com/series/s1mg88x/the-patron-of-villains",
    "type": "Manhwa",
-   "latest": 61,
+   "latest": 62,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531118.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T00:37:28+00:00",
+   "history": [
+    {
+     "chapter": 62,
+     "at": "2026-11-20T00:37:28+00:00"
+    }
+   ]
   },
   "46211735900": {
    "title": "Narutaru",
@@ -2425,11 +2439,16 @@
    "title": "SSS-Class Revival Hunter",
    "url": "https://www.mangaupdates.com/series/7v63sfr/sss-class-revival-hunter",
    "type": "Manhwa",
-   "latest": 159,
+   "latest": 160,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i469710.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-20T00:37:28+00:00",
+   "history": [
+    {
+     "chapter": 160,
+     "at": "2026-11-20T00:37:28+00:00"
+    }
+   ],
    "vo_volumes": 4
   },
   "63414246785": {
