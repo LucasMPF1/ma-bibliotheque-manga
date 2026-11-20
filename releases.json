@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-20T00:37:28+00:00",
+ "checked_at": "2026-11-20T15:27:56+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -756,11 +756,16 @@
    "title": "The Extra's Academy Survival Guide",
    "url": "https://www.mangaupdates.com/series/iy9ya7q/the-extra-s-academy-survival-guide",
    "type": "Manhwa",
-   "latest": 132,
+   "latest": 133,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i538828.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T15:27:56+00:00",
+   "history": [
+    {
+     "chapter": 133,
+     "at": "2026-11-20T15:27:56+00:00"
+    }
+   ]
   },
   "77920556712": {
    "title": "Bastard Swordsman",
@@ -1438,11 +1443,16 @@
    "title": "The Genius Prismatic Mage",
    "url": "https://www.mangaupdates.com/series/47rt5pa/the-genius-prismatic-mage",
    "type": "Manhwa",
-   "latest": 102,
+   "latest": 103,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515997.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T15:27:56+00:00",
+   "history": [
+    {
+     "chapter": 103,
+     "at": "2026-11-20T15:27:56+00:00"
+    }
+   ]
   },
   "67671265448": {
    "title": "The Last Adventurer",
@@ -1623,7 +1633,7 @@
    "title": "The Patron of Villains",
    "url": "https://www.mangaupdates.com/series/s1mg88x/the-patron-of-villains",
    "type": "Manhwa",
-   "latest": 62,
+   "latest": 60,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531118.jpg",
    "changed_at": "2026-11-20T00:37:28+00:00",
@@ -2675,11 +2685,16 @@
    "title": "Surviving the Game as a Barbarian",
    "url": "https://www.mangaupdates.com/series/ly5au35/surviving-the-game-as-a-barbarian",
    "type": "Manhwa",
-   "latest": 169,
+   "latest": 170,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505374.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T15:27:56+00:00",
+   "history": [
+    {
+     "chapter": 170,
+     "at": "2026-11-20T15:27:56+00:00"
+    }
+   ]
   },
   "8690952745": {
    "title": "Pandora Hearts",
@@ -2696,11 +2711,16 @@
    "title": "Reincarnator (ALLA)",
    "url": "https://www.mangaupdates.com/series/pi50tev/reincarnator-alla",
    "type": "Manhwa",
-   "latest": 149,
+   "latest": 160,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i504254.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T15:27:56+00:00",
+   "history": [
+    {
+     "chapter": 160,
+     "at": "2026-11-20T15:27:56+00:00"
+    }
+   ]
   },
   "57384723284": {
    "title": "Ranker's Return (2021)",
