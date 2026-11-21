@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-20T15:27:56+00:00",
+ "checked_at": "2026-11-20T23:59:10+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -350,21 +350,31 @@
    "title": "My Blasted Reincarnated Life",
    "url": "https://www.mangaupdates.com/series/j7x0kkd/my-blasted-reincarnated-life",
    "type": "Manhwa",
-   "latest": 82,
+   "latest": 93,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i418196.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T23:59:10+00:00",
+   "history": [
+    {
+     "chapter": 93,
+     "at": "2026-11-20T23:59:10+00:00"
+    }
+   ]
   },
   "60225852049": {
    "title": "The Reincarnated Assassin Is a Swordmaster",
    "url": "https://www.mangaupdates.com/series/ro0x0up/the-reincarnated-assassin-is-a-swordmaster",
    "type": "Manhwa",
-   "latest": 100,
+   "latest": 101,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i486266.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T23:59:10+00:00",
+   "history": [
+    {
+     "chapter": 101,
+     "at": "2026-11-20T23:59:10+00:00"
+    }
+   ]
   },
   "60261451232": {
    "title": "Your Talent Is Mine",
@@ -658,11 +668,16 @@
    "title": "Reborn as the Enemy Prince",
    "url": "https://www.mangaupdates.com/series/m3eyfwm/reborn-as-the-enemy-prince",
    "type": "Manhwa",
-   "latest": 126,
+   "latest": 127,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i498176.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T23:59:10+00:00",
+   "history": [
+    {
+     "chapter": 127,
+     "at": "2026-11-20T23:59:10+00:00"
+    }
+   ]
   },
   "5236596036": {
    "title": "Maryoku 9999 Man - Zen Zokusei Tsukai no Dai Kenja",
@@ -1172,11 +1187,16 @@
    "title": "The Archmage's Restaurant",
    "url": "https://www.mangaupdates.com/series/31pnhwu/the-archmage-s-restaurant",
    "type": "Manhwa",
-   "latest": 158,
+   "latest": 159,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i539072.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T23:59:10+00:00",
+   "history": [
+    {
+     "chapter": 159,
+     "at": "2026-11-20T23:59:10+00:00"
+    }
+   ]
   },
   "38438441949": {
    "title": "The Druid of Seoul Station",
@@ -1398,11 +1418,16 @@
    "title": "Bad Born Blood",
    "url": "https://www.mangaupdates.com/series/uqa6tlj/bad-born-blood",
    "type": "Manhwa",
-   "latest": 100,
+   "latest": 109,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502497.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-20T23:59:10+00:00",
+   "history": [
+    {
+     "chapter": 109,
+     "at": "2026-11-20T23:59:10+00:00"
+    }
+   ]
   },
   "39532348244": {
    "title": "I Became the Tyrant of a Defense Game",
