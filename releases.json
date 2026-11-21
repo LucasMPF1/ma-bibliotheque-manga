@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-21T14:39:56+00:00",
+ "checked_at": "2026-11-21T23:16:26+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -77,11 +77,16 @@
    "title": "The Frozen Player Returns",
    "url": "https://www.mangaupdates.com/series/6iabio1/the-frozen-player-returns",
    "type": "Manhwa",
-   "latest": 234,
+   "latest": 235,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505318.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-21T23:16:26+00:00",
+   "history": [
+    {
+     "chapter": 235,
+     "at": "2026-11-21T23:16:26+00:00"
+    }
+   ]
   },
   "25084267078": {
    "title": "After Ten Millennia in Hell",
@@ -153,11 +158,16 @@
    "title": "The Swordmaster's Son",
    "url": "https://www.mangaupdates.com/series/y1efy8l/the-swordmaster-s-son",
    "type": "Manhwa",
-   "latest": 221,
+   "latest": 222,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506263.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-21T23:16:26+00:00",
+   "history": [
+    {
+     "chapter": 222,
+     "at": "2026-11-21T23:16:26+00:00"
+    }
+   ]
   },
   "57444291766": {
    "title": "Boundless Ascension",
