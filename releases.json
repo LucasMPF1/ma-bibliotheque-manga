@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-22T14:35:39+00:00",
+ "checked_at": "2026-11-22T23:36:52+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -310,11 +310,15 @@
    "title": "The Hero Returns",
    "url": "https://www.mangaupdates.com/series/lznnqm7/the-hero-returns",
    "type": "Manhwa",
-   "latest": 179,
+   "latest": 180,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535858.jpg",
-   "changed_at": "2026-11-16T22:11:09+00:00",
+   "changed_at": "2026-11-22T23:36:52+00:00",
    "history": [
+    {
+     "chapter": 180,
+     "at": "2026-11-22T23:36:52+00:00"
+    },
     {
      "chapter": 179,
      "at": "2026-11-16T22:11:09+00:00"
@@ -355,11 +359,15 @@
    "title": "Revenge of the Baskerville Bloodhound",
    "url": "https://www.mangaupdates.com/series/5v7h9gf/revenge-of-the-baskerville-bloodhound",
    "type": "Manhwa",
-   "latest": 189,
+   "latest": 190,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505316.jpg",
-   "changed_at": "2026-11-16T15:48:25+00:00",
+   "changed_at": "2026-11-22T23:36:52+00:00",
    "history": [
+    {
+     "chapter": 190,
+     "at": "2026-11-22T23:36:52+00:00"
+    },
     {
      "chapter": 189,
      "at": "2026-11-16T15:48:25+00:00"
@@ -684,7 +692,7 @@
    "type": "Manhwa",
    "latest": 224,
    "completed": false,
-   "cover": "https://cdn.mangaupdates.com/image/thumb/i487935.jpg",
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i543336.jpg",
    "changed_at": "2026-11-16T21:57:51+00:00",
    "history": [
     {
@@ -1576,11 +1584,15 @@
    "title": "The Dragon Slayer's Regression on Another Level",
    "url": "https://www.mangaupdates.com/series/5bc7r73/the-dragon-slayer-s-regression-on-another-level",
    "type": "Manhwa",
-   "latest": 111,
+   "latest": 112,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i509348.jpg",
-   "changed_at": "2026-11-16T15:48:25+00:00",
+   "changed_at": "2026-11-22T23:36:52+00:00",
    "history": [
+    {
+     "chapter": 112,
+     "at": "2026-11-22T23:36:52+00:00"
+    },
     {
      "chapter": 111,
      "at": "2026-11-16T15:48:25+00:00"
@@ -2204,11 +2216,16 @@
    "title": "Kagurabachi",
    "url": "https://www.mangaupdates.com/series/rrlks4b/kagurabachi",
    "type": "Manga",
-   "latest": 139,
+   "latest": 140,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i536550.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-22T23:36:52+00:00",
+   "history": [
+    {
+     "chapter": 140,
+     "at": "2026-11-22T23:36:52+00:00"
+    }
+   ],
    "vo_volumes": 12
   },
   "15541244086": {
@@ -2420,11 +2437,16 @@
    "title": "One Piece",
    "url": "https://www.mangaupdates.com/series/pb8uwds/one-piece",
    "type": "Manga",
-   "latest": 1198,
+   "latest": 1199,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531056.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-22T23:36:52+00:00",
+   "history": [
+    {
+     "chapter": 1199,
+     "at": "2026-11-22T23:36:52+00:00"
+    }
+   ],
    "vo_volumes": 115
   },
   "42064105448": {
@@ -2534,11 +2556,16 @@
    "title": "Spy x Family",
    "url": "https://www.mangaupdates.com/series/v5is1fi/spy-x-family",
    "type": "Manga",
-   "latest": 143,
+   "latest": 144,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i542485.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-22T23:36:52+00:00",
+   "history": [
+    {
+     "chapter": 144,
+     "at": "2026-11-22T23:36:52+00:00"
+    }
+   ],
    "vo_volumes": 18
   },
   "17122182327": {
