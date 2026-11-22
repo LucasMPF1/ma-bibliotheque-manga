@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-21T23:16:26+00:00",
+ "checked_at": "2026-11-22T14:35:39+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -372,7 +372,7 @@
    "type": "Manhwa",
    "latest": 101,
    "completed": false,
-   "cover": "https://cdn.mangaupdates.com/image/thumb/i418196.jpg",
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i543304.jpg",
    "changed_at": "2026-11-21T14:39:56+00:00",
    "history": [
     {
@@ -424,7 +424,7 @@
    "title": "The Academy's Genius Swordsman",
    "url": "https://www.mangaupdates.com/series/iq7rqvq/the-academy-s-genius-swordsman",
    "type": "Manhwa",
-   "latest": 163,
+   "latest": 162,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503967.jpg",
    "changed_at": null,
@@ -907,11 +907,16 @@
    "title": "I Killed the Main Player",
    "url": "https://www.mangaupdates.com/series/jbia152/i-killed-the-main-player",
    "type": "Manhwa",
-   "latest": 121,
+   "latest": 122,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i506594.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-22T14:35:39+00:00",
+   "history": [
+    {
+     "chapter": 122,
+     "at": "2026-11-22T14:35:39+00:00"
+    }
+   ]
   },
   "34313491284": {
    "title": "Becoming a Magic School Mage",
@@ -987,11 +992,16 @@
    "title": "Blink Master of the Magic Academy",
    "url": "https://www.mangaupdates.com/series/4x1ds0v/blink-master-of-the-magic-academy",
    "type": "Manhwa",
-   "latest": 102,
+   "latest": 103,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505629.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-22T14:35:39+00:00",
+   "history": [
+    {
+     "chapter": 103,
+     "at": "2026-11-22T14:35:39+00:00"
+    }
+   ]
   },
   "27558584427": {
    "title": "The Stellar Swordmaster",
@@ -1636,11 +1646,16 @@
    "title": "Reincarnator's Stream",
    "url": "https://www.mangaupdates.com/series/4khyru3/reincarnator-s-stream",
    "type": "Manhwa",
-   "latest": 73,
+   "latest": 74,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534452.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-22T14:35:39+00:00",
+   "history": [
+    {
+     "chapter": 74,
+     "at": "2026-11-22T14:35:39+00:00"
+    }
+   ]
   },
   "63958220672": {
    "title": "Act Like a Boss Monster, Mr. Swallow!",
@@ -2059,11 +2074,15 @@
    "title": "Hagane no Renkinjutsushi",
    "url": "https://www.mangaupdates.com/series/8q91xb4/hagane-no-renkinjutsushi",
    "type": "Manga",
-   "latest": 167,
+   "latest": 168,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i513279.jpg",
-   "changed_at": "2026-11-19T15:45:04+00:00",
+   "changed_at": "2026-11-22T14:35:39+00:00",
    "history": [
+    {
+     "chapter": 168,
+     "at": "2026-11-22T14:35:39+00:00"
+    },
     {
      "chapter": 167,
      "at": "2026-11-19T15:45:04+00:00"
