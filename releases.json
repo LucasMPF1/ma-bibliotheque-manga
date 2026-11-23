@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-22T23:36:52+00:00",
+ "checked_at": "2026-11-23T18:09:40+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -378,7 +378,7 @@
    "title": "My Blasted Reincarnated Life",
    "url": "https://www.mangaupdates.com/series/j7x0kkd/my-blasted-reincarnated-life",
    "type": "Manhwa",
-   "latest": 101,
+   "latest": 85,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i543304.jpg",
    "changed_at": "2026-11-21T14:39:56+00:00",
@@ -722,7 +722,7 @@
    "type": "Manga",
    "latest": 207,
    "completed": false,
-   "cover": "https://cdn.mangaupdates.com/image/thumb/i528683.jpg",
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i543388.jpg",
    "changed_at": "2026-11-18T00:58:01+00:00",
    "history": [
     {
@@ -1194,11 +1194,15 @@
    "title": "Ian the Illegitimate Son Was an Emperor",
    "url": "https://www.mangaupdates.com/series/jamg1pn/ian-the-illegitimate-son-was-an-emperor",
    "type": "Manhwa",
-   "latest": 134,
+   "latest": 135,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i534169.jpg",
-   "changed_at": "2026-11-16T22:11:09+00:00",
+   "changed_at": "2026-11-23T18:09:40+00:00",
    "history": [
+    {
+     "chapter": 135,
+     "at": "2026-11-23T18:09:40+00:00"
+    },
     {
      "chapter": 134,
      "at": "2026-11-16T22:11:09+00:00"
