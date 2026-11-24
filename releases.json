@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-24T03:57:40+00:00",
+ "checked_at": "2026-11-24T17:45:36+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -383,7 +383,7 @@
    "url": "https://www.mangaupdates.com/series/j7x0kkd/my-blasted-reincarnated-life",
    "type": "Manhwa",
    "latest": 87,
-   "completed": false,
+   "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i543304.jpg",
    "changed_at": "2026-11-24T03:57:40+00:00",
    "history": [
@@ -480,11 +480,15 @@
    "title": "The World After the Fall",
    "url": "https://www.mangaupdates.com/series/i41kc6g/the-world-after-the-fall",
    "type": "Manhwa",
-   "latest": 259,
+   "latest": 260,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i543420.jpg",
-   "changed_at": "2026-11-19T00:23:44+00:00",
+   "changed_at": "2026-11-24T17:45:36+00:00",
    "history": [
+    {
+     "chapter": 260,
+     "at": "2026-11-24T17:45:36+00:00"
+    },
     {
      "chapter": 259,
      "at": "2026-11-19T00:23:44+00:00"
@@ -2876,11 +2880,15 @@
    "title": "Reincarnator (ALLA)",
    "url": "https://www.mangaupdates.com/series/pi50tev/reincarnator-alla",
    "type": "Manhwa",
-   "latest": 160,
+   "latest": 161,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i504254.jpg",
-   "changed_at": "2026-11-20T15:27:56+00:00",
+   "changed_at": "2026-11-24T17:45:36+00:00",
    "history": [
+    {
+     "chapter": 161,
+     "at": "2026-11-24T17:45:36+00:00"
+    },
     {
      "chapter": 160,
      "at": "2026-11-20T15:27:56+00:00"
