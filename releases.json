@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-24T17:45:36+00:00",
+ "checked_at": "2026-11-25T02:30:30+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -31,11 +31,15 @@
    "title": "Omniscient Reader",
    "url": "https://www.mangaupdates.com/series/n50wl4o/omniscient-reader",
    "type": "Manhwa",
-   "latest": 311,
+   "latest": 312,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i519012.jpg",
-   "changed_at": "2026-11-16T21:57:51+00:00",
+   "changed_at": "2026-11-25T02:30:30+00:00",
    "history": [
+    {
+     "chapter": 312,
+     "at": "2026-11-25T02:30:30+00:00"
+    },
     {
      "chapter": 311,
      "at": "2026-11-16T21:57:51+00:00"
@@ -382,11 +386,15 @@
    "title": "My Blasted Reincarnated Life",
    "url": "https://www.mangaupdates.com/series/j7x0kkd/my-blasted-reincarnated-life",
    "type": "Manhwa",
-   "latest": 87,
+   "latest": 88,
    "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i543304.jpg",
-   "changed_at": "2026-11-24T03:57:40+00:00",
+   "changed_at": "2026-11-25T02:30:30+00:00",
    "history": [
+    {
+     "chapter": 88,
+     "at": "2026-11-25T02:30:30+00:00"
+    },
     {
      "chapter": 87,
      "at": "2026-11-24T03:57:40+00:00"
@@ -442,7 +450,7 @@
    "type": "Manhwa",
    "latest": 164,
    "completed": false,
-   "cover": "https://cdn.mangaupdates.com/image/thumb/i503967.jpg",
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i543540.jpg",
    "changed_at": "2026-11-24T03:57:40+00:00",
    "history": [
     {
@@ -532,11 +540,15 @@
    "title": "The Infinite Mage",
    "url": "https://www.mangaupdates.com/series/ev4ygbg/the-infinite-mage",
    "type": "Manhwa",
-   "latest": 194,
+   "latest": 195,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i514425.jpg",
-   "changed_at": "2026-11-18T15:40:57+00:00",
+   "changed_at": "2026-11-25T02:30:30+00:00",
    "history": [
+    {
+     "chapter": 195,
+     "at": "2026-11-25T02:30:30+00:00"
+    },
     {
      "chapter": 194,
      "at": "2026-11-18T15:40:57+00:00"
@@ -1551,11 +1563,15 @@
    "title": "The Bastard of Swordborne",
    "url": "https://www.mangaupdates.com/series/f40yr56/the-bastard-of-swordborne",
    "type": "Manhwa",
-   "latest": 121,
+   "latest": 122,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502563.jpg",
-   "changed_at": "2026-11-18T00:58:01+00:00",
+   "changed_at": "2026-11-25T02:30:30+00:00",
    "history": [
+    {
+     "chapter": 122,
+     "at": "2026-11-25T02:30:30+00:00"
+    },
     {
      "chapter": 121,
      "at": "2026-11-18T00:58:01+00:00"
