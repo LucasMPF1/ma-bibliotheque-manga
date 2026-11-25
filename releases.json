@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-25T02:30:30+00:00",
+ "checked_at": "2026-11-25T17:14:30+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -303,11 +303,15 @@
    "title": "Demon Devourer",
    "url": "https://www.mangaupdates.com/series/qvw2hie/demon-devourer",
    "type": "Manhwa",
-   "latest": 151,
+   "latest": 152,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502620.jpg",
-   "changed_at": "2026-11-18T15:40:57+00:00",
+   "changed_at": "2026-11-25T17:14:30+00:00",
    "history": [
+    {
+     "chapter": 152,
+     "at": "2026-11-25T17:14:30+00:00"
+    },
     {
      "chapter": 151,
      "at": "2026-11-18T15:40:57+00:00"
@@ -653,7 +657,7 @@
    "title": "The Reborn Young Lord Is an Assassin",
    "url": "https://www.mangaupdates.com/series/2phrgxp/the-reborn-young-lord-is-an-assassin",
    "type": "Manhwa",
-   "latest": 153,
+   "latest": 152,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505378.jpg",
    "changed_at": "2026-11-20T00:37:28+00:00",
@@ -871,11 +875,15 @@
    "title": "Hardcore Leveling Warrior",
    "url": "https://www.mangaupdates.com/series/n4mlav8/hardcore-leveling-warrior",
    "type": "Manhwa",
-   "latest": 155,
+   "latest": 156,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i428951.jpg",
-   "changed_at": "2026-11-18T15:40:57+00:00",
+   "changed_at": "2026-11-25T17:14:30+00:00",
    "history": [
+    {
+     "chapter": 156,
+     "at": "2026-11-25T17:14:30+00:00"
+    },
     {
      "chapter": 155,
      "at": "2026-11-18T15:40:57+00:00"
@@ -1056,11 +1064,16 @@
    "title": "The Stellar Swordmaster",
    "url": "https://www.mangaupdates.com/series/cnro3u3/the-stellar-swordmaster",
    "type": "Manhwa",
-   "latest": 146,
+   "latest": 147,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i521480.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-25T17:14:30+00:00",
+   "history": [
+    {
+     "chapter": 147,
+     "at": "2026-11-25T17:14:30+00:00"
+    }
+   ]
   },
   "17058241528": {
    "title": "How to Use a Returner",
@@ -1288,11 +1301,15 @@
    "title": "The Archmage's Restaurant",
    "url": "https://www.mangaupdates.com/series/31pnhwu/the-archmage-s-restaurant",
    "type": "Manhwa",
-   "latest": 159,
+   "latest": 160,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i539072.jpg",
-   "changed_at": "2026-11-20T23:59:10+00:00",
+   "changed_at": "2026-11-25T17:14:30+00:00",
    "history": [
+    {
+     "chapter": 160,
+     "at": "2026-11-25T17:14:30+00:00"
+    },
     {
      "chapter": 159,
      "at": "2026-11-20T23:59:10+00:00"
@@ -1503,7 +1520,7 @@
    "title": "The Regressed Mercenary Has a Plan",
    "url": "https://www.mangaupdates.com/series/ya9vyfk/the-regressed-mercenary-has-a-plan",
    "type": "Manhwa",
-   "latest": 115,
+   "latest": 107,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i509014.jpg",
    "changed_at": "2026-11-18T15:40:57+00:00",
@@ -2139,10 +2156,10 @@
    "type": "Manga",
    "latest": 103,
    "completed": false,
-   "cover": "https://cdn.mangaupdates.com/image/thumb/i539121.jpg",
+   "cover": "https://cdn.mangaupdates.com/image/thumb/i543616.jpg",
    "changed_at": null,
    "history": [],
-   "vo_volumes": 28
+   "vo_volumes": 29
   },
   "19001585632": {
    "title": "Hagane no Renkinjutsushi",
