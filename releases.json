@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-26T01:47:24+00:00",
+ "checked_at": "2026-11-26T16:54:43+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -1163,7 +1163,7 @@
    "url": "https://www.mangaupdates.com/series/kcvqli9/demon-king-of-the-royal-class",
    "type": "Manhwa",
    "latest": 80,
-   "completed": false,
+   "completed": true,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i502740.jpg",
    "changed_at": null,
    "history": []
@@ -1612,11 +1612,15 @@
    "title": "The Genius Prismatic Mage",
    "url": "https://www.mangaupdates.com/series/47rt5pa/the-genius-prismatic-mage",
    "type": "Manhwa",
-   "latest": 103,
+   "latest": 104,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i515997.jpg",
-   "changed_at": "2026-11-20T15:27:56+00:00",
+   "changed_at": "2026-11-26T16:54:43+00:00",
    "history": [
+    {
+     "chapter": 104,
+     "at": "2026-11-26T16:54:43+00:00"
+    },
     {
      "chapter": 103,
      "at": "2026-11-20T15:27:56+00:00"
@@ -2178,11 +2182,15 @@
    "title": "Hagane no Renkinjutsushi",
    "url": "https://www.mangaupdates.com/series/8q91xb4/hagane-no-renkinjutsushi",
    "type": "Manga",
-   "latest": 168,
+   "latest": 169,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i513279.jpg",
-   "changed_at": "2026-11-22T14:35:39+00:00",
+   "changed_at": "2026-11-26T16:54:43+00:00",
    "history": [
+    {
+     "chapter": 169,
+     "at": "2026-11-26T16:54:43+00:00"
+    },
     {
      "chapter": 168,
      "at": "2026-11-22T14:35:39+00:00"
@@ -2905,11 +2913,15 @@
    "title": "Surviving the Game as a Barbarian",
    "url": "https://www.mangaupdates.com/series/ly5au35/surviving-the-game-as-a-barbarian",
    "type": "Manhwa",
-   "latest": 170,
+   "latest": 171,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505374.jpg",
-   "changed_at": "2026-11-20T15:27:56+00:00",
+   "changed_at": "2026-11-26T16:54:43+00:00",
    "history": [
+    {
+     "chapter": 171,
+     "at": "2026-11-26T16:54:43+00:00"
+    },
     {
      "chapter": 170,
      "at": "2026-11-20T15:27:56+00:00"
