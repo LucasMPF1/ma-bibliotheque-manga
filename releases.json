@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-25T17:14:30+00:00",
+ "checked_at": "2026-11-26T01:47:24+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -66,11 +66,15 @@
    "title": "The Return of the Disaster-Class Hero",
    "url": "https://www.mangaupdates.com/series/jv1z73a/the-return-of-the-disaster-class-hero",
    "type": "Manhwa",
-   "latest": 197,
+   "latest": 198,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i503940.jpg",
-   "changed_at": "2026-11-19T15:45:04+00:00",
+   "changed_at": "2026-11-26T01:47:24+00:00",
    "history": [
+    {
+     "chapter": 198,
+     "at": "2026-11-26T01:47:24+00:00"
+    },
     {
      "chapter": 197,
      "at": "2026-11-19T15:45:04+00:00"
@@ -529,11 +533,15 @@
    "title": "Pick Me Up!",
    "url": "https://www.mangaupdates.com/series/r4ksmo5/pick-me-up",
    "type": "Manhwa",
-   "latest": 228,
+   "latest": 229,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i535665.jpg",
-   "changed_at": "2026-11-19T00:23:44+00:00",
+   "changed_at": "2026-11-26T01:47:24+00:00",
    "history": [
+    {
+     "chapter": 229,
+     "at": "2026-11-26T01:47:24+00:00"
+    },
     {
      "chapter": 228,
      "at": "2026-11-19T00:23:44+00:00"
@@ -904,11 +912,16 @@
    "title": "Log-In Murim",
    "url": "https://www.mangaupdates.com/series/zbcw2f8/log-in-murim",
    "type": "Manhwa",
-   "latest": 253,
+   "latest": 254,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540976.jpg",
-   "changed_at": null,
-   "history": []
+   "changed_at": "2026-11-26T01:47:24+00:00",
+   "history": [
+    {
+     "chapter": 254,
+     "at": "2026-11-26T01:47:24+00:00"
+    }
+   ]
   },
   "53575829933": {
    "title": "Return of the SSS-Class Demon Lord",
@@ -2543,11 +2556,16 @@
    "title": "One Punch-Man",
    "url": "https://www.mangaupdates.com/series/e1096mh/one-punch-man",
    "type": "Manga",
-   "latest": 241,
+   "latest": 242,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i530468.jpg",
-   "changed_at": null,
-   "history": [],
+   "changed_at": "2026-11-26T01:47:24+00:00",
+   "history": [
+    {
+     "chapter": 242,
+     "at": "2026-11-26T01:47:24+00:00"
+    }
+   ],
    "vo_volumes": 37
   },
   "27540312201": {
@@ -2932,11 +2950,15 @@
    "title": "Ranker's Return (2021)",
    "url": "https://www.mangaupdates.com/series/qd1drv8/ranker-s-return-2021",
    "type": "Manhwa",
-   "latest": 270,
+   "latest": 271,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i531585.jpg",
-   "changed_at": "2026-11-24T03:57:40+00:00",
+   "changed_at": "2026-11-26T01:47:24+00:00",
    "history": [
+    {
+     "chapter": 271,
+     "at": "2026-11-26T01:47:24+00:00"
+    },
     {
      "chapter": 270,
      "at": "2026-11-24T03:57:40+00:00"
