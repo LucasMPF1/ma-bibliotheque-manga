@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-27T16:40:17+00:00",
+ "checked_at": "2026-11-28T01:27:18+00:00",
  "series": {
   "15180124327": {
    "title": "Solo Leveling",
@@ -85,11 +85,15 @@
    "title": "The Frozen Player Returns",
    "url": "https://www.mangaupdates.com/series/6iabio1/the-frozen-player-returns",
    "type": "Manhwa",
-   "latest": 235,
+   "latest": 236,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i505318.jpg",
-   "changed_at": "2026-11-21T23:16:26+00:00",
+   "changed_at": "2026-11-28T01:27:18+00:00",
    "history": [
+    {
+     "chapter": 236,
+     "at": "2026-11-28T01:27:18+00:00"
+    },
     {
      "chapter": 235,
      "at": "2026-11-21T23:16:26+00:00"
@@ -262,11 +266,15 @@
    "title": "The Top Dungeon Farmer",
    "url": "https://www.mangaupdates.com/series/fdbhhx7/the-top-dungeon-farmer",
    "type": "Manhwa",
-   "latest": 153,
+   "latest": 154,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i540009.jpg",
-   "changed_at": "2026-11-21T14:39:56+00:00",
+   "changed_at": "2026-11-28T01:27:18+00:00",
    "history": [
+    {
+     "chapter": 154,
+     "at": "2026-11-28T01:27:18+00:00"
+    },
     {
      "chapter": 153,
      "at": "2026-11-21T14:39:56+00:00"
@@ -762,11 +770,15 @@
    "title": "Reborn as the Enemy Prince",
    "url": "https://www.mangaupdates.com/series/m3eyfwm/reborn-as-the-enemy-prince",
    "type": "Manhwa",
-   "latest": 127,
+   "latest": 128,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i498176.jpg",
-   "changed_at": "2026-11-20T23:59:10+00:00",
+   "changed_at": "2026-11-28T01:27:18+00:00",
    "history": [
+    {
+     "chapter": 128,
+     "at": "2026-11-28T01:27:18+00:00"
+    },
     {
      "chapter": 127,
      "at": "2026-11-20T23:59:10+00:00"
@@ -891,7 +903,7 @@
    "title": "Hardcore Leveling Warrior",
    "url": "https://www.mangaupdates.com/series/n4mlav8/hardcore-leveling-warrior",
    "type": "Manhwa",
-   "latest": 156,
+   "latest": 490,
    "completed": false,
    "cover": "https://cdn.mangaupdates.com/image/thumb/i428951.jpg",
    "changed_at": "2026-11-25T17:14:30+00:00",
